@@ -1,0 +1,20 @@
+
+void (*ENG_CAPI_PropertySound_SetPlaying)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySound_GetPlaying)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySound_SetRepeat)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySound_GetRepeat)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySound_SetVolume)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertySound_GetVolume)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySound_SetWaveFile)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertySound_GetWaveFile)(eng_obj_ptr obj  ) = NULL;
+
+

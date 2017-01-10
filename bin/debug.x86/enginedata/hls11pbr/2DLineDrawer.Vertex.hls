@@ -1,0 +1,69 @@
+#line 1 "enginedata\hls11\LineDrawer.Vertex.hls"
+
+
+cbuffer SHADER_EXTERN
+{
+	float4 ScreenWidth;
+	float4 ScreenHeight;
+	
+	float4x4 Orientation;
+};
+
+
+
+
+// 입력정점 형식
+struct VS_INPUT
+{
+    float3 Position : POSITION;
+	float4 Color : COLOR;
+};
+
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float4 Color : NORMAL0;
+};
+
+
+
+
+
+
+VS_OUTPUT VS(VS_INPUT In)
+{
+	const float DepthRange = 100.0;
+
+
+
+    VS_OUTPUT   Out;
+    
+	float4 pos3;
+	pos3.x = (In.Position.x * 2.0) / ScreenWidth.x - 1.0;
+	pos3.y = (-In.Position.y * 2.0) / ScreenHeight.x + 1.0;
+	pos3.z = 0.0;
+	pos3.w = 1.0;
+	pos3 = mul(pos3, Orientation);
+    
+	Out.Position.x = pos3.x;
+	Out.Position.y = pos3.y;
+	Out.Position.z = In.Position.z ;
+	Out.Position.w = 1.0;
+
+	Out.Color = In.Color;
+
+	return Out;
+	
+	
+
+}
+
+
+
+
+

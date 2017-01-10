@@ -1,0 +1,16 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySound_SetPlaying)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySound_GetPlaying)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySound_SetRepeat)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySound_GetRepeat)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySound_SetVolume)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertySound_GetVolume)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySound_SetWaveFile)(eng_obj_ptr obj,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertySound_GetWaveFile)(eng_obj_ptr obj );
+
+

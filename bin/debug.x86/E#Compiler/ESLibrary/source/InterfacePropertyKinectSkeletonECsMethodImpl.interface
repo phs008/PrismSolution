@@ -1,0 +1,140 @@
+	public Vector3 GetAnkleLeft( );
+	public void SetAnkleLeft(Vector3 value);
+
+
+
+	public Vector3 GetAnkleRight( );
+	public void SetAnkleRight(Vector3 value);
+
+
+
+	public Vector3 GetElbowLeft( );
+	public void SetElbowLeft(Vector3 value);
+
+
+
+	public Vector3 GetElbowRight( );
+	public void SetElbowRight(Vector3 value);
+
+
+
+	public Vector3 GetFootLeft( );
+	public void SetFootLeft(Vector3 value);
+
+
+
+	public Vector3 GetFootRight( );
+	public void SetFootRight(Vector3 value);
+
+
+
+	public Vector3 GetHandLeft( );
+	public void SetHandLeft(Vector3 value);
+
+
+
+	public Vector3 GetHandRight( );
+	public void SetHandRight(Vector3 value);
+
+
+
+	public Vector3 GetHandTipLeft( );
+	public void SetHandTipLeft(Vector3 value);
+
+
+
+	public Vector3 GetHandTipRight( );
+	public void SetHandTipRight(Vector3 value);
+
+
+
+	public Vector3 GetHead( );
+	public void SetHead(Vector3 value);
+
+
+
+	public Vector3 GetHipLeft( );
+	public void SetHipLeft(Vector3 value);
+
+
+
+	public Vector3 GetHipRight( );
+	public void SetHipRight(Vector3 value);
+
+
+
+	public Vector3 GetKneeLeft( );
+	public void SetKneeLeft(Vector3 value);
+
+
+
+	public Vector3 GetKneeRight( );
+	public void SetKneeRight(Vector3 value);
+
+
+
+	public int GetLeftHand( );
+	public void SetLeftHand(int value);
+
+
+
+	public Vector3 GetNeck( );
+	public void SetNeck(Vector3 value);
+
+
+
+	public int GetRightHand( );
+	public void SetRightHand(int value);
+
+
+
+	public Vector3 GetShoulderLeft( );
+	public void SetShoulderLeft(Vector3 value);
+
+
+
+	public Vector3 GetShoulderRight( );
+	public void SetShoulderRight(Vector3 value);
+
+
+
+	public Vector3 GetSpineBase( );
+	public void SetSpineBase(Vector3 value);
+
+
+
+	public Vector3 GetSpineMid( );
+	public void SetSpineMid(Vector3 value);
+
+
+
+	public Vector3 GetSpineShoulder( );
+	public void SetSpineShoulder(Vector3 value);
+
+
+
+	public Vector3 GetThumbLeft( );
+	public void SetThumbLeft(Vector3 value);
+
+
+
+	public Vector3 GetThumbRight( );
+	public void SetThumbRight(Vector3 value);
+
+
+
+	public int GetTracked( );
+	public void SetTracked(int value);
+
+
+
+	public Vector3 GetWristLeft( );
+	public void SetWristLeft(Vector3 value);
+
+
+
+	public Vector3 GetWristRight( );
+	public void SetWristRight(Vector3 value);
+
+
+

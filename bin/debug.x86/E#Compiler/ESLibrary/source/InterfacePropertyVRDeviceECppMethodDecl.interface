@@ -1,0 +1,4 @@
+	string GetDeviceID( );
+	void SetDeviceID(const char * value);
+
+

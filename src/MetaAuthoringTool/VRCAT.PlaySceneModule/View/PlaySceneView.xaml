@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="VRCAT.PlaySceneModule.PlaySceneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top">
+            <Button Content="카메라 리셋" Click="CameraReset_Click" Margin="5,0,0,0" />
+            <Label Content="카메라 선택"/>
+            <ComboBox DropDownOpened="ComboBox_DropDownOpened" x:Name="CameraComboBox" DisplayMemberPath="Name" SelectionChanged="CameraComboBox_SelectionChanged" />
+        </StackPanel>
+        <Border x:Name="RenderingView" Background="Transparent"
+                MouseMove="RenderingView_MouseMove" 
+                MouseDown="RenderingView_MouseDown"
+                MouseUp="RenderingView_MouseUp"
+                MouseWheel="RenderingView_MouseWheel" 
+                MouseLeave="RenderView_MouseLeave"
+                KeyDown="RenderingView_KeyDown" 
+                KeyUp="RenderingView_KeyUp"
+                Focusable="True"
+                >
+        </Border>
+    </DockPanel>
+
+</UserControl>

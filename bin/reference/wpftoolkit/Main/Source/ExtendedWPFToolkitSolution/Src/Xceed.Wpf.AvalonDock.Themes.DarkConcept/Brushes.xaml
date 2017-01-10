@@ -1,0 +1,47 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="DarkTheme_MainColor"
+                   Color="#141414" />
+    <SolidColorBrush x:Key="DarkTheme_Gray"
+                   Color="#424242"/>
+
+    <SolidColorBrush x:Key="DarkTheme_LightGray"
+                     Color="#303030" />
+
+    <SolidColorBrush x:Key="DarkTheme_White"
+                   Color="#F6F6F6"/>
+
+    <SolidColorBrush x:Key="DarkTheme_MainSpliter"
+                   Color="#000000" />
+    
+    <SolidColorBrush x:Key="DarkTheme_DockingLayoutBackgroundColor"
+                     Color="#212121" />
+
+    <SolidColorBrush x:Key="DarkTheme_PanelBorderBrush"
+                   Color="#000000"/>
+
+
+    <LinearGradientBrush x:Key="DarkTheme_BaseColor16"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <!--<GradientStop Color="#5e2e2e" Offset="0" />
+		<GradientStop Color="#340808" Offset="1" />-->
+        <GradientStop Color="DarkGray" Offset="0" />
+        <GradientStop Color="LightGray" Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DarkTheme_BaseColor2" 
+                     Color="Black"/>
+
+    <SolidColorBrush x:Key="DarkTheme_ITemContainerBackgroundColor" 
+                     Color="#303030"/>
+
+    <SolidColorBrush x:Key="DarkTheme_LayoutSelectColor" 
+                     Color="#3F51B5"/>
+    <SolidColorBrush x:Key="DarkTheme_DocumentSelectColor" 
+                     Color="#424242"/>
+
+    <SolidColorBrush x:Key="DarkTheme_BaseColor4" 
+                     Color="#5EA1C0"/>
+</ResourceDictionary>

@@ -1,0 +1,111 @@
+
+
+Vector3* PropertyTransform::GetPosition( )
+{
+	if (ENG_CAPI_PropertyTransform_GetPosition)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyTransform_GetPosition(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyTransform::SetPosition(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyTransform_SetPosition)
+	{
+		ENG_CAPI_PropertyTransform_SetPosition(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetPosition is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Quaternion* PropertyTransform::GetRotation( )
+{
+	if (ENG_CAPI_PropertyTransform_GetRotation)
+	{
+		Quaternion *r = new Quaternion;
+		*r = Quaternion( ENG_CAPI_PropertyTransform_GetRotation(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Quaternion *r = new Quaternion;
+		*r = Quaternion( ::Quaternion(0.0f, 0.0f, 0.0f, 1.0f) );
+		return r;
+	}
+}
+
+
+void PropertyTransform::SetRotation(  Quaternion *value)
+{
+	if (ENG_CAPI_PropertyTransform_SetRotation)
+	{
+		ENG_CAPI_PropertyTransform_SetRotation(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetRotation is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyTransform::GetScale( )
+{
+	if (ENG_CAPI_PropertyTransform_GetScale)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyTransform_GetScale(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyTransform::SetScale(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyTransform_SetScale)
+	{
+		ENG_CAPI_PropertyTransform_SetScale(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetScale is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

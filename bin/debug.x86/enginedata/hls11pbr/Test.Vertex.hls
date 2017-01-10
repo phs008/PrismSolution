@@ -1,0 +1,187 @@
+#line 1 "enginedata\hls11\Test.Vertex.hls"
+
+
+cbuffer SHADER_EXTERN
+{
+	float4x4 WorldViewProj;
+	float4x4 ViewProj;
+	float4x4 World;
+	float4x4 WorldInverse;
+	float4x4 ObjectWorld;
+	float4x4 View;
+	float4x4 Proj;
+	float4 CameraPos;
+	float4 SunLight;
+
+	int DrawPhase;
+	float4x4 ShadowMapMatrix;
+	float4 UseShadowMap;
+	float4 ShadowMapDepthMax; 
+	float4 ShadowMapDepthMin; 
+	
+};
+
+
+//#include "Common.Vertex.inc"
+
+
+
+
+// 입력정점 형식
+struct VS_INPUT
+{
+    float3 Position : POSITION;
+    float3 Normal : NORMAL;
+    float2 UV : TEXCOORD0;
+    float4 Tangent : NORMAL1;
+};
+
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+	float4 InPosition : TEXCOORD1;
+	float4 ViewPosition : TEXCOORD2;
+	float4 ShadowPosition : TEXCOORD3;
+	float4 CameraPosition : TEXCOORD4;
+	float3 Normal : NORMAL0; 
+    float3 Tangent : NORMAL1;
+    float3 Binormal : NORMAL2;
+	
+};
+
+
+/*
+	PhaseRender = 0,
+	PhaseEnvMap = 1,
+	PhaseFrame = 2,
+	PhaseDepth = 3,
+	PhaseShadowMap = 4,
+	PhaseMirror = 5,
+	PhasePosition = 6,
+	PhaseNormal = 7,
+*/
+
+
+	// shadow map function
+
+
+
+float4 GetShadowPosition(float4 posWorld)
+{
+	float4 shadowPos = mul(posWorld, ShadowMapMatrix);
+
+	return shadowPos;
+}
+
+
+
+VS_OUTPUT VS(VS_INPUT In)
+{
+    VS_OUTPUT   Out;
+    
+    float4 posWorld;
+    
+    posWorld.xyz = In.Position;
+    posWorld.w = 1.0;
+
+	float3 normalTrans = mul( (float3)(In.Normal), (float3x3)(World)) ;
+	normalTrans = normalize(normalTrans);
+
+	posWorld = mul(posWorld, World );
+	
+	float3 posWorldSave = posWorld.xyz / posWorld.w;
+	
+	Out.InPosition = float4(posWorldSave, 1.0);
+	
+	//  PhaseShadowMap
+	if (DrawPhase == 4) 
+	{
+		
+		Out.ShadowPosition = GetShadowPosition(posWorld) ;
+		Out.CameraPosition = Out.ShadowPosition;
+		Out.ViewPosition = Out.ShadowPosition;
+		Out.Position = Out.ViewPosition;
+	}
+	else
+	{
+		if (UseShadowMap.x > 0.9)   
+		{
+			Out.ShadowPosition = GetShadowPosition(Out.InPosition) ;
+		}
+
+		posWorld = mul(posWorld, View); 
+		
+		Out.UV.z = posWorld.z / posWorld.w;
+		Out.CameraPosition = posWorld;
+		
+		Out.ViewPosition = mul(posWorld, Proj); 
+		Out.Position = Out.ViewPosition ;
+
+		if (UseShadowMap.x < 0.1)   
+		{
+			//Out.ShadowPosition = Out.ViewPosition;
+		}
+		
+	}
+
+	Out.UV.xy = In.UV;
+	
+	Out.Normal = normalTrans;
+
+	
+	if ((In.Tangent.x * In.Tangent.x + In.Tangent.y * In.Tangent.y + In.Tangent.z * In.Tangent.z) > 0.001)
+	{
+		// tangent space로 변환
+		float3 tangent = normalize(mul( (float3)In.Tangent, (float3x3)(World) ));
+		// cross product 를 이용
+		Out.Tangent = tangent;
+
+		// cross product 를 이용
+		if (In.Tangent.w > 0.0)
+			Out.Binormal = normalize( cross(tangent, Out.Normal) );  
+		else
+			Out.Binormal = normalize( cross(-tangent, Out.Normal) ); 
+		
+	}
+	else
+	{
+		Out.Tangent = float3(0.0, 0.0, 0.0);
+		Out.Binormal = float3(0.0, 0.0, 0.0);
+	}
+	
+    
+	return Out;
+
+}
+
+
+
+
+
+
+
+
+		//Out.CameraDir = posWorldSave - CameraPos ;
+		//Out.CameraDir = normalize(mul( surfaceSpace , Out.CameraDir  ) );
+		//Out.Normal = normalize(mul( surfaceSpace , Out.Normal  ) );
+		//Out.CameraDir = (float3)posWorld - CameraPos ;
+		//Out.CameraDir = normalize( Out.CameraDir ) ;
+
+		// goes to per pixel fragment shader
+		//float3x3 surfaceSpace = float3x3(tangent, Out.Binormal, Out.Normal);   // column major 로 들어감
+		//Out.Light = normalize(mul( surfaceSpace, SunLight));  // column vector 이므로 순서 반대로 변환해야함 
+		//Out.Light = SunLight;
+	//float4 Diffuse : NORMAL3;
+         
+	// tangent space로 변환 끝
+	//float f = dot(-SunLight.xyz , normalTrans ) ;
+	//if (f < 0)
+	//	f = 0;
+	//Out.Diffuse = float4(f,f,f,1.0);
+	

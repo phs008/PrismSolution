@@ -1,0 +1,4 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyKinectImage_SetImageType)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyKinectImage_GetImageType)(eng_obj_ptr obj );
+
+

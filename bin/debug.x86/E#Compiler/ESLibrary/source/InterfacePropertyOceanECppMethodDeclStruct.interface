@@ -1,0 +1,6 @@
+	Vector3* GetOceanWaterColor();
+	void SetOceanWaterColor(Vector3 *value);
+
+	Vector2* GetOceanWindDir();
+	void SetOceanWindDir(Vector2 *value);
+

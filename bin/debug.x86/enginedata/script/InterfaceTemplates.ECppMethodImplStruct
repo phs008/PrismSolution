@@ -1,0 +1,36 @@
+
+
+%argtype%* %group%::Get%prop%( )
+{
+	if (ENG_CAPI_%group%_Get%prop%)
+	{
+		%argtype% *r = new %argtype%;
+		*r = %argtype%( ENG_CAPI_%group%_Get%prop%(Owner->id  %groupindexprevcomma%) );
+		return r;
+	}
+	else
+	{
+		%argtype% *r = new %argtype%;
+		*r = %argtype%( %default% );
+		return r;
+	}
+}
+
+
+void %group%::Set%prop%(  %argtype% *value)
+{
+	if (ENG_CAPI_%group%_Set%prop%)
+	{
+		ENG_CAPI_%group%_Set%prop%(Owner->id, %groupindexcomma%  *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_%group%_Set%prop% is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+

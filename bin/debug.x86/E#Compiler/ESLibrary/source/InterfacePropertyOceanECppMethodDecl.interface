@@ -1,0 +1,40 @@
+	float GetOceanChoppyScale( );
+	void SetOceanChoppyScale(float value);
+
+
+	float GetOceanGlossiness( );
+	void SetOceanGlossiness(float value);
+
+
+	float GetOceanMetalness( );
+	void SetOceanMetalness(float value);
+
+
+	int GetOceanPatchLength( );
+	void SetOceanPatchLength(int value);
+
+
+	int GetOceanPause( );
+	void SetOceanPause(int value);
+
+
+	int GetOceanSize( );
+	void SetOceanSize(int value);
+
+
+	float GetOceanTimeScale( );
+	void SetOceanTimeScale(float value);
+
+
+	float GetOceanWaveAmplitude( );
+	void SetOceanWaveAmplitude(float value);
+
+
+	float GetOceanWindDependency( );
+	void SetOceanWindDependency(float value);
+
+
+	float GetOceanWindSpeed( );
+	void SetOceanWindSpeed(float value);
+
+

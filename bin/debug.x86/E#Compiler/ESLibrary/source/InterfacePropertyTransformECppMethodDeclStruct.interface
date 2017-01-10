@@ -1,0 +1,9 @@
+	Vector3* GetPosition();
+	void SetPosition(Vector3 *value);
+
+	Quaternion* GetRotation();
+	void SetRotation(Quaternion *value);
+
+	Vector3* GetScale();
+	void SetScale(Vector3 *value);
+

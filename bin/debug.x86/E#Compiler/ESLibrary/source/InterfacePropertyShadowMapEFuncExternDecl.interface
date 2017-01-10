@@ -1,0 +1,20 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyShadowMap_SetShadowDarkness)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyShadowMap_GetShadowDarkness)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyShadowMap_SetShadowMapAlias)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyShadowMap_GetShadowMapAlias)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMax)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyShadowMap_GetShadowMapDepthMax)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMin)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyShadowMap_GetShadowMapDepthMin)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyShadowMap_SetUseShadowMap)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyShadowMap_GetUseShadowMap)(eng_obj_ptr obj );
+
+

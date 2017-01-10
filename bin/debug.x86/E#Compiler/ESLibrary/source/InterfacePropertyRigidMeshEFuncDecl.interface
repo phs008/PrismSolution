@@ -1,0 +1,10 @@
+
+void (*ENG_CAPI_PropertyRigidMesh_SetMaterial)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyRigidMesh_GetMaterial)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyRigidMesh_SetMesh)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyRigidMesh_GetMesh)(eng_obj_ptr obj  ) = NULL;
+
+

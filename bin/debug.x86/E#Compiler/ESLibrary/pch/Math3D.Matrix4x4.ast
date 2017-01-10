@@ -1,0 +1,77 @@
+(V COMPILATION_UNIT 1
+  NIL
+  NIL
+  (V EXTERN_ALIAS_DIRECTIVES_OPT 0
+    NIL
+    NIL)
+  (V USING_DIRECTIVES_OPT 1
+    NIL
+    NIL
+    (V USING_DIRECTIVES 0
+      NIL
+      NIL
+      (V USING_DIRECTIVE 1
+        NIL
+        NIL
+        (T "using" 1)
+        (V NAMESPACE_NAME 0
+          $6
+          NIL
+          (V NAMESPACE_OR_TYPE_NAME 0
+            NIL
+            NIL
+            (T "System" 1)
+            (V TYPE_ARGUMENT_LIST_OPT 0
+              NIL
+              NIL)))
+        (T ";" 1))))
+  (V NAMESPACE_MEMBER_DECLARATIONS 0
+    $4
+    NIL
+    (V NAMESPACE_MEMBER_DECLARATION 1
+      $4
+      NIL
+      (V TYPE_DECLARATION 0
+        $4
+        NIL
+        (V CLASS_DECLARATION 0
+          $4
+          NIL
+          (V ATTRIBUTES_OPT 0
+            NIL
+            NIL)
+          (V MODIFIERS_OPT 1
+            NIL
+            NIL
+            (V MODIFIERS 0
+              NIL
+              NIL
+              (V MODIFIER 1
+                NIL
+                NIL
+                (T "public" 18))))
+          (V PARTIAL_OPT 0
+            NIL
+            NIL)
+          (T "class" 18)
+          (T "Matrix" 18)
+          (V TYPE_PARAMETER_LIST_OPT 0
+            NIL
+            NIL)
+          (V CLASS_BASE_OPT 0
+            NIL
+            NIL)
+          (V TYPE_PARAMETER_CONSTRAINTS_CLAUSES_OPT 0
+            NIL
+            NIL)
+          (V CLASS_BODY 0
+            NIL
+            NIL
+            (T "{" 19)
+            (V CLASS_MEMBER_DECLARATIONS_OPT 0
+              NIL
+              NIL)
+            (T "}" 821))
+          (V SEMI_OPT 0
+            NIL
+            NIL))))))

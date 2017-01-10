@@ -1,0 +1,15 @@
+
+void (*ENG_CAPI_PropertyCube_SetDepth)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCube_GetDepth)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCube_SetHeight)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCube_GetHeight)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCube_SetWidth)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCube_GetWidth)(eng_obj_ptr obj  ) = NULL;
+
+

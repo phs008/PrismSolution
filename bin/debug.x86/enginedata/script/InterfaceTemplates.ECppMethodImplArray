@@ -1,0 +1,22 @@
+
+%rettype% %group%::Get%prop%( int index)
+{
+	if (ENG_CAPI_%group%_Get%prop%)
+		return ENG_CAPI_%group%_Get%prop%(Owner->id, %groupindexcomma%  index);
+	else
+		return %default%;
+}
+
+
+void %group%::Set%prop%(  %argtype% value, int index)
+{
+	if (ENG_CAPI_%group%_Set%prop%)
+		ENG_CAPI_%group%_Set%prop%(Owner->id, %groupindexcomma%  value, index);
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_%group%_Set%prop% is not Linked", 0, 0.0f );
+	}
+}
+
+

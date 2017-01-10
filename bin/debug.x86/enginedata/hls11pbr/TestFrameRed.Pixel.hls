@@ -1,0 +1,328 @@
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+};
+
+
+cbuffer SHADER_EXTERN
+{
+	float4   CameraPos;
+	float4x4 ViewProj;
+	float4x4 ProjInverse;	
+	float4x4 View;
+	float4   LightColors;
+	float4   LightPositions;
+};
+
+
+//sampler TextureFrameColor : register(s0);
+//sampler TextureFrameDepth : register(s1);
+
+//Texture2D TextureFrameColor : register(t0);
+//SamplerState TextureFrameSampler : register(s0);
+
+
+//sampler TextureDiffuse : register(s0);
+
+//Texture2D TextureDiffuse : register(t0);
+//SamplerState TextureDiffuseSampler : register(s0);
+
+
+//sampler TextureFrameColor : register(s0);
+
+Texture2D TextureFrameColor : register(t0);
+SamplerState TextureDiffuseSampler : register(s0);
+
+Texture2D TextureFrameNormal : register(t1);
+Texture2D TextureFrameDepth : register(t2);
+Texture2D TextureFramePosition : register(t3);
+
+Texture2D TexturePBRCubeMap : register(t4);
+
+//TextureCube TexturePBRCubeMap : register(t4);
+
+float linearizeDepth(float d) {
+	float f = 2000.0;
+	float n = 0.3;
+	return (2 * n) / (f + n - d * (f - n));
+}
+
+float3 reconstructPos(float2 uv, float d) {
+	//float4 p = float4(float3(uv * 2.0 - 1.0, d), 1.0);
+	float4 p = float4(uv.x*2.0-1.0,uv.y*2.0-1.0, d, 1.0);
+	float4x4 originProjInverse = transpose(ProjInverse);		
+	p = mul(originProjInverse, p);			
+	return p.xyz / p.w;
+}
+
+
+float4 getGbuf(Texture2D tex, float2 uv) {
+	return tex.Sample(TextureDiffuseSampler, uv * float2(1.0, -1.0));
+}
+
+
+float3 calcLightingExt(float3 albedo, float3 normal, float3 position, float emissive,float3 depth) {
+		
+	LightColors = float4(1.0,0.0,0.0,1.0);
+	LightPositions = float4(1000.0,1000.0,1000.0,1.01);
+
+	const float3 amb = float3(1.0, 1.0, 1.0) * 0.002;
+	
+	float3 view = normalize(-position);
+	float3 col = float3(0, 0, 0);
+	View = transpose(View);
+	
+		float4 viewLightPos = mul(View, float4(LightPositions.xyz, 1.0));
+		float3 light = viewLightPos.xyz - position;
+		float lightDist2 = max(0.001, dot(light, light));
+		light = normalize(light);
+
+		float diff = saturate(dot(light, normal));
+		float intensity = LightColors.a;
+		diff *= intensity / lightDist2;
+
+		float3 H = normalize(light + view);
+		float NdotH = dot(normal, H);
+		float spec = 0;
+		if (dot(light, normal) > 0) {
+			const float a = 200;
+			spec = pow(saturate(NdotH), a);
+			spec *= intensity;
+			// Normalization factor for energy conservation
+			spec *= (a + 8) / (8 * 3.1415);
+		}
+
+		col += lerp(
+			diff * LightColors.rgb,
+			spec * LightColors.rgb,
+			0.50);
+	
+	col = col * albedo + amb * albedo;
+	col += albedo * emissive * 32.0;
+	
+	return pow(col, 1.0 / 2.2);
+}
+
+float3 calcLighting(float3 pos, float3 normal,float3 albedo,float3 depth) {
+     float4 LightFactor   = float4(-0.57735032,-0.57735032,0.5773502,1);
+	 float4 LightAmbient = float4(0.5,0.5,0.5,1.0);
+	 float4 LightDiffuse = float4(0.89999998,0.89999998,0.89999998,1);
+	 float4 LightSpecular = float4(0.30000001,0.30000001,0.30000001,1);
+	 float3 MaterialAmbient = float3(1,1,1);
+     float  attenuationValue = 1.0;
+	 float3 CameraPos = float3(1,1,0);
+	 float3 lightDirection = float3(0,-1,1);
+	 float4 highlight = float4(0.0,0.0,0.0,1.0);
+	 float4 MaterialDiffuse = float4(1.0,0.0,0.0,0.0);
+	 
+	 float3 specularAlbedo = float3(1,1,1);
+	 float  specularPower= 200;
+	 lightDirection = normalize(lightDirection);
+
+	 float3 directionLightDirection = -lightDirection;
+	 float3 lightColor = float3(1.0,1.0,1.0);
+	 
+	 float  normalDotLighting = saturate( dot( normal, directionLightDirection ) ); 
+	 
+	 //float3 diffuse = normalDotLighting * lightColor * albedo; 
+
+	 float4 tmpDiffuse = normalDotLighting * LightDiffuse * MaterialDiffuse.x;
+	 highlight += LightAmbient * MaterialAmbient.x;
+	 highlight += tmpDiffuse;
+
+	 float3 diffuse = albedo.xyz * highlight.xyz;
+
+
+	 // specular value
+	 float3 viewVector = CameraPos - pos;
+	 float3 halfVector = normalize(directionLightDirection + viewVector);
+	 //float3 specularVal = pow( saturate( dot( normal, halfVector ) ), specularPower ) * lightColor *specularAlbedo *  normalDotLighting ;  
+
+	 float3 specularVal = pow( saturate( dot( normal, halfVector ) ), specularPower ) * lightColor *specularAlbedo;
+
+
+	 diffuse = diffuse.xyz * highlight.xyz;
+
+	 if(depth.x >=  0.999) 
+	 	return albedo;
+
+	 return (diffuse); //+specularVal);
+}
+
+
+// 2016.09.19 start 
+float2 ConvCubeCoord(float3 r)
+{
+	r = normalize(r);
+	float dirx = abs(r.x);
+	float diry = abs(r.y);
+	float dirz = abs(r.z);
+	
+	float2 uv = float2(0.0, 0.0);
+	if (dirx >= diry && dirx >= dirz)
+	{
+		if (r.x >= 0.0)
+		{
+			uv.x = r.z / r.x / 8.0 + 1.0/8.0;
+			uv.y = r.y / r.x / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = r.z / r.x / 8.0 + 5.0/8.0;
+			uv.y = - r.y / r.x / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (dirz >= diry && dirz >= dirx)
+	{
+		if (r.z >= 0.0)
+		{
+			uv.x = - r.x / r.z / 8.0 + 3.0/8.0;
+			uv.y = r.y / r.z / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = - r.x / r.z / 8.0 + 7.0/8.0;
+			uv.y = - r.y / r.z / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (diry >= dirz && diry >= dirx)
+	{
+		if (r.y >= 0.0)
+		{
+			uv.x = - r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 5.0/6.0;
+		}
+		else
+		{
+			uv.x = r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 1.0/6.0;
+		}
+	}
+
+	uv.y = 1.0 - uv.y;
+	return uv;
+}
+
+
+float2 ConvERPCoord(float3 v)
+{
+
+	float PI = 3.1415926535;
+	
+	float2 uv;
+	v = normalize(v);
+	uv.x = atan(v.z / v.x);
+	if (v.x < 0)
+		uv.x += PI;
+	if (uv.x < 0)
+		uv.x += PI * 2.0;
+	
+	uv.x = fmod(uv.x , PI * 2.0 );
+
+	uv.y = acos( v.y );
+
+	uv = float2(uv.x / (PI * 2.0) , uv.y / PI  );
+
+	return uv;
+
+}
+
+
+float3 GetGlossTexture(float3 decal0, float3 normal, float3 cameraDir, float4 glossinessmap)
+{
+	float3 Glossiness;
+	Glossiness.x = 0.2;
+
+	//if (Glossiness.x > 0.001)
+	{
+		//R = 2*(V dot N)*N - V
+		float3 reflectionDir =  (normal * dot(normal, -cameraDir) * 2.0 + cameraDir) ;
+				
+		reflectionDir = normalize(reflectionDir);
+
+		float2 uv; 
+
+		//if (BackgroundType.x == 2.0)
+		//	uv = ConvCubeCoord(reflectionDir); 
+		//else  // 3.0
+			uv = ConvERPCoord(reflectionDir); 
+
+		float4 reflection = TexturePBRCubeMap.Sample(TextureDiffuseSampler, uv);		
+		return decal0.xyz * (1.0 - glossinessmap.xyz * Glossiness.x) + reflection.xyz * ( glossinessmap.xyz * Glossiness.x );
+	}
+	//else
+	//	return decal0;
+}
+// // 2016.09.19 end
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	float4 color;
+	float4 normal;
+	float3 finalColor;
+	float4 decal; // 2016.09.19
+	
+	color  = TextureFrameColor.Sample(TextureDiffuseSampler, float2(Out.UV.x,Out.UV.y)); 
+
+	float3 normalOrigin = TextureFrameNormal.Sample(TextureDiffuseSampler, float2(Out.UV.x,Out.UV.y)); 
+	float3 pos    = reconstructPos(Out.UV, getGbuf(TextureFrameDepth, Out.UV).r); 
+	float3 posOrigin = TextureFramePosition.Sample(TextureDiffuseSampler, float2(Out.UV.x,Out.UV.y)); 
+	
+	float3 normal_depthcolor  = TextureFrameDepth.Sample(TextureDiffuseSampler, float2(Out.UV.x,Out.UV.y)); 
+	float3 finalDepthColor  = linearizeDepth(normal_depthcolor.r);
+
+	color = float4(calcLighting(posOrigin,normalOrigin,color,finalDepthColor),1.0);
+	//color = float4(calcLightingExt(color,normalOrigin,pos,0.0),1.0);
+
+	//color = float4(finalDepthColor,1.0);		
+
+	float4 glossinessmap = float4(1.0, 1.0, 1.0, 1.0);
+	float3 cameraDir = normalize(posOrigin.xyz - CameraPos.xyz);  
+	float3 normalDir = normalize(normalOrigin.xyz);
+	
+
+	decal.xyz = color.xyz;
+	decal.xyz = GetGlossTexture(decal.xyz, normalDir, cameraDir, glossinessmap);
+	
+	if(finalDepthColor.x <  0.999) {
+		color.xyz = decal.xyz;
+	}
+	
+	finalColor = color.xyz;
+
+	const float drawRatio = 1.0 / 4.0;
+
+	if(Out.UV.x > drawRatio*3.0){
+		if(Out.UV.y < drawRatio){
+			float2 uv = (Out.UV-float2(drawRatio*3.0,0)) / drawRatio;
+			normal = TextureFrameNormal.Sample(TextureDiffuseSampler, float2(uv.x,uv.y)); 
+			finalColor = normal.xyz * 0.5 + 0.5;
+		}else if(Out.UV.y < 2.0*drawRatio){
+			float2 uv = (Out.UV-float2(drawRatio*3.0,drawRatio)) / drawRatio;
+			color  = TextureFrameColor.Sample(TextureDiffuseSampler, float2(uv.x,uv.y)); 
+			finalColor = color.xyz;
+		}else if(Out.UV.y < 3.0*drawRatio){
+			float2 uv = (Out.UV-float2(drawRatio*3.0,drawRatio*2.0)) / drawRatio;
+			color  = TextureFrameDepth.Sample(TextureDiffuseSampler, float2(uv.x,uv.y)); 
+			finalColor  = linearizeDepth(color.r);
+			//finalColor  = float3(1,0,0);
+			//finalColor = reconstructPos(uv,color.r);
+		}else{
+			float2 uv = (Out.UV-float2(drawRatio*3,drawRatio*3.0)) / drawRatio;
+			color  = TextureFramePosition.Sample(TextureDiffuseSampler, float2(uv.x,uv.y)); 
+			finalColor = color.xyz;
+		}
+	}
+		
+	return float4(finalColor,1.0);
+
+}
+
+
+

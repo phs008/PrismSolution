@@ -1,0 +1,121 @@
+#line 1 "enginedata\hls11\Test.Pixel.hlp"
+
+//include "Common.Fragment.inc"
+
+
+
+cbuffer SHADER_EXTERN
+{
+	int DrawPhase;
+	float4 UseShadowMap;
+	float4 ClipPlane;
+
+	float4x4 LightAmbient;
+	float4x4 LightSpecular;
+	float4x4 LightDiffuse;
+
+	float4 MaterialAmbient;
+	float4 MaterialSpecular;
+	float4 MaterialDiffuse;
+
+	float4 AmbientColor;
+	float4 AmbientColorRate;
+
+	float4 Glossiness;
+
+	float4 CameraPos;
+
+	float4x4 LightFactor;
+	
+	float4x4 LightFactorSpotDirection;
+
+	float4x4 LightFactorSpotFactor;
+
+	float4 Opacity;
+
+	float4 FogFactor;
+	float4 FogColor;
+
+	float4 SunLight;	
+	
+	float4 ShadowMapAlias;
+	
+	float4x4 ObjectWorld;
+	
+};
+
+
+
+
+// 출력정점 형식
+
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+	float4 InPosition : TEXCOORD1;
+	float4 ViewPosition : TEXCOORD2;  
+	float4 ShadowPosition : TEXCOORD3;
+	float4 CameraPosition : TEXCOORD4;
+	float3 Normal : NORMAL0; 
+    float3 Tangent : NORMAL1;
+    float3 Binormal : NORMAL2;
+	
+};
+
+
+
+
+
+// lookup tag for dx9 code  
+/*
+아래 slot number가 dx11에서 bug 있으므로  아래 comment된 코드와 병용해야 함
+
+sampler Texture1 : register(s0);
+sampler Texture2 : register(s1);
+sampler Texture3 : register(s2);
+sampler Texture4 : register(s3);
+sampler TextureShadowMap : register(s4); // must assign to textureNo 3 
+sampler TextureEnv : register(s5); // must assign to textureNo 3 
+sampler TextureNormal : register(s6); // must assign to textureNo 3 
+sampler TextureSpecular : register(s7); // must assign to textureNo 3 
+*/
+
+// 5.1EX
+Texture2D Texture1 : register(t0);
+SamplerState Texture1Sampler : register(s0);
+
+Texture2D Texture2 : register(t1);
+SamplerState Texture2Sampler : register(s1);
+
+Texture2D Texture3 : register(t2);
+SamplerState Texture3Sampler : register(s2);
+
+Texture2D Texture4 : register(t3);
+SamplerState Texture4Sampler : register(s3);
+
+
+Texture2D TextureShadowMap : register(t4);
+SamplerState TextureShadowMapSampler : register(s4);
+
+Texture2D TextureEnv : register(t5);
+SamplerState TextureEnvSampler : register(s5);
+
+Texture2D TextureNormal : register(t6);
+SamplerState TextureNormalSampler : register(s6);
+
+Texture2D TextureSpecular : register(t7);
+SamplerState TextureSpecularSampler : register(s7);
+
+
+
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	//return float4(normalize(Out.Normal.xyz), 1.0) * 0.5 + 1.0;
+	return float4(normalize(Out.Normal.xyz), 1.0);
+	
+}
+

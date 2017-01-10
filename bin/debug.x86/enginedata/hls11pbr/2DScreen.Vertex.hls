@@ -1,0 +1,77 @@
+#line 1 "enginedata\hls11\2DScreen.Vertex.hls"
+
+cbuffer SHADER_EXTERN
+{
+	float4 ScreenWidth;
+	float4 ScreenHeight;
+
+	float4x4 Transform;
+	float4x4 Orientation;
+};
+
+
+
+
+// 입력정점 형식
+struct VS_INPUT
+{
+    float3 Position : POSITION;
+    float2 UV : TEXCOORD0;
+};
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  
+};
+
+
+// uv.z 는 depth 로 사용 한다 !!
+
+
+
+
+VS_OUTPUT VS(VS_INPUT In)
+{
+	const float DepthRange = 100.0;
+
+
+    VS_OUTPUT   Out;
+    
+    float4 pos;
+    
+    pos.xyz = In.Position;
+    pos.w = 1.0;
+	pos = mul(pos, Transform);
+	
+	float4 pos3;
+	pos3.x = ((pos.x+0.5) * 2.0) / ScreenWidth.x - 1.0;  
+	pos3.y = (-(pos.y+0.5) * 2.0) / ScreenHeight.x  + 1.0; 
+	
+
+	pos3.z = 0.0;
+	pos3.w = 1.0;
+	pos3 = mul(pos3, Orientation);
+	
+	Out.Position.x = pos3.x;
+	Out.Position.y = pos3.y;
+	Out.Position.z = 0.0;//pos.z ;
+	Out.Position.w = 1.0;
+
+	Out.UV.xy = In.UV.xy;
+	Out.UV.z = Out.Position.z / DepthRange;
+
+
+	return Out;
+
+}
+
+
+
+
+
+
+
+

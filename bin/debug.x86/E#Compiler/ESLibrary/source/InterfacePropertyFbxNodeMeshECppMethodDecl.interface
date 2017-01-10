@@ -1,0 +1,8 @@
+	string GetFbxMeshFile( );
+	void SetFbxMeshFile(const char * value);
+
+
+	string GetIndependentMaterial( );
+	void SetIndependentMaterial(const char * value);
+
+

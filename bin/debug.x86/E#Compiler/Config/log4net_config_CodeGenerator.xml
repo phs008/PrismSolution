@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<log4net>
+	<!-- Console Appender For Main Logger -->
+	<appender name="consoleForMain" type="log4net.Appender.ConsoleAppender">
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value = "[%date{HH:mm:ss.fff}][%-5level][%type{1}:%line] %message%newline" />
+		</layout>
+	</appender>
+
+	<!-- File Appender For Main Logger -->
+	<appender name="fileForMain" type="log4net.Appender.RollingFileAppender">
+		<file value="..\log\" />
+		<datePattern value="'CodeGenerator.'yyyy-MM-dd'.log'" />
+		<staticLogFileName value="false" />
+		<appendToFile value="true" />
+		<rollingStyle value="Composite" />
+		<maxSizeRollBackups value="100" />
+		<maximumFileSize value="100MB" />
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value = "[%date{HH:mm:ss.fff}][%-5level][%type{1}:%line] %message%newline" />
+		</layout>
+	</appender>
+
+	<!-- Main Logger -->
+	<logger name="main">
+		<level value="all" />
+		<appender-ref ref="fileForMain" />
+	</logger>
+</log4net>

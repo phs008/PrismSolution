@@ -1,0 +1,108 @@
+
+int PropertySound::GetPlaying( )
+{
+	if (ENG_CAPI_PropertySound_GetPlaying)
+	{
+		return ENG_CAPI_PropertySound_GetPlaying(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySound::SetPlaying(  int value)
+{
+	if (ENG_CAPI_PropertySound_SetPlaying)
+	{
+		ENG_CAPI_PropertySound_SetPlaying(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySound_SetPlaying is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertySound::GetRepeat( )
+{
+	if (ENG_CAPI_PropertySound_GetRepeat)
+	{
+		return ENG_CAPI_PropertySound_GetRepeat(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySound::SetRepeat(  int value)
+{
+	if (ENG_CAPI_PropertySound_SetRepeat)
+	{
+		ENG_CAPI_PropertySound_SetRepeat(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySound_SetRepeat is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertySound::GetVolume( )
+{
+	if (ENG_CAPI_PropertySound_GetVolume)
+	{
+		return ENG_CAPI_PropertySound_GetVolume(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertySound::SetVolume(  float value)
+{
+	if (ENG_CAPI_PropertySound_SetVolume)
+	{
+		ENG_CAPI_PropertySound_SetVolume(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySound_SetVolume is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertySound::GetWaveFile( )
+{
+	if (ENG_CAPI_PropertySound_GetWaveFile)
+	{
+		return ENG_CAPI_PropertySound_GetWaveFile(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertySound::SetWaveFile(  const char * value)
+{
+	if (ENG_CAPI_PropertySound_SetWaveFile)
+	{
+		ENG_CAPI_PropertySound_SetWaveFile(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySound_SetWaveFile is not Linked", 0, 0.0f );
+	}
+}
+
+
+

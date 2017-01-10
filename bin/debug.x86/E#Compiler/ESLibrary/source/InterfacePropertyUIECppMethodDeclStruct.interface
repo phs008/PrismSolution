@@ -1,0 +1,6 @@
+	Vector2* GetPivot();
+	void SetPivot(Vector2 *value);
+
+	Vector2* GetSize();
+	void SetSize(Vector2 *value);
+

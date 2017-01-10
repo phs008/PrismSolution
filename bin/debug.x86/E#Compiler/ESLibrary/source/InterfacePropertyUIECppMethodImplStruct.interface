@@ -1,0 +1,74 @@
+
+
+Vector2* PropertyUI::GetPivot( )
+{
+	if (ENG_CAPI_PropertyUI_GetPivot)
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ENG_CAPI_PropertyUI_GetPivot(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ::Vector2(0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyUI::SetPivot(  Vector2 *value)
+{
+	if (ENG_CAPI_PropertyUI_SetPivot)
+	{
+		ENG_CAPI_PropertyUI_SetPivot(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyUI_SetPivot is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector2* PropertyUI::GetSize( )
+{
+	if (ENG_CAPI_PropertyUI_GetSize)
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ENG_CAPI_PropertyUI_GetSize(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ::Vector2(0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyUI::SetSize(  Vector2 *value)
+{
+	if (ENG_CAPI_PropertyUI_SetSize)
+	{
+		ENG_CAPI_PropertyUI_SetSize(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyUI_SetSize is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

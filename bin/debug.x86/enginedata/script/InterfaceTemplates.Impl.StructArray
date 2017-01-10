@@ -1,0 +1,65 @@
+%argtype% Engine_%group%_Get%prop%(UID obj, %propindexcomma% int index)
+{
+	Component::ComponentBase *base = Component::Link< Component::ComponentBase >::LookupPointer(obj);
+	if (base && base->KindOf(Dictionary::%containerClassname%))
+	{
+		%namespace%::%containerClassname% *obj = static_cast<%namespace%::%containerClassname% *>(base);
+
+		if ((&obj->%groupvar%%propindexaccess%) != NULL)
+		{
+
+			int arraySize = sizeof(obj->%groupvar%%propindexaccess%.%prop%) / sizeof(obj->%groupvar%%propindexaccess%.%prop%[0]);
+			if (index <= arraySize && index >= 1)
+			{
+				return obj->%groupvar%%propindexaccess%.%prop%[index-1].Value;
+			}
+			else
+			{
+				Debugger::GetLogger().Log("Cannot Access obj->%groupvar%%propindexaccess% (out of arraybound) in Engine_%group%_Get%prop%" );
+				return %default%;
+			}
+		}
+		else
+		{
+			Debugger::GetLogger().Log("Cannot Access obj->%groupvar%%propindexaccess% in Engine_%group%_Get%prop%" );
+			return %default%;
+		}
+	}
+	else
+	{
+		Debugger::GetLogger().Log("Script Lookup Errror %containerClassname% (%s) in Engine_%group%_Get%prop%", (const char *)Utility::StringConversion::ToString( obj )); 
+		return %default%;
+	}
+}
+
+void Engine_%group%_Set%prop%(UID obj , %propindexcomma% %argtype% value, int index)
+{
+	Component::ComponentBase *base = Component::Link< Component::ComponentBase >::LookupPointer(obj);
+	if (base)
+	{
+		%namespace%::%containerClassname% *obj = static_cast<%namespace%::%containerClassname% *>(base);
+		if ((&obj->%groupvar%%propindexaccess%) != NULL)
+		{
+			int arraySize = sizeof(obj->%groupvar%%propindexaccess%.%prop%) / sizeof(obj->%groupvar%%propindexaccess%.%prop%[0]);
+			if (index <= arraySize && index >= 1)
+			{
+				obj->%groupvar%%propindexaccess%.%prop%[index-1].Value = value;
+				obj->%groupvar%%propindexaccess%.%prop%[index-1].ApplyChange();
+			}
+		}
+		else
+		{
+			Debugger::GetLogger().Log("Cannot Access obj->%groupvar%%propindexaccess% in Engine_%group%_Set%prop%" );
+		}
+	}
+	else
+	{
+		Debugger::GetLogger().Log("Script Lookup Errror %containerClassname% (%s) in Engine_%group%_Set%prop%", (const char *)Utility::StringConversion::ToString( obj )); 
+	}
+}
+
+
+
+
+
+

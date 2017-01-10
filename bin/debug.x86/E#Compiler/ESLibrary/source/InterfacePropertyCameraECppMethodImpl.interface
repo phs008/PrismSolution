@@ -1,0 +1,567 @@
+
+float PropertyCamera::GetAspectRatio( )
+{
+	if (ENG_CAPI_PropertyCamera_GetAspectRatio)
+	{
+		return ENG_CAPI_PropertyCamera_GetAspectRatio(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetAspectRatio(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetAspectRatio)
+	{
+		ENG_CAPI_PropertyCamera_SetAspectRatio(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetAspectRatio is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyCamera::GetBackgroundTextureFile( )
+{
+	if (ENG_CAPI_PropertyCamera_GetBackgroundTextureFile)
+	{
+		return ENG_CAPI_PropertyCamera_GetBackgroundTextureFile(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyCamera::SetBackgroundTextureFile(  const char * value)
+{
+	if (ENG_CAPI_PropertyCamera_SetBackgroundTextureFile)
+	{
+		ENG_CAPI_PropertyCamera_SetBackgroundTextureFile(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetBackgroundTextureFile is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetBackgroundType( )
+{
+	if (ENG_CAPI_PropertyCamera_GetBackgroundType)
+	{
+		return ENG_CAPI_PropertyCamera_GetBackgroundType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetBackgroundType(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetBackgroundType)
+	{
+		ENG_CAPI_PropertyCamera_SetBackgroundType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetBackgroundType is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetClearColor( )
+{
+	if (ENG_CAPI_PropertyCamera_GetClearColor)
+	{
+		return ENG_CAPI_PropertyCamera_GetClearColor(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetClearColor(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetClearColor)
+	{
+		ENG_CAPI_PropertyCamera_SetClearColor(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetClearColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetClearDepth( )
+{
+	if (ENG_CAPI_PropertyCamera_GetClearDepth)
+	{
+		return ENG_CAPI_PropertyCamera_GetClearDepth(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetClearDepth(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetClearDepth)
+	{
+		ENG_CAPI_PropertyCamera_SetClearDepth(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetClearDepth is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetDepthOfField( )
+{
+	if (ENG_CAPI_PropertyCamera_GetDepthOfField)
+	{
+		return ENG_CAPI_PropertyCamera_GetDepthOfField(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetDepthOfField(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetDepthOfField)
+	{
+		ENG_CAPI_PropertyCamera_SetDepthOfField(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetDepthOfField is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetDrawGrid( )
+{
+	if (ENG_CAPI_PropertyCamera_GetDrawGrid)
+	{
+		return ENG_CAPI_PropertyCamera_GetDrawGrid(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetDrawGrid(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetDrawGrid)
+	{
+		ENG_CAPI_PropertyCamera_SetDrawGrid(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetDrawGrid is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetEnableCulling( )
+{
+	if (ENG_CAPI_PropertyCamera_GetEnableCulling)
+	{
+		return ENG_CAPI_PropertyCamera_GetEnableCulling(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetEnableCulling(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetEnableCulling)
+	{
+		ENG_CAPI_PropertyCamera_SetEnableCulling(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetEnableCulling is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetFarViewPlane( )
+{
+	if (ENG_CAPI_PropertyCamera_GetFarViewPlane)
+	{
+		return ENG_CAPI_PropertyCamera_GetFarViewPlane(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetFarViewPlane(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetFarViewPlane)
+	{
+		ENG_CAPI_PropertyCamera_SetFarViewPlane(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetFarViewPlane is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetFarViewPlaneSky( )
+{
+	if (ENG_CAPI_PropertyCamera_GetFarViewPlaneSky)
+	{
+		return ENG_CAPI_PropertyCamera_GetFarViewPlaneSky(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetFarViewPlaneSky(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetFarViewPlaneSky)
+	{
+		ENG_CAPI_PropertyCamera_SetFarViewPlaneSky(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetFarViewPlaneSky is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetFocalLength( )
+{
+	if (ENG_CAPI_PropertyCamera_GetFocalLength)
+	{
+		return ENG_CAPI_PropertyCamera_GetFocalLength(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetFocalLength(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetFocalLength)
+	{
+		ENG_CAPI_PropertyCamera_SetFocalLength(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetFocalLength is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetFocusingDistance( )
+{
+	if (ENG_CAPI_PropertyCamera_GetFocusingDistance)
+	{
+		return ENG_CAPI_PropertyCamera_GetFocusingDistance(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetFocusingDistance(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetFocusingDistance)
+	{
+		ENG_CAPI_PropertyCamera_SetFocusingDistance(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetFocusingDistance is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetGridAlpha( )
+{
+	if (ENG_CAPI_PropertyCamera_GetGridAlpha)
+	{
+		return ENG_CAPI_PropertyCamera_GetGridAlpha(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetGridAlpha(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetGridAlpha)
+	{
+		ENG_CAPI_PropertyCamera_SetGridAlpha(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetGridAlpha is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetGridInterval( )
+{
+	if (ENG_CAPI_PropertyCamera_GetGridInterval)
+	{
+		return ENG_CAPI_PropertyCamera_GetGridInterval(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetGridInterval(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetGridInterval)
+	{
+		ENG_CAPI_PropertyCamera_SetGridInterval(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetGridInterval is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetLayerFilter( )
+{
+	if (ENG_CAPI_PropertyCamera_GetLayerFilter)
+	{
+		return ENG_CAPI_PropertyCamera_GetLayerFilter(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetLayerFilter(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetLayerFilter)
+	{
+		ENG_CAPI_PropertyCamera_SetLayerFilter(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetLayerFilter is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetNearViewPlane( )
+{
+	if (ENG_CAPI_PropertyCamera_GetNearViewPlane)
+	{
+		return ENG_CAPI_PropertyCamera_GetNearViewPlane(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetNearViewPlane(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetNearViewPlane)
+	{
+		ENG_CAPI_PropertyCamera_SetNearViewPlane(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetNearViewPlane is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetOrthographicViewSize( )
+{
+	if (ENG_CAPI_PropertyCamera_GetOrthographicViewSize)
+	{
+		return ENG_CAPI_PropertyCamera_GetOrthographicViewSize(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetOrthographicViewSize(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetOrthographicViewSize)
+	{
+		ENG_CAPI_PropertyCamera_SetOrthographicViewSize(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetOrthographicViewSize is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetRenderOrder( )
+{
+	if (ENG_CAPI_PropertyCamera_GetRenderOrder)
+	{
+		return ENG_CAPI_PropertyCamera_GetRenderOrder(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetRenderOrder(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetRenderOrder)
+	{
+		ENG_CAPI_PropertyCamera_SetRenderOrder(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetRenderOrder is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetStereoCamera( )
+{
+	if (ENG_CAPI_PropertyCamera_GetStereoCamera)
+	{
+		return ENG_CAPI_PropertyCamera_GetStereoCamera(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetStereoCamera(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetStereoCamera)
+	{
+		ENG_CAPI_PropertyCamera_SetStereoCamera(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetStereoCamera is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCamera::GetStereoEyeOffset( )
+{
+	if (ENG_CAPI_PropertyCamera_GetStereoEyeOffset)
+	{
+		return ENG_CAPI_PropertyCamera_GetStereoEyeOffset(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCamera::SetStereoEyeOffset(  float value)
+{
+	if (ENG_CAPI_PropertyCamera_SetStereoEyeOffset)
+	{
+		ENG_CAPI_PropertyCamera_SetStereoEyeOffset(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetStereoEyeOffset is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyCamera::GetWireFrame( )
+{
+	if (ENG_CAPI_PropertyCamera_GetWireFrame)
+	{
+		return ENG_CAPI_PropertyCamera_GetWireFrame(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyCamera::SetWireFrame(  int value)
+{
+	if (ENG_CAPI_PropertyCamera_SetWireFrame)
+	{
+		ENG_CAPI_PropertyCamera_SetWireFrame(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetWireFrame is not Linked", 0, 0.0f );
+	}
+}
+
+
+

@@ -1,0 +1,125 @@
+
+void (*ENG_CAPI_PropertyCamera_SetAspectRatio)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetAspectRatio)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetBackColor)(eng_obj_ptr obj,  EngineMath3D::Color value) = NULL;
+EngineMath3D::Color (*ENG_CAPI_PropertyCamera_GetBackColor)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetBackgroundTextureFile)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyCamera_GetBackgroundTextureFile)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetBackgroundType)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetBackgroundType)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetClearColor)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetClearColor)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetClearDepth)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetClearDepth)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetDepthOfField)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetDepthOfField)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetDrawGrid)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetDrawGrid)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetEnableCulling)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetEnableCulling)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetFarViewPlane)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetFarViewPlane)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetFarViewPlaneSky)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetFarViewPlaneSky)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetFocalLength)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetFocalLength)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetFocusingDistance)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetFocusingDistance)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetGridAlpha)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetGridAlpha)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetGridInterval)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetGridInterval)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetLayerFilter)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetLayerFilter)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetNearViewPlane)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetNearViewPlane)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetOffset)(eng_obj_ptr obj,  EngineMath3D::Vector2 value) = NULL;
+EngineMath3D::Vector2 (*ENG_CAPI_PropertyCamera_GetOffset)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetOrthographicViewSize)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetOrthographicViewSize)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetRenderOrder)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetRenderOrder)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetStereoCamera)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetStereoCamera)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetStereoEyeOffset)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyCamera_GetStereoEyeOffset)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetViewPortCenter)(eng_obj_ptr obj,  EngineMath3D::Vector2 value) = NULL;
+EngineMath3D::Vector2 (*ENG_CAPI_PropertyCamera_GetViewPortCenter)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetViewPortSize)(eng_obj_ptr obj,  EngineMath3D::Vector2 value) = NULL;
+EngineMath3D::Vector2 (*ENG_CAPI_PropertyCamera_GetViewPortSize)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyCamera_SetWireFrame)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyCamera_GetWireFrame)(eng_obj_ptr obj  ) = NULL;
+
+

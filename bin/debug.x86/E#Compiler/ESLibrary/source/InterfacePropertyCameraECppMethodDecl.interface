@@ -1,0 +1,84 @@
+	float GetAspectRatio( );
+	void SetAspectRatio(float value);
+
+
+	string GetBackgroundTextureFile( );
+	void SetBackgroundTextureFile(const char * value);
+
+
+	int GetBackgroundType( );
+	void SetBackgroundType(int value);
+
+
+	int GetClearColor( );
+	void SetClearColor(int value);
+
+
+	int GetClearDepth( );
+	void SetClearDepth(int value);
+
+
+	float GetDepthOfField( );
+	void SetDepthOfField(float value);
+
+
+	int GetDrawGrid( );
+	void SetDrawGrid(int value);
+
+
+	int GetEnableCulling( );
+	void SetEnableCulling(int value);
+
+
+	float GetFarViewPlane( );
+	void SetFarViewPlane(float value);
+
+
+	float GetFarViewPlaneSky( );
+	void SetFarViewPlaneSky(float value);
+
+
+	float GetFocalLength( );
+	void SetFocalLength(float value);
+
+
+	float GetFocusingDistance( );
+	void SetFocusingDistance(float value);
+
+
+	float GetGridAlpha( );
+	void SetGridAlpha(float value);
+
+
+	float GetGridInterval( );
+	void SetGridInterval(float value);
+
+
+	int GetLayerFilter( );
+	void SetLayerFilter(int value);
+
+
+	float GetNearViewPlane( );
+	void SetNearViewPlane(float value);
+
+
+	float GetOrthographicViewSize( );
+	void SetOrthographicViewSize(float value);
+
+
+	float GetRenderOrder( );
+	void SetRenderOrder(float value);
+
+
+	int GetStereoCamera( );
+	void SetStereoCamera(int value);
+
+
+	float GetStereoEyeOffset( );
+	void SetStereoEyeOffset(float value);
+
+
+	int GetWireFrame( );
+	void SetWireFrame(int value);
+
+

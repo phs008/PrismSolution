@@ -1,0 +1,8 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFbxAnimation_SetActiveAnimation)(eng_obj_ptr obj,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyFbxAnimation_GetActiveAnimation)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFbxAnimation_SetAnimationSpeed)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyFbxAnimation_GetAnimationSpeed)(eng_obj_ptr obj );
+
+

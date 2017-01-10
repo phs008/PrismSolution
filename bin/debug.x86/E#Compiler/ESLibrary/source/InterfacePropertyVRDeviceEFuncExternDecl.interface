@@ -1,0 +1,4 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyVRDevice_SetDeviceID)(eng_obj_ptr obj,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyVRDevice_GetDeviceID)(eng_obj_ptr obj );
+
+

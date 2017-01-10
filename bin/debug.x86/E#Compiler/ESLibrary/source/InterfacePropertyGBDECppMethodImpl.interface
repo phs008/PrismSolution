@@ -1,0 +1,54 @@
+
+string PropertyGBD::GetGestureGBD( )
+{
+	if (ENG_CAPI_PropertyGBD_GetGestureGBD)
+	{
+		return ENG_CAPI_PropertyGBD_GetGestureGBD(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyGBD::SetGestureGBD(  const char * value)
+{
+	if (ENG_CAPI_PropertyGBD_SetGestureGBD)
+	{
+		ENG_CAPI_PropertyGBD_SetGestureGBD(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGBD_SetGestureGBD is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyGBD::GetUseGBD( )
+{
+	if (ENG_CAPI_PropertyGBD_GetUseGBD)
+	{
+		return ENG_CAPI_PropertyGBD_GetUseGBD(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyGBD::SetUseGBD(  int value)
+{
+	if (ENG_CAPI_PropertyGBD_SetUseGBD)
+	{
+		ENG_CAPI_PropertyGBD_SetUseGBD(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGBD_SetUseGBD is not Linked", 0, 0.0f );
+	}
+}
+
+
+

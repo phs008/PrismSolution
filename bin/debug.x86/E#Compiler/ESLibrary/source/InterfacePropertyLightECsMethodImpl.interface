@@ -1,0 +1,45 @@
+	public float GetEffectiveRange( );
+	public void SetEffectiveRange(float value);
+
+
+
+	public Color GetLightColor( );
+	public void SetLightColor(Color value);
+
+
+
+	public int GetLightFallOff( );
+	public void SetLightFallOff(int value);
+
+
+
+	public float GetLightIntensity( );
+	public void SetLightIntensity(float value);
+
+
+
+	public int GetLightRange( );
+	public void SetLightRange(int value);
+
+
+
+	public int GetLightType( );
+	public void SetLightType(int value);
+
+
+
+	public float GetPickerSize( );
+	public void SetPickerSize(float value);
+
+
+
+	public float GetSpotAngle( );
+	public void SetSpotAngle(float value);
+
+
+
+	public float GetSpotAngleSmooth( );
+	public void SetSpotAngleSmooth(float value);
+
+
+

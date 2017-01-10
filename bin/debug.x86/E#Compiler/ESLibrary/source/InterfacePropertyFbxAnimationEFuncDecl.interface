@@ -1,0 +1,10 @@
+
+void (*ENG_CAPI_PropertyFbxAnimation_SetActiveAnimation)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyFbxAnimation_GetActiveAnimation)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyFbxAnimation_SetAnimationSpeed)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyFbxAnimation_GetAnimationSpeed)(eng_obj_ptr obj  ) = NULL;
+
+

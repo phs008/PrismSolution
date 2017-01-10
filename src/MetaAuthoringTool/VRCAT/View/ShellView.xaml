@@ -1,0 +1,49 @@
+﻿<Window x:Class="VRCAT.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cal="http://www.codeplex.com/prism"
+        xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:service="bucketplay.com"
+        xmlns:z="clr-namespace:VRCAT" 
+        x:Name="MainView"
+        WindowStyle="None" Background="Transparent" BorderThickness="1" ShowInTaskbar="True" Title="VR 저작도구" 
+        WindowState="Normal"
+        Height="Auto" Width="Auto">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="Undo" Executed="UndoCommand_Execute"/>
+        <CommandBinding Command="Redo" Executed="RedoCommand_Execute"/>
+    </Window.CommandBindings>-->
+    <Window.InputBindings>
+        <KeyBinding Command="Undo" Key="Z" Modifiers="Ctrl" />
+        <KeyBinding Command="Redo" Key="X" Modifiers="Ctrl"/>
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0"  Background="#303030"  MouseLeftButtonDown="Border_MouseLeftButtonDown" >
+            <Grid>
+                <Image Source="pack://siteoforigin:,,,/Resources/MainTitle.png" Width="30" Height="30" HorizontalAlignment="Left" Margin="10,0,0,0" />
+                <TextBlock x:Name="TextBox_SceneName" Text="Title : " Margin="55,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gold" FontSize="13" />
+                <TextBlock Text="EVR" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Foreground="WhiteSmoke" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,3,0">
+                    <Button VerticalAlignment="Center" Click="minimize_program" Width="25" Margin="8,0,0,0" Height="25" Background="#FF4081">_</Button>
+                    <Button VerticalAlignment="Center" Click="maximize_program" Width="25" Height="25" Margin="8,0,0,0" Background="#FF4081" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" >ㅁ</Button>
+                    <Button VerticalAlignment="Center" Click="close_program" Width="25" Margin="8,0,0,0" Height="25" Background="#FF4081">X</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <ContentControl Grid.Row="1" cal:RegionManager.RegionName="ToolBarControl"/>
+        <avalonDock:DockingManager Grid.Row="2" x:Name="DockingManager" cal:RegionManager.RegionName="DockingRegion">
+            <avalonDock:DockingManager.Theme>
+                <avalonDock:DarkConceptTheme/>
+                <!--<avalonDock:MetroTheme/>-->
+            </avalonDock:DockingManager.Theme>
+        </avalonDock:DockingManager>
+    </Grid>
+</Window>

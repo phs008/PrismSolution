@@ -1,0 +1,4 @@
+	string GetFbxFile( );
+	void SetFbxFile(const char * value);
+
+

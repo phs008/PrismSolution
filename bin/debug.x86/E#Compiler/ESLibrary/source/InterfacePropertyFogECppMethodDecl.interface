@@ -1,0 +1,12 @@
+	float GetFogFarPlane( );
+	void SetFogFarPlane(float value);
+
+
+	int GetFogMode( );
+	void SetFogMode(int value);
+
+
+	float GetFogNearPlane( );
+	void SetFogNearPlane(float value);
+
+

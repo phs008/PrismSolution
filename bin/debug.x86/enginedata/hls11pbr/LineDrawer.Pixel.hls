@@ -1,0 +1,25 @@
+
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float4 Color : NORMAL0;
+};
+
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	return Out.Color;
+}
+
+
+
+
+
+

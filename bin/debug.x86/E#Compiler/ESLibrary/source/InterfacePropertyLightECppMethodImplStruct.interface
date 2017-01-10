@@ -1,0 +1,37 @@
+
+
+Color* PropertyLight::GetLightColor( )
+{
+	if (ENG_CAPI_PropertyLight_GetLightColor)
+	{
+		Color *r = new Color;
+		*r = Color( ENG_CAPI_PropertyLight_GetLightColor(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Color *r = new Color;
+		*r = Color( ::Color(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyLight::SetLightColor(  Color *value)
+{
+	if (ENG_CAPI_PropertyLight_SetLightColor)
+	{
+		ENG_CAPI_PropertyLight_SetLightColor(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetLightColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

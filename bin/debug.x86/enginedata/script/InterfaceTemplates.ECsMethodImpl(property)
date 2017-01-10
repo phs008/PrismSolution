@@ -1,0 +1,22 @@
+
+
+	public %rettype% %prop%
+	{
+		get; //return ENG_CAPI_%group%_Get%prop%(id);
+		set; //	ENG_CAPI_%group%_Set%prop%(id, value);
+	}
+
+
+	public %rettype% %prop%
+	{
+		get
+		{
+			return Get%prop%();
+		}
+		set
+		{
+			Set%prop%(value);
+		}
+	}
+
+

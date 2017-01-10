@@ -1,0 +1,135 @@
+
+int PropertyTransform::GetBillboardType( )
+{
+	if (ENG_CAPI_PropertyTransform_GetBillboardType)
+	{
+		return ENG_CAPI_PropertyTransform_GetBillboardType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyTransform::SetBillboardType(  int value)
+{
+	if (ENG_CAPI_PropertyTransform_SetBillboardType)
+	{
+		ENG_CAPI_PropertyTransform_SetBillboardType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetBillboardType is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyTransform::GetCullType( )
+{
+	if (ENG_CAPI_PropertyTransform_GetCullType)
+	{
+		return ENG_CAPI_PropertyTransform_GetCullType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyTransform::SetCullType(  int value)
+{
+	if (ENG_CAPI_PropertyTransform_SetCullType)
+	{
+		ENG_CAPI_PropertyTransform_SetCullType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetCullType is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyTransform::GetFixedOrder( )
+{
+	if (ENG_CAPI_PropertyTransform_GetFixedOrder)
+	{
+		return ENG_CAPI_PropertyTransform_GetFixedOrder(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyTransform::SetFixedOrder(  int value)
+{
+	if (ENG_CAPI_PropertyTransform_SetFixedOrder)
+	{
+		ENG_CAPI_PropertyTransform_SetFixedOrder(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetFixedOrder is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyTransform::GetShow( )
+{
+	if (ENG_CAPI_PropertyTransform_GetShow)
+	{
+		return ENG_CAPI_PropertyTransform_GetShow(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyTransform::SetShow(  int value)
+{
+	if (ENG_CAPI_PropertyTransform_SetShow)
+	{
+		ENG_CAPI_PropertyTransform_SetShow(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetShow is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyTransform::GetSortType( )
+{
+	if (ENG_CAPI_PropertyTransform_GetSortType)
+	{
+		return ENG_CAPI_PropertyTransform_GetSortType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyTransform::SetSortType(  int value)
+{
+	if (ENG_CAPI_PropertyTransform_SetSortType)
+	{
+		ENG_CAPI_PropertyTransform_SetSortType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyTransform_SetSortType is not Linked", 0, 0.0f );
+	}
+}
+
+
+

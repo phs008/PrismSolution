@@ -1,0 +1,162 @@
+
+int PropertyInstance::GetExpanded( )
+{
+	if (ENG_CAPI_PropertyInstance_GetExpanded)
+	{
+		return ENG_CAPI_PropertyInstance_GetExpanded(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyInstance::SetExpanded(  int value)
+{
+	if (ENG_CAPI_PropertyInstance_SetExpanded)
+	{
+		ENG_CAPI_PropertyInstance_SetExpanded(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyInstance_SetExpanded is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyInstance::GetLayer( )
+{
+	if (ENG_CAPI_PropertyInstance_GetLayer)
+	{
+		return ENG_CAPI_PropertyInstance_GetLayer(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyInstance::SetLayer(  int value)
+{
+	if (ENG_CAPI_PropertyInstance_SetLayer)
+	{
+		ENG_CAPI_PropertyInstance_SetLayer(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyInstance_SetLayer is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyInstance::GetLocked( )
+{
+	if (ENG_CAPI_PropertyInstance_GetLocked)
+	{
+		return ENG_CAPI_PropertyInstance_GetLocked(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyInstance::SetLocked(  int value)
+{
+	if (ENG_CAPI_PropertyInstance_SetLocked)
+	{
+		ENG_CAPI_PropertyInstance_SetLocked(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyInstance_SetLocked is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyInstance::GetName( )
+{
+	if (ENG_CAPI_PropertyInstance_GetName)
+	{
+		return ENG_CAPI_PropertyInstance_GetName(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyInstance::SetName(  const char * value)
+{
+	if (ENG_CAPI_PropertyInstance_SetName)
+	{
+		ENG_CAPI_PropertyInstance_SetName(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyInstance_SetName is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyInstance::GetSelected( )
+{
+	if (ENG_CAPI_PropertyInstance_GetSelected)
+	{
+		return ENG_CAPI_PropertyInstance_GetSelected(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyInstance::SetSelected(  int value)
+{
+	if (ENG_CAPI_PropertyInstance_SetSelected)
+	{
+		ENG_CAPI_PropertyInstance_SetSelected(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyInstance_SetSelected is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyInstance::GetShow( )
+{
+	if (ENG_CAPI_PropertyInstance_GetShow)
+	{
+		return ENG_CAPI_PropertyInstance_GetShow(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyInstance::SetShow(  int value)
+{
+	if (ENG_CAPI_PropertyInstance_SetShow)
+	{
+		ENG_CAPI_PropertyInstance_SetShow(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyInstance_SetShow is not Linked", 0, 0.0f );
+	}
+}
+
+
+

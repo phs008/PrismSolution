@@ -1,0 +1,20 @@
+	public int GetPlaying( );
+	public void SetPlaying(int value);
+
+
+
+	public int GetRepeat( );
+	public void SetRepeat(int value);
+
+
+
+	public float GetVolume( );
+	public void SetVolume(float value);
+
+
+
+	public string GetWaveFile( );
+	public void SetWaveFile(string value);
+
+
+

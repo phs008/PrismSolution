@@ -1,0 +1,48 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanChoppyScale)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanChoppyScale)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanGlossiness)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanGlossiness)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanMetalness)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanMetalness)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanPatchLength)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyOcean_GetOceanPatchLength)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanPause)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyOcean_GetOceanPause)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanSize)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyOcean_GetOceanSize)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanTimeScale)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanTimeScale)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanWaterColor)(eng_obj_ptr obj,  EngineMath3D::Vector3 value);
+EXTERN_C DLLAPI EngineMath3D::Vector3 (*ENG_CAPI_PropertyOcean_GetOceanWaterColor)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanWaveAmplitude)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanWaveAmplitude)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanWindDependency)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanWindDependency)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanWindDir)(eng_obj_ptr obj,  EngineMath3D::Vector2 value);
+EXTERN_C DLLAPI EngineMath3D::Vector2 (*ENG_CAPI_PropertyOcean_GetOceanWindDir)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyOcean_SetOceanWindSpeed)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyOcean_GetOceanWindSpeed)(eng_obj_ptr obj );
+
+

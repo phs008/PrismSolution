@@ -1,0 +1,10 @@
+	public string GetActiveAnimation( );
+	public void SetActiveAnimation(string value);
+
+
+
+	public float GetAnimationSpeed( );
+	public void SetAnimationSpeed(float value);
+
+
+

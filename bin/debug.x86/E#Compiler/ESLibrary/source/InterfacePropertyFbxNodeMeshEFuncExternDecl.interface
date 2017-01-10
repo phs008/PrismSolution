@@ -1,0 +1,8 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFbxNodeMesh_SetFbxMeshFile)(eng_obj_ptr obj,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyFbxNodeMesh_GetFbxMeshFile)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFbxNodeMesh_SetIndependentMaterial)(eng_obj_ptr obj,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyFbxNodeMesh_GetIndependentMaterial)(eng_obj_ptr obj );
+
+

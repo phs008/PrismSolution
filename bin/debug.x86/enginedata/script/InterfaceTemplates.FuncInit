@@ -1,0 +1,3 @@
+			PImport_%group%_Get%prop% = NULL;
+			PImport_%group%_Set%prop% = NULL;
+

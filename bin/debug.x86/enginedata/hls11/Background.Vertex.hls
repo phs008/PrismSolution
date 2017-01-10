@@ -1,0 +1,46 @@
+#line 1 "enginedata\hls11\Background.Vertex.hls"
+
+// SHADER_EXTERN bug 7.0F  SHADER_EXTERN cannot be empty
+cbuffer SHADER_EXTERN
+{
+};
+
+
+
+
+// 입력정점 형식
+struct VS_INPUT
+{
+    float3 Position : POSITION;
+};
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float4 InPosition : TEXCOORD0;
+};
+
+
+
+VS_OUTPUT VS(VS_INPUT In)
+{
+    VS_OUTPUT   Out;
+    
+	Out.InPosition.xyz = In.Position;
+	Out.InPosition.w = 1.0;
+
+	Out.Position.xyz = In.Position;
+	Out.Position.w = 1.0;
+    
+    return Out;
+}
+
+
+
+
+
+
+
+

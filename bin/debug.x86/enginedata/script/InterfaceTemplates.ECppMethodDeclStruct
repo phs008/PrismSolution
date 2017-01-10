@@ -1,0 +1,2 @@
+	%rettype%* Get%prop%();
+	void Set%prop%(%argtype% *value);

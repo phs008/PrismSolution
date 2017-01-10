@@ -1,0 +1,4 @@
+	public %csrettype% Get%prop%( );
+	public void Set%prop%(%csargtype% value);
+
+

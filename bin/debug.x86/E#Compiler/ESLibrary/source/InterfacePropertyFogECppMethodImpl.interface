@@ -1,0 +1,81 @@
+
+float PropertyFog::GetFogFarPlane( )
+{
+	if (ENG_CAPI_PropertyFog_GetFogFarPlane)
+	{
+		return ENG_CAPI_PropertyFog_GetFogFarPlane(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyFog::SetFogFarPlane(  float value)
+{
+	if (ENG_CAPI_PropertyFog_SetFogFarPlane)
+	{
+		ENG_CAPI_PropertyFog_SetFogFarPlane(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFog_SetFogFarPlane is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyFog::GetFogMode( )
+{
+	if (ENG_CAPI_PropertyFog_GetFogMode)
+	{
+		return ENG_CAPI_PropertyFog_GetFogMode(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyFog::SetFogMode(  int value)
+{
+	if (ENG_CAPI_PropertyFog_SetFogMode)
+	{
+		ENG_CAPI_PropertyFog_SetFogMode(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFog_SetFogMode is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyFog::GetFogNearPlane( )
+{
+	if (ENG_CAPI_PropertyFog_GetFogNearPlane)
+	{
+		return ENG_CAPI_PropertyFog_GetFogNearPlane(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyFog::SetFogNearPlane(  float value)
+{
+	if (ENG_CAPI_PropertyFog_SetFogNearPlane)
+	{
+		ENG_CAPI_PropertyFog_SetFogNearPlane(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFog_SetFogNearPlane is not Linked", 0, 0.0f );
+	}
+}
+
+
+

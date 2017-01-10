@@ -1,0 +1,129 @@
+	int GetAlphaBlending( );
+	void SetAlphaBlending(int value);
+
+
+	float GetAlphaTest( );
+	void SetAlphaTest(float value);
+
+
+	float GetAmbient( );
+	void SetAmbient(float value);
+
+
+	float GetAmbientColorRate( );
+	void SetAmbientColorRate(float value);
+
+
+	int GetCullBackFace( );
+	void SetCullBackFace(int value);
+
+
+	float GetDiffuse( );
+	void SetDiffuse(float value);
+
+
+	int GetFog( );
+	void SetFog(int value);
+
+
+	float GetGlossiness( );
+	void SetGlossiness(float value);
+
+
+	int GetIsPBRMaterial( );
+	void SetIsPBRMaterial(int value);
+
+
+	int GetMagFilter( );
+	void SetMagFilter(int value);
+
+
+	float GetMetalliness( );
+	void SetMetalliness(float value);
+
+
+	int GetMinFilter( );
+	void SetMinFilter(int value);
+
+
+	float GetOpacity( );
+	void SetOpacity(float value);
+
+
+	string GetPixelShader( );
+	void SetPixelShader(const char * value);
+
+
+	float GetRoughness( );
+	void SetRoughness(float value);
+
+
+	int GetShadingModel( );
+	void SetShadingModel(int value);
+
+
+	float GetShadowDarkness( );
+	void SetShadowDarkness(float value);
+
+
+	float GetShininess( );
+	void SetShininess(float value);
+
+
+	float GetSmoothness( );
+	void SetSmoothness(float value);
+
+
+	float GetSpecular( );
+	void SetSpecular(float value);
+
+
+	string GetTextureDiffuse( );
+	void SetTextureDiffuse(const char * value);
+
+
+	string GetTextureEnv( );
+	void SetTextureEnv(const char * value);
+
+
+	string GetTextureEtc( int index);
+	void SetTextureEtc(const char * value, int index);
+
+
+
+	string GetTextureGlossiness( );
+	void SetTextureGlossiness(const char * value);
+
+
+	string GetTextureNormal( );
+	void SetTextureNormal(const char * value);
+
+
+	string GetTextureRoughness( );
+	void SetTextureRoughness(const char * value);
+
+
+	string GetTextureShininess( );
+	void SetTextureShininess(const char * value);
+
+
+	string GetTextureSpecular( );
+	void SetTextureSpecular(const char * value);
+
+
+	int GetUseAlbedoTexture( );
+	void SetUseAlbedoTexture(int value);
+
+
+	int GetUseMetalSmoothnessTexture( );
+	void SetUseMetalSmoothnessTexture(int value);
+
+
+	string GetVertexShader( );
+	void SetVertexShader(const char * value);
+
+
+	int GetWireFrame( );
+	void SetWireFrame(int value);
+
+

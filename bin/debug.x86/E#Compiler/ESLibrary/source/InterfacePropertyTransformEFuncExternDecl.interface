@@ -1,0 +1,32 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetBillboardType)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyTransform_GetBillboardType)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetCullType)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyTransform_GetCullType)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetFixedOrder)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyTransform_GetFixedOrder)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetPosition)(eng_obj_ptr obj,  EngineMath3D::Vector3 value);
+EXTERN_C DLLAPI EngineMath3D::Vector3 (*ENG_CAPI_PropertyTransform_GetPosition)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetRotation)(eng_obj_ptr obj,  EngineMath3D::Quaternion value);
+EXTERN_C DLLAPI EngineMath3D::Quaternion (*ENG_CAPI_PropertyTransform_GetRotation)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetScale)(eng_obj_ptr obj,  EngineMath3D::Vector3 value);
+EXTERN_C DLLAPI EngineMath3D::Vector3 (*ENG_CAPI_PropertyTransform_GetScale)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetShow)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyTransform_GetShow)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyTransform_SetSortType)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyTransform_GetSortType)(eng_obj_ptr obj );
+
+

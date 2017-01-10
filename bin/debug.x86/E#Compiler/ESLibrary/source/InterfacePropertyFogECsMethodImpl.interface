@@ -1,0 +1,20 @@
+	public Color GetFogColor( );
+	public void SetFogColor(Color value);
+
+
+
+	public float GetFogFarPlane( );
+	public void SetFogFarPlane(float value);
+
+
+
+	public int GetFogMode( );
+	public void SetFogMode(int value);
+
+
+
+	public float GetFogNearPlane( );
+	public void SetFogNearPlane(float value);
+
+
+

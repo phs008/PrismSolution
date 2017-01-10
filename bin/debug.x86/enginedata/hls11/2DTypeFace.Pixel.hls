@@ -1,0 +1,57 @@
+#line 1 "enginedata\hls11\2DTypeFace.Pixel.hlp"
+
+
+cbuffer SHADER_EXTERN
+{
+	float4 Opacity;
+	float4 AmbientColor; 
+	float4 AmbientColorRate;
+	float4 ClipRange; 
+};
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+	float4 InPosition : TEXCOORD1;
+};
+
+
+
+
+sampler Texture1 : register(s0); 
+
+
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	float4 color;
+	
+	if (Out.InPosition.y < ClipRange.x || Out.InPosition.y >= ClipRange.y )
+	{
+		discard;
+	}
+
+	if (AmbientColorRate.x < 1.0)
+	{
+		color = tex2D(Texture1, Out.UV.xy)  ;
+		//color.xyzw *= AmbientColor.xyzw * AmbientColorRate.x;  ?? why w
+		color.xyz = color.xyz * (1.0-AmbientColorRate.x) + AmbientColor.xyz * AmbientColorRate.x;
+		color.w = color.w * Opacity.x * Out.UV.z;
+	}
+	else
+	{	
+		color = AmbientColor;
+		color.w = color.w * Opacity.x * Out.UV.z;
+	}
+
+
+	return color;
+}
+
+

@@ -1,0 +1,27 @@
+
+int PropertyUI::GetPixelPerfect( )
+{
+	if (ENG_CAPI_PropertyUI_GetPixelPerfect)
+	{
+		return ENG_CAPI_PropertyUI_GetPixelPerfect(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyUI::SetPixelPerfect(  int value)
+{
+	if (ENG_CAPI_PropertyUI_SetPixelPerfect)
+	{
+		ENG_CAPI_PropertyUI_SetPixelPerfect(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyUI_SetPixelPerfect is not Linked", 0, 0.0f );
+	}
+}
+
+
+

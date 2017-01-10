@@ -1,0 +1,20 @@
+
+void (*ENG_CAPI_PropertyFog_SetFogColor)(eng_obj_ptr obj,  EngineMath3D::Color value) = NULL;
+EngineMath3D::Color (*ENG_CAPI_PropertyFog_GetFogColor)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyFog_SetFogFarPlane)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyFog_GetFogFarPlane)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyFog_SetFogMode)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyFog_GetFogMode)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyFog_SetFogNearPlane)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyFog_GetFogNearPlane)(eng_obj_ptr obj  ) = NULL;
+
+

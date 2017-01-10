@@ -1,0 +1,925 @@
+
+
+Vector3* PropertyKinectSkeleton::GetAnkleLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetAnkleLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetAnkleLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetAnkleLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetAnkleLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetAnkleLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetAnkleLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetAnkleRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetAnkleRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetAnkleRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetAnkleRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetAnkleRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetAnkleRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetAnkleRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetElbowLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetElbowLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetElbowLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetElbowLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetElbowLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetElbowLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetElbowLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetElbowRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetElbowRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetElbowRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetElbowRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetElbowRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetElbowRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetElbowRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetFootLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetFootLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetFootLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetFootLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetFootLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetFootLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetFootLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetFootRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetFootRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetFootRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetFootRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetFootRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetFootRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetFootRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHandLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHandLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHandLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHandLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHandLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHandLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHandLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHandRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHandRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHandRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHandRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHandRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHandRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHandRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHandTipLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHandTipLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHandTipLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHandTipLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHandTipLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHandTipLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHandTipLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHandTipRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHandTipRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHandTipRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHandTipRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHandTipRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHandTipRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHandTipRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHead( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHead)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHead(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHead(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHead)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHead(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHead is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHipLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHipLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHipLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHipLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHipLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHipLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHipLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetHipRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetHipRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetHipRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetHipRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetHipRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetHipRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetHipRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetKneeLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetKneeLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetKneeLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetKneeLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetKneeLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetKneeLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetKneeLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetKneeRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetKneeRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetKneeRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetKneeRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetKneeRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetKneeRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetKneeRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetNeck( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetNeck)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetNeck(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetNeck(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetNeck)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetNeck(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetNeck is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetShoulderLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetShoulderLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetShoulderLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetShoulderLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetShoulderLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetShoulderLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetShoulderLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetShoulderRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetShoulderRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetShoulderRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetShoulderRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetShoulderRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetShoulderRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetShoulderRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetSpineBase( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetSpineBase)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetSpineBase(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetSpineBase(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetSpineBase)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetSpineBase(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetSpineBase is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetSpineMid( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetSpineMid)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetSpineMid(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetSpineMid(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetSpineMid)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetSpineMid(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetSpineMid is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetSpineShoulder( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetSpineShoulder)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetSpineShoulder(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetSpineShoulder(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetSpineShoulder)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetSpineShoulder(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetSpineShoulder is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetThumbLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetThumbLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetThumbLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetThumbLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetThumbLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetThumbLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetThumbLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetThumbRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetThumbRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetThumbRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetThumbRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetThumbRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetThumbRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetThumbRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetWristLeft( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetWristLeft)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetWristLeft(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetWristLeft(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetWristLeft)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetWristLeft(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetWristLeft is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector3* PropertyKinectSkeleton::GetWristRight( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetWristRight)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyKinectSkeleton_GetWristRight(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyKinectSkeleton::SetWristRight(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetWristRight)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetWristRight(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetWristRight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

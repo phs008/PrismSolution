@@ -1,0 +1,8 @@
+	string GetGestureGBD( );
+	void SetGestureGBD(const char * value);
+
+
+	int GetUseGBD( );
+	void SetUseGBD(int value);
+
+

@@ -1,0 +1,135 @@
+
+float PropertyShadowMap::GetShadowDarkness( )
+{
+	if (ENG_CAPI_PropertyShadowMap_GetShadowDarkness)
+	{
+		return ENG_CAPI_PropertyShadowMap_GetShadowDarkness(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyShadowMap::SetShadowDarkness(  float value)
+{
+	if (ENG_CAPI_PropertyShadowMap_SetShadowDarkness)
+	{
+		ENG_CAPI_PropertyShadowMap_SetShadowDarkness(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyShadowMap_SetShadowDarkness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyShadowMap::GetShadowMapAlias( )
+{
+	if (ENG_CAPI_PropertyShadowMap_GetShadowMapAlias)
+	{
+		return ENG_CAPI_PropertyShadowMap_GetShadowMapAlias(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyShadowMap::SetShadowMapAlias(  float value)
+{
+	if (ENG_CAPI_PropertyShadowMap_SetShadowMapAlias)
+	{
+		ENG_CAPI_PropertyShadowMap_SetShadowMapAlias(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyShadowMap_SetShadowMapAlias is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyShadowMap::GetShadowMapDepthMax( )
+{
+	if (ENG_CAPI_PropertyShadowMap_GetShadowMapDepthMax)
+	{
+		return ENG_CAPI_PropertyShadowMap_GetShadowMapDepthMax(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyShadowMap::SetShadowMapDepthMax(  float value)
+{
+	if (ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMax)
+	{
+		ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMax(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMax is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyShadowMap::GetShadowMapDepthMin( )
+{
+	if (ENG_CAPI_PropertyShadowMap_GetShadowMapDepthMin)
+	{
+		return ENG_CAPI_PropertyShadowMap_GetShadowMapDepthMin(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyShadowMap::SetShadowMapDepthMin(  float value)
+{
+	if (ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMin)
+	{
+		ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMin(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyShadowMap_SetShadowMapDepthMin is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyShadowMap::GetUseShadowMap( )
+{
+	if (ENG_CAPI_PropertyShadowMap_GetUseShadowMap)
+	{
+		return ENG_CAPI_PropertyShadowMap_GetUseShadowMap(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyShadowMap::SetUseShadowMap(  int value)
+{
+	if (ENG_CAPI_PropertyShadowMap_SetUseShadowMap)
+	{
+		ENG_CAPI_PropertyShadowMap_SetUseShadowMap(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyShadowMap_SetUseShadowMap is not Linked", 0, 0.0f );
+	}
+}
+
+
+

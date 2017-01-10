@@ -1,0 +1,2 @@
+			Func_%group%_Get%prop% * PImport_%group%_Get%prop%;
+			Func_%group%_Set%prop% * PImport_%group%_Set%prop%;

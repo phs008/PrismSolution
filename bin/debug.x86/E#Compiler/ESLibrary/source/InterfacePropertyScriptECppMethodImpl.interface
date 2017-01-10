@@ -1,0 +1,27 @@
+
+string PropertyScript::GetScript( )
+{
+	if (ENG_CAPI_PropertyScript_GetScript)
+	{
+		return ENG_CAPI_PropertyScript_GetScript(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyScript::SetScript(  const char * value)
+{
+	if (ENG_CAPI_PropertyScript_SetScript)
+	{
+		ENG_CAPI_PropertyScript_SetScript(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyScript_SetScript is not Linked", 0, 0.0f );
+	}
+}
+
+
+

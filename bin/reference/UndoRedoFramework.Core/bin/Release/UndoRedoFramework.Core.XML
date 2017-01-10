@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UndoRedoFramework.Core</name>
+    </assembly>
+    <members>
+        <member name="T:UndoRedoFramework.Core.UndoableDelegateCommand`2">
+            <summary>
+            This class implements the ICommand, and the IUndoableAction interface.
+            It relays all its logic to internal delegates that it recieves in its constructor.
+            </summary>
+            <typeparam name="TCommandData">The type of the ICommand members parameter.</typeparam>
+            <typeparam name="TUndoRedoData">The type of the IUndoableAction members parameter.</typeparam>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand`2.#ctor(System.Func{`0,`1},System.Func{`0,System.Boolean},System.Func{`1,`1},System.Func{`1,`1},System.String,UndoRedoFramework.Core.ObjectModel.IUndoRedoContext)">
+            <summary>
+            Creates a new instance of the UndoableDelegateCommand with the specified delegates providing logic for the class.
+            </summary>
+            <param name="execute">A delegate that takes a TCommandData object, and returns a TUndoRedoData object. This delegate is called when the command is executed.</param>
+            <param name="canExecute">A delegate that takes a TCommandData object and returns a bool. This delegate is called to determine when the command can be executed.</param>
+            <param name="undo">A delegate that takes a TUndoRedoData object, undoes the actions executed during the execute logic, and returns another TUndoRedoData object to assist in redoing this command.</param>
+            <param name="redo">A delegate that takes a TUndoRedoData object, redoes the actions executed during the undo logic, and returns another TUndoRedoData object to assist in re-undoing this command.</param>
+            <param name="name">The name of the command. If left blank, a System.Guid is used.</param>
+            <param name="context">The context that is used to manage this UndoableCommand</param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand`2.Execute(`0)">
+            <summary>
+            Executes this command.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand`2.CanExecute(`0)">
+            <summary>
+            Checks if this command can execute.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UndoRedoFramework.Core.UndoableDelegateCommand`1">
+            <summary>
+            This class implements the ICommand, and the IUndoableAction interface.
+            It relays all its logic to internal delegates that it recieves in its constructor.
+            </summary>
+            <typeparam name="TUndoRedoData">The type of the IUndoableAction members parameter.</typeparam>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand`1.#ctor(System.Func{`0},System.Func{System.Boolean},System.Func{`0,`0},System.Func{`0,`0},System.String,UndoRedoFramework.Core.ObjectModel.IUndoRedoContext)">
+            <summary>
+            Creates a new instance of the UndoableDelegateCommand with the specified delegates providing logic for the class.
+            </summary>
+            <param name="execute">A delegate that returns a TUndoRedoData object. This delegate is called when the command is executed.</param>
+            <param name="canExecute">A delegate that returns a bool. This delegate is called to determine when the command can be executed.</param>
+            <param name="undo">A delegate that takes a TUndoRedoData object, undoes the actions executed during the execute logic, and returns another TUndoRedoData object to assist in redoing this command.</param>
+            <param name="redo">A delegate that takes a TUndoRedoData object, redoes the actions executed during the undo logic, and returns another TUndoRedoData object to assist in re-undoing this command.</param>
+            <param name="name">The name of the command. If left blank, a System.Guid is used.</param>
+            <param name="context">The context that is used to manage this UndoableCommand</param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand`1.Execute">
+            <summary>
+            Executes this command.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand`1.CanExecute">
+            <summary>
+            Checks if this command can execute.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UndoRedoFramework.Core.UndoableDelegateCommand">
+            <summary>
+            This class implements the ICommand, and the IUndoableAction interface.
+            It relays all its logic to internal delegates that it recieves in its constructor.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand.#ctor(System.Action,System.Func{System.Boolean},System.Action,System.Action,System.String,UndoRedoFramework.Core.ObjectModel.IUndoRedoContext)">
+            <summary>
+            Creates a new instance of the UndoableDelegateCommand with the specified delegates providing logic for the class.
+            </summary>
+            <param name="execute">A delegate that performs an action. This delegate is called when the command is executed.</param>
+            <param name="canExecute">A delegate that returns a bool. This delegate is called to determine when the command can be executed.</param>
+            <param name="undo">A delegate that takes undoes the actions executed during the execute logic.</param>
+            <param name="redo">A delegate that redoes the actions executed during the undo logic.</param>
+            <param name="name">The name of the command. If left blank, a System.Guid is used.</param>
+            <param name="context">The context that is used to manage this UndoableCommand</param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand.Execute">
+            <summary>
+            Executes this command.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableDelegateCommand.CanExecute">
+            <summary>
+            Checks if this command can execute.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UndoRedoFramework.Core.ObjectModel.IUndoableAction">
+            <summary>
+            Represents an undoable action.
+            </summary>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.IUndoableAction.Name">
+            <summary>
+            An optional name.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoableAction.Undo(System.Object)">
+            <summary>
+            An undo method.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoableAction.Redo(System.Object)">
+            <summary>
+            A redo method.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UndoRedoFramework.Core.ObjectModel.IUndoableProperty">
+            <summary>
+            Represents an undoable property.
+            </summary>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.IUndoableProperty.BatchingTimeout">
+            <summary>
+            Represents the time to wait before batching property changes together. Measured in milliseconds.
+            </summary>
+        </member>
+        <member name="T:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext">
+            <summary>
+            Represents any object that manages Undo/Redo commands, and undoable properties
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.RegisterAction(UndoRedoFramework.Core.ObjectModel.IUndoableAction)">
+            <summary>
+            Registers an action with the context.
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.UnregisterAction(UndoRedoFramework.Core.ObjectModel.IUndoableAction)">
+            <summary>
+            Unregisters an action with the context.
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.ActionExecuted(UndoRedoFramework.Core.ObjectModel.IUndoableAction,System.Object)">
+            <summary>
+            Tells the context that an action has occurred.
+            </summary>
+            <param name="action">The action that was executed.</param>
+            <param name="data">The data associated with the action.</param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.Undo">
+            <summary>
+            Tells the context to undo the last action executed.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.Redo">
+            <summary>
+            Tells the context to redo the last action undone.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.CanUndo">
+            <summary>
+            Returns a bool representing if this context can undo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.CanRedo">
+            <summary>
+            Returns a bool representing if this context can redo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.GetUndoCommand">
+            <summary>
+            Returns this context's undo capabilites in the form of an ICommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.GetRedoCommand">
+            <summary>
+            Returns this context's undo capabilites in the form of an ICommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.PropertyChanged">
+            <summary>
+            This event handler provides a way for this context to raise property changed notifications on behalf of the UndoableProperties.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.RaisePropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Allows the container object to raise property changed notifications
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.IUndoRedoContext.RaisePropertyChanged(System.Object,System.String)">
+            <summary>
+            Allows the container object to raise property changed notifications
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2">
+            <summary>
+            This is the base class for all UndoableDelegateCommands.
+            </summary>
+            <typeparam name="TCommandData">The type of the parameter passed to the ICommand members.</typeparam>
+            <typeparam name="TUndoRedoData">The type of the parameter that this command stores.</typeparam>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.#ctor(System.Func{`0,`1},System.Func{`0,System.Boolean},System.Func{`1,`1},System.Func{`1,`1},System.String,UndoRedoFramework.Core.ObjectModel.IUndoRedoContext)">
+            <summary>
+            This internal contructor is designed to prevent external code from continuing this inheritance chain. This should never be called from external code.
+            </summary>
+            <param name="execute"></param>
+            <param name="canExecute"></param>
+            <param name="undo"></param>
+            <param name="redo"></param>
+            <param name="name"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.CheckCommandDataType(System.Object)">
+            <summary>
+            Checks if any given object matches the type of TCommandData.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.VerifyCommandDataType(System.Object)">
+            <summary>
+            Verifies if any given object matches the type of TCommandData.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.ExecuteOverride">
+            <summary>
+            Stores the Execute logic for this command.
+            </summary>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.CanExecuteOverride">
+            <summary>
+            Stores the CanExecute logic for this command.
+            </summary>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.UndoOverride">
+            <summary>
+            Stores the Undo logic for this command. 
+            </summary>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.RedoOverride">
+            <summary>
+            Stores the Redo logic for this command.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.Undo(`1)">
+            <summary>
+            Overriden from UndoableActionBase.
+            </summary>
+            <param name="undoData"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableDelegateCommandBase`2.Redo(`1)">
+            <summary>
+            Overriden from UndoableActionBase.
+            </summary>
+            <param name="redoData"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1">
+            <summary>
+            This is the base class for all undoable actions.
+            </summary>
+            <typeparam name="TUndoRedoData"></typeparam>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.#ctor(System.String,UndoRedoFramework.Core.ObjectModel.IUndoRedoContext)">
+            <summary>
+            This constructor prevents external code from inheriting from this class.
+            </summary>
+            <param name="name"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.Context">
+            <summary>
+            Stores the context which is managing this UndoableAction.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.CheckUndoRedoDataType(System.Object)">
+            <summary>
+            Checks if any given object matches the type of TUndoRedoData.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.VerifyUndoRedoDataType(System.Object)">
+            <summary>
+            Verifies if any given object matches the type of TUndoRedoData.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.Undo(`0)">
+            <summary>
+            Requires all inheritors to ovveride this method. Contains the implementation for IUndoableAction.Undo
+            </summary>
+            <param name="undoData"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.Redo(`0)">
+            <summary>
+            Requires all inheritors to ovveride this method. Contains the implementation for IUndoableAction.Redo
+            </summary>
+            <param name="undoData"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:UndoRedoFramework.Core.ObjectModel.UndoableActionBase`1.Name">
+            <summary>
+            The optional name for this IUndoableAction
+            </summary>
+        </member>
+        <member name="T:UndoRedoFramework.Core.UndoableProperty`1">
+            <summary>
+            Represents the backing store for a property that is automatically undoable.
+            </summary>
+            <typeparam name="TPropertyType"></typeparam>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableProperty`1.#ctor(System.ComponentModel.INotifyPropertyChanged,System.String,UndoRedoFramework.Core.ObjectModel.IUndoRedoContext,`0)">
+            <summary>
+            Creates a new UndoableProperty.
+            </summary>
+            <param name="associatedObject">The object containing the property.</param>
+            <param name="propertyName">The name of the property as a string.</param>
+            <param name="context">The context which manages this UndoableProperty.</param>
+            <param name="startingValue">The starting value for the property backer.</param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableProperty`1.GetValue">
+            <summary>
+            Returns the value this container is holding.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableProperty`1.SetValue(`0)">
+            <summary>
+            Sets the value this container is holding.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="F:UndoRedoFramework.Core.UndoableProperty`1._internalStore">
+            <summary>
+            The actual store for the value of the backing store.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableProperty`1.Undo(`0)">
+            <summary>
+            Overriden from UndoableActionBase.
+            </summary>
+            <param name="undoData"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoableProperty`1.Redo(`0)">
+            <summary>
+            Overriden from UndoableActionBase.
+            </summary>
+            <param name="redoData"></param>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="P:UndoRedoFramework.Core.UndoableProperty`1.BatchingTimeout">
+            <summary>
+            Controls how long before UndoRedoContext starts batching changes in milliseconds.
+            </summary>
+        </member>
+        <member name="T:UndoRedoFramework.Core.UndoRedoContext">
+            <summary>
+            A class that manages UndoableCommands and UndoableProperties
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.GetDefaultContext">
+            <summary>
+            Gets the default context.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.#ctor">
+            <summary>
+            Creates a new UndoRedoContext.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.RegisterAction(UndoRedoFramework.Core.ObjectModel.IUndoableAction)">
+            <summary>
+            Registers an action with this context.
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.UnregisterAction(UndoRedoFramework.Core.ObjectModel.IUndoableAction)">
+            <summary>
+            Unregisters an action from this context.
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.GetAction(System.String)">
+            <summary>
+            Method used internally to get an IUndoableAction given a string.
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:UndoRedoFramework.Core.UndoRedoContext.UndoStack">
+            <summary>
+            Keeps track of all actions executed.
+            </summary>
+        </member>
+        <member name="P:UndoRedoFramework.Core.UndoRedoContext.RedoStack">
+            <summary>
+            Keeps track of all actions undone.
+            </summary>
+        </member>
+        <member name="F:UndoRedoFramework.Core.UndoRedoContext.lastModified">
+            <summary>
+            Records when a UndoableProperty has last been modified.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.ActionExecuted(UndoRedoFramework.Core.ObjectModel.IUndoableAction,System.Object)">
+            <summary>
+            Tells the context that an action has occurred.
+            </summary>
+            <param name="action">The action that was executed.</param>
+            <param name="data">The data associated with the action.</param>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.Undo">
+            <summary>
+            Tells the context to undo the last action executed.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.CanUndo">
+            <summary>
+            Returns a bool representing if this context can undo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.Redo">
+            <summary>
+            Tells the context to redo the last action undone.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.CanRedo">
+            <summary>
+            Returns a bool representing if this context can redo.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.GetUndoCommand">
+            <summary>
+            Returns this context's undo capabilites in the form of an ICommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.GetRedoCommand">
+            <summary>
+            Returns this context's undo capabilites in the form of an ICommand.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.RaisePropertyChanged(System.Object,System.String)">
+            <summary>
+            Allows the container object to raise property changed notifications
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="E:UndoRedoFramework.Core.UndoRedoContext.PropertyChanged">
+            <summary>
+            This event handler provides a way for this context to raise property changed notifications on behalf of the UndoableProperties.
+            </summary>
+        </member>
+        <member name="M:UndoRedoFramework.Core.UndoRedoContext.RaisePropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Allows the container object to raise property changed notifications
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+    </members>
+</doc>

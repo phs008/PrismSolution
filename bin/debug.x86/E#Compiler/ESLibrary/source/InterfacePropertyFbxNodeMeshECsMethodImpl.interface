@@ -1,0 +1,10 @@
+	public string GetFbxMeshFile( );
+	public void SetFbxMeshFile(string value);
+
+
+
+	public string GetIndependentMaterial( );
+	public void SetIndependentMaterial(string value);
+
+
+

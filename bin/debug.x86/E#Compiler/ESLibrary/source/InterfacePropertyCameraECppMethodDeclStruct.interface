@@ -1,0 +1,12 @@
+	Color* GetBackColor();
+	void SetBackColor(Color *value);
+
+	Vector2* GetOffset();
+	void SetOffset(Vector2 *value);
+
+	Vector2* GetViewPortCenter();
+	void SetViewPortCenter(Vector2 *value);
+
+	Vector2* GetViewPortSize();
+	void SetViewPortSize(Vector2 *value);
+

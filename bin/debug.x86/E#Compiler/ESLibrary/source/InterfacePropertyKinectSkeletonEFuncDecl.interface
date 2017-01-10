@@ -1,0 +1,140 @@
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetAnkleLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetAnkleLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetAnkleRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetAnkleRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetElbowLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetElbowLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetElbowRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetElbowRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetFootLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetFootLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetFootRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetFootRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHandLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHandLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHandRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHandRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHandTipLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHandTipLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHandTipRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHandTipRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHead)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHead)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHipLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHipLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetHipRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetHipRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetKneeLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetKneeLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetKneeRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetKneeRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetLeftHand)(eng_obj_ptr obj, int propIndex,  int value) = NULL;
+int (*ENG_CAPI_PropertyKinectSkeleton_GetLeftHand)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetNeck)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetNeck)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetRightHand)(eng_obj_ptr obj, int propIndex,  int value) = NULL;
+int (*ENG_CAPI_PropertyKinectSkeleton_GetRightHand)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetShoulderLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetShoulderLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetShoulderRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetShoulderRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetSpineBase)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetSpineBase)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetSpineMid)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetSpineMid)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetSpineShoulder)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetSpineShoulder)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetThumbLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetThumbLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetThumbRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetThumbRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetTracked)(eng_obj_ptr obj, int propIndex,  int value) = NULL;
+int (*ENG_CAPI_PropertyKinectSkeleton_GetTracked)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetWristLeft)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetWristLeft)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyKinectSkeleton_SetWristRight)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector3 value) = NULL;
+EngineMath3D::Vector3 (*ENG_CAPI_PropertyKinectSkeleton_GetWristRight)(eng_obj_ptr obj  , int propIndex) = NULL;
+
+

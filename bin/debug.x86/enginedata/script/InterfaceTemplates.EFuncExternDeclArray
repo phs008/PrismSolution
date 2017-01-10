@@ -1,0 +1,3 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_%group%_Set%prop%)(eng_obj_ptr obj, %propindexcomma% %engineargtype% value, int index);
+EXTERN_C DLLAPI %enginerettype% (*ENG_CAPI_%group%_Get%prop%)(eng_obj_ptr obj, %propindexcomma% int index);
+

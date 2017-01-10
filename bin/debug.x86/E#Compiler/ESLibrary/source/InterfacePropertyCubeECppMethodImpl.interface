@@ -1,0 +1,81 @@
+
+float PropertyCube::GetDepth( )
+{
+	if (ENG_CAPI_PropertyCube_GetDepth)
+	{
+		return ENG_CAPI_PropertyCube_GetDepth(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCube::SetDepth(  float value)
+{
+	if (ENG_CAPI_PropertyCube_SetDepth)
+	{
+		ENG_CAPI_PropertyCube_SetDepth(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCube_SetDepth is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCube::GetHeight( )
+{
+	if (ENG_CAPI_PropertyCube_GetHeight)
+	{
+		return ENG_CAPI_PropertyCube_GetHeight(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCube::SetHeight(  float value)
+{
+	if (ENG_CAPI_PropertyCube_SetHeight)
+	{
+		ENG_CAPI_PropertyCube_SetHeight(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCube_SetHeight is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyCube::GetWidth( )
+{
+	if (ENG_CAPI_PropertyCube_GetWidth)
+	{
+		return ENG_CAPI_PropertyCube_GetWidth(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyCube::SetWidth(  float value)
+{
+	if (ENG_CAPI_PropertyCube_SetWidth)
+	{
+		ENG_CAPI_PropertyCube_SetWidth(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCube_SetWidth is not Linked", 0, 0.0f );
+	}
+}
+
+
+

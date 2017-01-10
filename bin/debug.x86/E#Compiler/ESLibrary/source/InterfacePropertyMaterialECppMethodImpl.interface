@@ -1,0 +1,860 @@
+
+int PropertyMaterial::GetAlphaBlending( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetAlphaBlending)
+	{
+		return ENG_CAPI_PropertyMaterial_GetAlphaBlending(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetAlphaBlending(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetAlphaBlending)
+	{
+		ENG_CAPI_PropertyMaterial_SetAlphaBlending(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetAlphaBlending is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetAlphaTest( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetAlphaTest)
+	{
+		return ENG_CAPI_PropertyMaterial_GetAlphaTest(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetAlphaTest(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetAlphaTest)
+	{
+		ENG_CAPI_PropertyMaterial_SetAlphaTest(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetAlphaTest is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetAmbient( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetAmbient)
+	{
+		return ENG_CAPI_PropertyMaterial_GetAmbient(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetAmbient(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetAmbient)
+	{
+		ENG_CAPI_PropertyMaterial_SetAmbient(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetAmbient is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetAmbientColorRate( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetAmbientColorRate)
+	{
+		return ENG_CAPI_PropertyMaterial_GetAmbientColorRate(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetAmbientColorRate(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetAmbientColorRate)
+	{
+		ENG_CAPI_PropertyMaterial_SetAmbientColorRate(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetAmbientColorRate is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetCullBackFace( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetCullBackFace)
+	{
+		return ENG_CAPI_PropertyMaterial_GetCullBackFace(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetCullBackFace(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetCullBackFace)
+	{
+		ENG_CAPI_PropertyMaterial_SetCullBackFace(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetCullBackFace is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetDiffuse( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetDiffuse)
+	{
+		return ENG_CAPI_PropertyMaterial_GetDiffuse(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetDiffuse(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetDiffuse)
+	{
+		ENG_CAPI_PropertyMaterial_SetDiffuse(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetDiffuse is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetFog( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetFog)
+	{
+		return ENG_CAPI_PropertyMaterial_GetFog(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetFog(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetFog)
+	{
+		ENG_CAPI_PropertyMaterial_SetFog(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetFog is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetGlossiness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetGlossiness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetGlossiness(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetGlossiness(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetGlossiness)
+	{
+		ENG_CAPI_PropertyMaterial_SetGlossiness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetGlossiness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetIsPBRMaterial( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetIsPBRMaterial)
+	{
+		return ENG_CAPI_PropertyMaterial_GetIsPBRMaterial(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetIsPBRMaterial(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetIsPBRMaterial)
+	{
+		ENG_CAPI_PropertyMaterial_SetIsPBRMaterial(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetIsPBRMaterial is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetMagFilter( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetMagFilter)
+	{
+		return ENG_CAPI_PropertyMaterial_GetMagFilter(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetMagFilter(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetMagFilter)
+	{
+		ENG_CAPI_PropertyMaterial_SetMagFilter(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetMagFilter is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetMetalliness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetMetalliness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetMetalliness(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetMetalliness(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetMetalliness)
+	{
+		ENG_CAPI_PropertyMaterial_SetMetalliness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetMetalliness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetMinFilter( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetMinFilter)
+	{
+		return ENG_CAPI_PropertyMaterial_GetMinFilter(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetMinFilter(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetMinFilter)
+	{
+		ENG_CAPI_PropertyMaterial_SetMinFilter(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetMinFilter is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetOpacity( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetOpacity)
+	{
+		return ENG_CAPI_PropertyMaterial_GetOpacity(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetOpacity(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetOpacity)
+	{
+		ENG_CAPI_PropertyMaterial_SetOpacity(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetOpacity is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetPixelShader( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetPixelShader)
+	{
+		return ENG_CAPI_PropertyMaterial_GetPixelShader(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetPixelShader(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetPixelShader)
+	{
+		ENG_CAPI_PropertyMaterial_SetPixelShader(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetPixelShader is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetRoughness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetRoughness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetRoughness(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetRoughness(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetRoughness)
+	{
+		ENG_CAPI_PropertyMaterial_SetRoughness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetRoughness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetShadingModel( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetShadingModel)
+	{
+		return ENG_CAPI_PropertyMaterial_GetShadingModel(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetShadingModel(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetShadingModel)
+	{
+		ENG_CAPI_PropertyMaterial_SetShadingModel(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetShadingModel is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetShadowDarkness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetShadowDarkness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetShadowDarkness(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetShadowDarkness(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetShadowDarkness)
+	{
+		ENG_CAPI_PropertyMaterial_SetShadowDarkness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetShadowDarkness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetShininess( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetShininess)
+	{
+		return ENG_CAPI_PropertyMaterial_GetShininess(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetShininess(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetShininess)
+	{
+		ENG_CAPI_PropertyMaterial_SetShininess(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetShininess is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetSmoothness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetSmoothness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetSmoothness(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetSmoothness(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetSmoothness)
+	{
+		ENG_CAPI_PropertyMaterial_SetSmoothness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetSmoothness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyMaterial::GetSpecular( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetSpecular)
+	{
+		return ENG_CAPI_PropertyMaterial_GetSpecular(Owner->id , GroupIndex);
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyMaterial::SetSpecular(  float value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetSpecular)
+	{
+		ENG_CAPI_PropertyMaterial_SetSpecular(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetSpecular is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureDiffuse( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureDiffuse)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureDiffuse(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureDiffuse(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureDiffuse)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureDiffuse(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureDiffuse is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureEnv( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureEnv)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureEnv(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureEnv(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureEnv)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureEnv(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureEnv is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureEtc( int index)
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureEtc)
+		return ENG_CAPI_PropertyMaterial_GetTextureEtc(Owner->id, GroupIndex,   index);
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureEtc(  const char * value, int index)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureEtc)
+		ENG_CAPI_PropertyMaterial_SetTextureEtc(Owner->id, GroupIndex,   value, index);
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureEtc is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureGlossiness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureGlossiness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureGlossiness(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureGlossiness(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureGlossiness)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureGlossiness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureGlossiness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureNormal( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureNormal)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureNormal(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureNormal(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureNormal)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureNormal(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureNormal is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureRoughness( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureRoughness)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureRoughness(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureRoughness(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureRoughness)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureRoughness(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureRoughness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureShininess( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureShininess)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureShininess(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureShininess(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureShininess)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureShininess(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureShininess is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetTextureSpecular( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetTextureSpecular)
+	{
+		return ENG_CAPI_PropertyMaterial_GetTextureSpecular(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetTextureSpecular(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetTextureSpecular)
+	{
+		ENG_CAPI_PropertyMaterial_SetTextureSpecular(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetTextureSpecular is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetUseAlbedoTexture( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetUseAlbedoTexture)
+	{
+		return ENG_CAPI_PropertyMaterial_GetUseAlbedoTexture(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetUseAlbedoTexture(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetUseAlbedoTexture)
+	{
+		ENG_CAPI_PropertyMaterial_SetUseAlbedoTexture(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetUseAlbedoTexture is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetUseMetalSmoothnessTexture( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetUseMetalSmoothnessTexture)
+	{
+		return ENG_CAPI_PropertyMaterial_GetUseMetalSmoothnessTexture(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetUseMetalSmoothnessTexture(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetUseMetalSmoothnessTexture)
+	{
+		ENG_CAPI_PropertyMaterial_SetUseMetalSmoothnessTexture(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetUseMetalSmoothnessTexture is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyMaterial::GetVertexShader( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetVertexShader)
+	{
+		return ENG_CAPI_PropertyMaterial_GetVertexShader(Owner->id , GroupIndex);
+	}
+	else
+		return "";
+}
+
+
+void PropertyMaterial::SetVertexShader(  const char * value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetVertexShader)
+	{
+		ENG_CAPI_PropertyMaterial_SetVertexShader(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetVertexShader is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyMaterial::GetWireFrame( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetWireFrame)
+	{
+		return ENG_CAPI_PropertyMaterial_GetWireFrame(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyMaterial::SetWireFrame(  int value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetWireFrame)
+	{
+		ENG_CAPI_PropertyMaterial_SetWireFrame(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetWireFrame is not Linked", 0, 0.0f );
+	}
+}
+
+
+

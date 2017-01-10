@@ -1,0 +1,20 @@
+	int GetBillboardType( );
+	void SetBillboardType(int value);
+
+
+	int GetCullType( );
+	void SetCullType(int value);
+
+
+	int GetFixedOrder( );
+	void SetFixedOrder(int value);
+
+
+	int GetShow( );
+	void SetShow(int value);
+
+
+	int GetSortType( );
+	void SetSortType(int value);
+
+

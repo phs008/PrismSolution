@@ -1,0 +1,30 @@
+	public float GetConfidence( );
+	public void SetConfidence(float value);
+
+
+
+	public int GetDetected( );
+	public void SetDetected(int value);
+
+
+
+	public string GetGestureName( );
+	public void SetGestureName(string value);
+
+
+
+	public int GetGesturePerson( );
+	public void SetGesturePerson(int value);
+
+
+
+	public int GetGestureType( );
+	public void SetGestureType(int value);
+
+
+
+	public int GetPersonNumber( );
+	public void SetPersonNumber(int value);
+
+
+

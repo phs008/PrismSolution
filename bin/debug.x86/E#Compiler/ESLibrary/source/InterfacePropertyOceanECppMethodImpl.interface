@@ -1,0 +1,270 @@
+
+float PropertyOcean::GetOceanChoppyScale( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanChoppyScale)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanChoppyScale(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanChoppyScale(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanChoppyScale)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanChoppyScale(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanChoppyScale is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyOcean::GetOceanGlossiness( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanGlossiness)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanGlossiness(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanGlossiness(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanGlossiness)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanGlossiness(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanGlossiness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyOcean::GetOceanMetalness( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanMetalness)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanMetalness(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanMetalness(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanMetalness)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanMetalness(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanMetalness is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyOcean::GetOceanPatchLength( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanPatchLength)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanPatchLength(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyOcean::SetOceanPatchLength(  int value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanPatchLength)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanPatchLength(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanPatchLength is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyOcean::GetOceanPause( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanPause)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanPause(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyOcean::SetOceanPause(  int value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanPause)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanPause(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanPause is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyOcean::GetOceanSize( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanSize)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanSize(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyOcean::SetOceanSize(  int value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanSize)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanSize(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanSize is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyOcean::GetOceanTimeScale( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanTimeScale)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanTimeScale(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanTimeScale(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanTimeScale)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanTimeScale(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanTimeScale is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyOcean::GetOceanWaveAmplitude( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanWaveAmplitude)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanWaveAmplitude(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanWaveAmplitude(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanWaveAmplitude)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanWaveAmplitude(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanWaveAmplitude is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyOcean::GetOceanWindDependency( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanWindDependency)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanWindDependency(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanWindDependency(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanWindDependency)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanWindDependency(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanWindDependency is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyOcean::GetOceanWindSpeed( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanWindSpeed)
+	{
+		return ENG_CAPI_PropertyOcean_GetOceanWindSpeed(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyOcean::SetOceanWindSpeed(  float value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanWindSpeed)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanWindSpeed(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanWindSpeed is not Linked", 0, 0.0f );
+	}
+}
+
+
+

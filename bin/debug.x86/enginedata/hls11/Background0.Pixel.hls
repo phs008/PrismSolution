@@ -1,0 +1,511 @@
+
+
+cbuffer SHADER_EXTERN
+{
+	float4 BackgroundType;
+	float4 Orthographic;
+	float4 DrawGrid;
+
+	float4 BackColor;
+	float4x4 ViewInverse;
+	float4x4 ProjInverse;
+	float4x4 ViewProjInverse;
+	float4x4 ViewProj;
+
+	float4 CameraDir;
+	float4 CameraPos;
+	float4 GridInterval;
+
+	float4 FarPlane;
+
+	float4x4 BackgroundSunMatrix;
+	float4 BackgroundSunSize;
+
+	float4 EnvMapProjection;
+	float4 BackgroundMipMapInfo;
+
+};
+
+	//float4 ZoomTangent;
+	//float4 AspectRatio;  
+	//float4 OrthographicViewSize; 
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float4 InPosition : TEXCOORD0;
+};
+
+
+/*
+아래 slot number가 dx11에서 bug 있으므로  아래 comment된 코드와 병용해야 함
+
+sampler TextureBackground : register(s0);
+sampler TextureGridDirection : register(s1);
+sampler TextureSun : register(s2);
+*/
+
+
+Texture2D TextureBackground : register(t0);
+SamplerState TextureBackgroundSampler : register(s0);
+
+Texture2D TextureGridDirection : register(t1);
+SamplerState TextureGridDirectionSampler : register(s1);
+
+
+Texture2D TextureSun : register(t2);
+SamplerState TextureSunSampler : register(s2);
+
+
+
+
+
+float3 TransformCoord(float3 source, float4x4 sourceMatrix)
+{
+	float3 result = float3(0.0, 0.0, 0.0);
+
+	float norm = 
+		sourceMatrix[0][3] * source.x + 
+		sourceMatrix[1][3] * source.y +
+		sourceMatrix[2][3] * source.z + 
+		sourceMatrix[3][3];
+
+	if( norm == 0.0)
+	{
+		result.x = 0.0;
+		result.y = 0.0;
+		result.z = 0.0;
+	}
+	else
+	{
+		result.x = 
+			((sourceMatrix[0][0] * source.x +
+			sourceMatrix[1][0] * source.y +
+			sourceMatrix[2][0] * source.z + sourceMatrix[3][0])  / norm );
+
+		result.y = 
+			((sourceMatrix[0][1] * source.x +
+			sourceMatrix[1][1] * source.y +
+			sourceMatrix[2][1] * source.z + sourceMatrix[3][1])  / norm );
+
+		result.z = 
+			((sourceMatrix[0][2] * source.x +
+			sourceMatrix[1][2] * source.y +
+			sourceMatrix[2][2] * source.z + sourceMatrix[3][2])  / norm );
+	}
+	return result;
+
+}
+
+
+
+
+
+float2 ConvCubeCoord(float3 r)
+{
+	r = normalize(r);
+	float dirx = abs(r.x);
+	float diry = abs(r.y);
+	float dirz = abs(r.z);
+	
+	float2 uv = float2(0.0, 0.0);
+	if (dirx >= diry && dirx >= dirz)
+	{
+		if (r.x >= 0.0)
+		{
+			uv.x = r.z / r.x / 8.0 + 1.0/8.0;
+			uv.y = r.y / r.x / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = r.z / r.x / 8.0 + 5.0/8.0;
+			uv.y = - r.y / r.x / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (dirz >= diry && dirz >= dirx)
+	{
+		if (r.z >= 0.0)
+		{
+			uv.x = - r.x / r.z / 8.0 + 3.0/8.0;
+			uv.y = r.y / r.z / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = - r.x / r.z / 8.0 + 7.0/8.0;
+			uv.y = - r.y / r.z / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (diry >= dirz && diry >= dirx)
+	{
+		if (r.y >= 0.0)
+		{
+			uv.x = - r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 5.0/6.0;
+		}
+		else
+		{
+			uv.x = r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 1.0/6.0;
+		}
+	}
+
+	uv.y = 1.0 - uv.y;
+	return uv;
+}
+
+
+
+
+
+
+float2 ConvERPCoord(float3 v)
+{
+
+	float PI = 3.1415926535;
+	
+	float2 uv;
+	v = normalize(v);
+	uv.x = atan(v.z / v.x);
+	if (v.x < 0)
+		uv.x += PI;
+	if (uv.x < 0)
+		uv.x += PI * 2.0;
+	
+	uv.x = fmod(uv.x , PI * 2.0 );
+
+	uv.y = acos( v.y );
+
+	uv = float2(uv.x / (PI * 2.0) , uv.y / PI  );
+
+	return uv;
+
+}
+
+
+
+// Q 2016.10.25
+float2 ConvertMipMapUV(float2 UV, int Level)
+{
+	if (BackgroundMipMapInfo.x > 0.1 && BackgroundMipMapInfo.y == 0.0)
+	{
+		if (BackgroundMipMapInfo.z <= Level )
+			Level = BackgroundMipMapInfo.z-1;
+
+		float2 result;
+
+		float power = pow(2, Level);
+	
+		int i = 0;
+		int sum = 0;
+		for(i = 0; i <= Level; i++)
+		{
+			sum += pow(2, i);
+		}
+
+		result.x = (UV.x + sum - 1) / pow(2, Level + 1);
+		result.y = (UV.y + sum + pow(2, Level)) / power;
+
+		return result;
+	}
+	else
+		return UV;
+}
+
+// Q 2016.10.31
+float4 MipMapSample(float2 UV, float Level, Texture2D Texture, SamplerState TextureSampler)
+{
+	float4 reflection;
+
+	if (Level == 0.0)
+	{
+		if(EnvMapProjection.x == 1.0)
+			UV = clamp(UV, 0.03, 1.0-0.03);
+		//UV = clamp( ( UV - 0.5 ) * 1.01 +0.5, 0.0, 1.0);
+		UV = ConvertMipMapUV( UV, 0 ); 
+		reflection = Texture.Sample(TextureSampler, UV);
+	}
+	else
+	{
+		float level;
+		level = clamp(Level, 0.0, 1.0);
+		level = level * (BackgroundMipMapInfo.z-1);
+		//UV = clamp( ( UV - 0.5 ) * 1.01 +0.5, 0.0, 1.0);
+
+		if(EnvMapProjection.x == 1.0)
+			UV = clamp(UV, 0.03*level, 1.0-0.03*level);
+		float2 uv0 = ConvertMipMapUV( UV, (int)level ); 
+		float2 uv1 = ConvertMipMapUV( UV, (int)level+1 ); 	
+		float4 reflection0 = Texture.Sample(TextureSampler, uv0);
+		float4 reflection1 = Texture.Sample(TextureSampler, uv1);
+		reflection = reflection0 * ((int)level+1 - level) + reflection1 * (level - (int)level);
+	}
+
+	return reflection;
+}
+
+// w is depth
+
+
+
+struct PS_OUTPUT
+{
+	float4 Target : SV_Target;
+	float Depth : SV_Depth;
+};
+
+
+PS_OUTPUT GetGridColor(float3 linefrom, float3 linedir, float multiple, float4 color)
+{
+
+	float gridInterval = GridInterval.x * multiple;
+
+	float depth = 0.9999;
+	float gridColorFog = 1.0;
+
+	float cuty = 0.0;
+	float4 gridBlack = float4(0.0, 0.0, 0.0, 0.0);
+	float4 gridWhite = float4(0.2, 0.2, 0.2, 0.0);
+	float fogDistMax = 50.0 * multiple;
+	float fogDistMin = 1.0 * multiple;
+
+	PS_OUTPUT result;
+	result.Target = gridBlack;
+	result.Depth = depth;
+
+	if (linedir.y == 0.0)
+	{
+		return result;
+	}
+
+	float3 y1;
+	float3 y0;
+	if (linedir.y > 0.0)
+	{
+		y1 = linefrom;
+		y0 = linefrom + linedir;
+	}
+	else
+	{
+		y1 = linefrom + linedir;
+		y0 = linefrom;
+	}
+
+	float a = (cuty - y0.y) / (y1.y - y0.y);
+	float3 intersect = (y1 - y0) * a + y0;
+	float3 distv = intersect - linefrom;
+
+	if (dot(linedir, distv) < 0.0)
+	{
+		return result;
+	}
+
+	float dist = (distv.x * distv.x + distv.y * distv.y + distv.z * distv.z);
+	if (dist > 1000 * 1000)
+	{
+		return result;
+	}
+
+	 
+	if (1) // use grid fog
+	{
+
+		gridColorFog = (fogDistMax*fogDistMax - dist) / (fogDistMax*fogDistMax - fogDistMin*fogDistMin);
+
+		// linear
+		//gridColorFog = (fogDistMax - dist) / (fogDistMax - fogDistMin);
+
+		if (gridColorFog < 0.0)
+			gridColorFog = 0.0;
+		if (gridColorFog > 1.0)
+			gridColorFog = 0.0;
+	}
+
+	float modx = intersect.x  / gridInterval - floor(intersect.x / gridInterval) ;
+	float modz = intersect.z  / gridInterval - floor(intersect.z / gridInterval) ;
+
+	float DirectionOpacity = 0.2;
+	float DirectionSize = 0.2;
+
+	float4 direction;
+	direction = float4(0.0, 0.0, 0.0, 0.0);
+	if (modx < DirectionSize && modz < DirectionSize)
+	{
+		direction = TextureGridDirection.Sample(TextureGridDirectionSampler, float2(modz / DirectionSize, 1.0 - modx / DirectionSize) );
+		direction.xyz *= direction.w;
+		direction.w *= DirectionOpacity;
+	}
+
+	float4 gridColor;
+	if (  ((modx < 0.5) && (modz < 0.5) )
+		|| ( (modx > 0.5) && (modz > 0.5)  ) )
+		gridColor = (gridBlack  + direction ) * gridColorFog;   
+	else
+		gridColor = (gridWhite + direction ) * gridColorFog;  
+
+	gridColor = gridColor + (1.0 - gridColorFog) * color;
+	gridColor.w = gridWhite.x * gridColorFog;
+	if (gridColor.w > 1.0)
+		gridColor.w = 1.0;
+	
+	float4 intersect4 = float4(intersect.x, intersect.y, intersect.z, 1.0 );
+	intersect4 = mul(intersect4 , ViewProj) ;
+	
+	depth = intersect4.z / intersect4.w;
+
+	PS_OUTPUT tar;
+	tar.Target = gridColor;
+	tar.Depth = depth;
+
+	return tar;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//float4 PS(VS_OUTPUT Out) : SV_Target
+PS_OUTPUT PS(VS_OUTPUT Out)
+{
+	PS_OUTPUT Output;
+
+	float4 color = BackColor;
+
+	float3 cuveDir = float3(0.0, 0.0, 0.0);
+
+	if ( ((BackgroundType.x == 2.0 || BackgroundType.x == 3.0) && Orthographic.x == 0.0)
+		||  (DrawGrid.x == 1.0 && Orthographic.x == 0.0) )
+	{
+		float2 screenCoord = Out.InPosition.xy;
+
+		float4 vp = float4(screenCoord.x, screenCoord.y, 1.0, 1.0);
+		/*
+		float4 vppos = mul( vp, ViewProjInverse) ;
+		vppos.xyz = vppos.xyz/vppos.w;
+		vppos.w = 1.0;
+
+		cuveDir = vppos.xyz - CameraPos.xyz; 
+		cuveDir = normalize(cuveDir);
+		*/
+
+		float3 vppos = TransformCoord( vp.xyz, ViewInverse) ;
+		cuveDir = vppos.xyz - CameraPos.xyz; 
+		cuveDir = normalize(cuveDir);
+	}
+
+	if (BackgroundType.x == 1.0)
+	{
+		float2 uv = Out.InPosition.xy / 2.0 + 0.5;
+		uv.y = 1.0 - uv.y;
+		color = TextureBackground.Sample(TextureBackgroundSampler, uv.xy);
+	}
+	else
+	if (BackgroundType.x == 2.0 || BackgroundType.x == 3.0)
+	{
+		if (Orthographic.x == 0.0)
+		{
+			float2 uvc;
+			
+			if (EnvMapProjection.x == 1.0)
+				uvc = ConvCubeCoord(cuveDir); 
+			else if (EnvMapProjection.x == 2.0)
+				uvc = ConvERPCoord(cuveDir);
+			else
+				uvc = float2(0.0, 0.0);
+
+			color = MipMapSample(uvc, 0, TextureBackground, TextureBackgroundSampler);
+
+			float4 suncolor = float4( 0, 0, 0 , 0);
+			float3 suncoord = mul(cuveDir.xyz, (float3x3) BackgroundSunMatrix); 
+
+			if (suncoord.x <= BackgroundSunSize.x && suncoord.x >= -BackgroundSunSize.x
+			   && suncoord.y <= BackgroundSunSize.y && suncoord.y >= -BackgroundSunSize.y
+			   && suncoord.z > 0.0 )
+			{
+				float2 sunuv;
+				sunuv.x = (suncoord.x/BackgroundSunSize.x)/2.0 + 0.5;
+				sunuv.y = -((suncoord.y/BackgroundSunSize.y)/2.0 + 0.5);
+				suncolor = TextureSun.Sample(TextureSunSampler, sunuv);
+			}
+			//test color.xyz = suncoord.xyz;
+
+			float sunIntensity = 1.0;
+			sunIntensity = (suncoord.z);
+			sunIntensity = clamp(sunIntensity, 0.0, 1.0);
+			//sunIntensity = sunIntensity ;// * sunIntensity  ; //* sunIntensity
+			sunIntensity = sunIntensity * sunIntensity * sunIntensity;
+
+			//test color.xyz = sunIntensity;
+
+			//float4 sunenv = float4(sunIntensity, sunIntensity, sunIntensity, 1.0);
+			float4 sunenv = float4(sunIntensity, sunIntensity, sunIntensity * 0.7, 1.0);  // yellow 
+			color = max(color , sunenv) * (1.0 - suncolor.w)  + suncolor * suncolor.w;  
+			color.w = 1.0;
+
+		}
+		else
+		{
+			color = BackColor;
+		}
+	}
+	else
+	{
+		color = BackColor;
+	}
+
+	if (DrawGrid.x == 1.0)
+	{
+		if (Orthographic.x == 0.0)
+		{
+			float multiple = 1.0;
+			return GetGridColor( CameraPos, cuveDir, multiple, color );
+		}
+		else
+		{
+
+			float4 vp0 = float4(0.0, 0.0, 0.0, 1.0);
+			float4 vppos0 = mul( vp0, ViewProjInverse) ;
+			float4 vp1 = float4(1.0, 1.0, 0.0, 1.0);
+			float4 vppos1 = mul( vp1, ViewProjInverse) ;
+			vppos1 = vppos1 - vppos0;
+			float len = sqrt(vppos1.x * vppos1.x + vppos1.y * vppos1.y );
+			float multiple = trunc(len / 5.0);
+			if (multiple < 1.0)
+				multiple = 1.0;
+
+			float2 screenCoord = Out.InPosition.xy;
+			float4 vp = float4(screenCoord.x, screenCoord.y, 0.0, 1.0);
+			float4 vppos = mul( vp, ViewProjInverse) ;
+			vppos.xyz = vppos.xyz/vppos.w;
+			vppos.w = 1.0;
+
+			float3 pos =  vppos; 
+
+			return GetGridColor(pos, CameraDir, multiple, color );
+
+		}
+
+	}
+
+	Output.Target = color;
+	Output.Depth = 0.9999;
+	return Output;
+}
+
+
+
+
+

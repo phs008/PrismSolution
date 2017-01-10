@@ -1,0 +1,24 @@
+	int GetExpanded( );
+	void SetExpanded(int value);
+
+
+	int GetLayer( );
+	void SetLayer(int value);
+
+
+	int GetLocked( );
+	void SetLocked(int value);
+
+
+	string GetName( );
+	void SetName(const char * value);
+
+
+	int GetSelected( );
+	void SetSelected(int value);
+
+
+	int GetShow( );
+	void SetShow(int value);
+
+

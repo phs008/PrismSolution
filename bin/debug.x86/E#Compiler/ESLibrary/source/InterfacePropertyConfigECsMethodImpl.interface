@@ -1,0 +1,14 @@
+
+public int RenderPBR
+{
+	get 
+	{
+		return ENG_CAPI_PropertyConfig_GetRenderPBR(id);
+	}
+	set
+	{
+		ENG_CAPI_PropertyConfig_SetRenderPBR(id, value);
+	}
+}
+
+

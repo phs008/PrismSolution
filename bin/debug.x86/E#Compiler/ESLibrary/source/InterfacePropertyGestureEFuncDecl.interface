@@ -1,0 +1,30 @@
+
+void (*ENG_CAPI_PropertyGesture_SetConfidence)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertyGesture_GetConfidence)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyGesture_SetDetected)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyGesture_GetDetected)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyGesture_SetGestureName)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyGesture_GetGestureName)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyGesture_SetGesturePerson)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyGesture_GetGesturePerson)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyGesture_SetGestureType)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyGesture_GetGestureType)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyGesture_SetPersonNumber)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyGesture_GetPersonNumber)(eng_obj_ptr obj  ) = NULL;
+
+

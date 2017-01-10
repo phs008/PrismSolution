@@ -1,0 +1,162 @@
+
+int PropertySphere::GetIcosahedronInteration( )
+{
+	if (ENG_CAPI_PropertySphere_GetIcosahedronInteration)
+	{
+		return ENG_CAPI_PropertySphere_GetIcosahedronInteration(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySphere::SetIcosahedronInteration(  int value)
+{
+	if (ENG_CAPI_PropertySphere_SetIcosahedronInteration)
+	{
+		ENG_CAPI_PropertySphere_SetIcosahedronInteration(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySphere_SetIcosahedronInteration is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertySphere::GetLatitutionalCut( )
+{
+	if (ENG_CAPI_PropertySphere_GetLatitutionalCut)
+	{
+		return ENG_CAPI_PropertySphere_GetLatitutionalCut(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySphere::SetLatitutionalCut(  int value)
+{
+	if (ENG_CAPI_PropertySphere_SetLatitutionalCut)
+	{
+		ENG_CAPI_PropertySphere_SetLatitutionalCut(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySphere_SetLatitutionalCut is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertySphere::GetLongitutionalCut( )
+{
+	if (ENG_CAPI_PropertySphere_GetLongitutionalCut)
+	{
+		return ENG_CAPI_PropertySphere_GetLongitutionalCut(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySphere::SetLongitutionalCut(  int value)
+{
+	if (ENG_CAPI_PropertySphere_SetLongitutionalCut)
+	{
+		ENG_CAPI_PropertySphere_SetLongitutionalCut(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySphere_SetLongitutionalCut is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertySphere::GetRadius( )
+{
+	if (ENG_CAPI_PropertySphere_GetRadius)
+	{
+		return ENG_CAPI_PropertySphere_GetRadius(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertySphere::SetRadius(  float value)
+{
+	if (ENG_CAPI_PropertySphere_SetRadius)
+	{
+		ENG_CAPI_PropertySphere_SetRadius(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySphere_SetRadius is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertySphere::GetUseIcosahedron( )
+{
+	if (ENG_CAPI_PropertySphere_GetUseIcosahedron)
+	{
+		return ENG_CAPI_PropertySphere_GetUseIcosahedron(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySphere::SetUseIcosahedron(  int value)
+{
+	if (ENG_CAPI_PropertySphere_SetUseIcosahedron)
+	{
+		ENG_CAPI_PropertySphere_SetUseIcosahedron(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySphere_SetUseIcosahedron is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertySphere::GetUseRect( )
+{
+	if (ENG_CAPI_PropertySphere_GetUseRect)
+	{
+		return ENG_CAPI_PropertySphere_GetUseRect(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertySphere::SetUseRect(  int value)
+{
+	if (ENG_CAPI_PropertySphere_SetUseRect)
+	{
+		ENG_CAPI_PropertySphere_SetUseRect(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertySphere_SetUseRect is not Linked", 0, 0.0f );
+	}
+}
+
+
+

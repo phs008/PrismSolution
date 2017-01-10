@@ -1,0 +1,24 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySphere_SetIcosahedronInteration)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySphere_GetIcosahedronInteration)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySphere_SetLatitutionalCut)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySphere_GetLatitutionalCut)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySphere_SetLongitutionalCut)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySphere_GetLongitutionalCut)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySphere_SetRadius)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertySphere_GetRadius)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySphere_SetUseIcosahedron)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySphere_GetUseIcosahedron)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertySphere_SetUseRect)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertySphere_GetUseRect)(eng_obj_ptr obj );
+
+

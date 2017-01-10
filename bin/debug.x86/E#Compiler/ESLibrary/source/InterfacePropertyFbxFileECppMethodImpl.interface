@@ -1,0 +1,27 @@
+
+string PropertyFbxFile::GetFbxFile( )
+{
+	if (ENG_CAPI_PropertyFbxFile_GetFbxFile)
+	{
+		return ENG_CAPI_PropertyFbxFile_GetFbxFile(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyFbxFile::SetFbxFile(  const char * value)
+{
+	if (ENG_CAPI_PropertyFbxFile_SetFbxFile)
+	{
+		ENG_CAPI_PropertyFbxFile_SetFbxFile(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFbxFile_SetFbxFile is not Linked", 0, 0.0f );
+	}
+}
+
+
+

@@ -1,0 +1,54 @@
+
+string PropertyRigidMesh::GetMaterial( )
+{
+	if (ENG_CAPI_PropertyRigidMesh_GetMaterial)
+	{
+		return ENG_CAPI_PropertyRigidMesh_GetMaterial(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyRigidMesh::SetMaterial(  const char * value)
+{
+	if (ENG_CAPI_PropertyRigidMesh_SetMaterial)
+	{
+		ENG_CAPI_PropertyRigidMesh_SetMaterial(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyRigidMesh_SetMaterial is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyRigidMesh::GetMesh( )
+{
+	if (ENG_CAPI_PropertyRigidMesh_GetMesh)
+	{
+		return ENG_CAPI_PropertyRigidMesh_GetMesh(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyRigidMesh::SetMesh(  const char * value)
+{
+	if (ENG_CAPI_PropertyRigidMesh_SetMesh)
+	{
+		ENG_CAPI_PropertyRigidMesh_SetMesh(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyRigidMesh_SetMesh is not Linked", 0, 0.0f );
+	}
+}
+
+
+

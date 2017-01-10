@@ -1,0 +1,5 @@
+
+void (*ENG_CAPI_PropertyFbxFile_SetFbxFile)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyFbxFile_GetFbxFile)(eng_obj_ptr obj  ) = NULL;
+
+

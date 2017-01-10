@@ -1,0 +1,4 @@
+	int GetPixelPerfect( );
+	void SetPixelPerfect(int value);
+
+

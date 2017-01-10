@@ -1,0 +1,583 @@
+﻿<UserControl x:Class="VRCAT.InspectorModule.PropertyGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:local="clr-namespace:VRCAT.InspectorModule"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:xceed="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:wpfxcommand="clr-namespace:WPFXCommand;assembly=WPFXCommand"
+             xmlns:service="bucketplay.com"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type local:NumericTextBox}" BasedOn="{StaticResource {x:Type TextBox}}"/>
+        <ControlTemplate x:Key="RoundButton" TargetType="{x:Type Button}">
+            <Grid Width="10" Height="10" x:Name="wid">
+                <Ellipse Stroke="Brown" x:Name="OuterEllipse"/>
+                <Ellipse x:Name="innerEllipse" Fill="Transparent">
+                    <Ellipse.BitmapEffect>
+                        <BevelBitmapEffect BevelWidth="8" EdgeProfile="BulgedUp" Smoothness="0.745"/>
+                    </Ellipse.BitmapEffect>
+                </Ellipse>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="OuterEllipse" Property="Stroke" Value="Red" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="innerEllipse" Property="Fill" Value="#FF3272B8" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="XButton" TargetType="{x:Type Button}">
+            <Grid Width="10" Height="10" x:Name="wid">
+                <Ellipse Stroke="Red" x:Name="OuterEllipse" Fill="Red"/>
+                <Path x:Name="InerPath" Stroke="#FF8f949b" StrokeThickness="1.5" StrokeStartLineCap="Square" StrokeEndLineCap="Square" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigure StartPoint="0,0">
+                                    <LineSegment Point="10,10"/>
+                                </PathFigure>
+                                <PathFigure StartPoint="0,10">
+                                    <LineSegment Point="10,0"/>
+                                </PathFigure>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="OuterEllipse" Property="Fill" Value="#FFc13535" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="InerPath" Property="Stroke" Value="#FFf9ebeb" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <local:StringToImageConverter x:Key="StirngToImageConverter" />
+        <!--<local:EnumBindingSourceExtension x:Key="EnumBindingSource" />-->
+        <local:EnumBindingConverter x:Key="EnumBindingConverter" />
+        <DataTemplate DataType="{x:Type local:ScriptVM}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition SharedSizeGroup="InspectorLeftColumn" />
+                    <RowDefinition SharedSizeGroup="InspectorLeftColumn" />
+                </Grid.RowDefinitions>
+                <ItemsControl ItemsSource="{Binding ScriptSourceParams}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding VRParams}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:ScriptSourceVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="ScriptPath" HorizontalAlignment="Center" />
+                <TextBox Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" IsReadOnly="True" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:MaterialVM}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition SharedSizeGroup="InspectorLeftColumn" />
+                    <RowDefinition SharedSizeGroup="InspectorLeftColumn" />
+                </Grid.RowDefinitions>
+                <ItemsControl ItemsSource="{Binding MaterialParams}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding VRParams}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:MaterialSourceVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=IDX}" HorizontalAlignment="Center" />
+                <TextBox IsReadOnly="True" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:AnimationViewModel}">
+            <Grid>
+                <ItemsControl ItemsSource="{Binding VRParams}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:AnimationSourceVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn" Width="10"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Width="10" Height="10" Template="{StaticResource XButton}" ToolTip="Remove Animation">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding AnimationRemove}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <TextBlock Grid.Column="1" Text="{Binding Path=IDX}" HorizontalAlignment="Center" />
+                <TextBox IsReadOnly="True" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Path=Value}" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRContainerObjectVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <Button Grid.Column="1" Width="10" Height="10" Template="{StaticResource RoundButton}" ToolTip="Reset Value">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding ContainerReset}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <TextBox IsReadOnly="True" Grid.Column="2" Margin="10,0,0,0" Text="{Binding Path=Value}" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRDefaultVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRBoolVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <ComboBox Grid.Column="1" Margin="10,0,0,0" SelectedValue="{Binding Path=Value}">
+                    <ComboBox.Items>
+                        <system:Boolean>True</system:Boolean>
+                        <system:Boolean>False</system:Boolean>
+                    </ComboBox.Items>
+                </ComboBox>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRStringVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRIntVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRFloatVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRDoubleVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRRangeVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <Slider Grid.Column="1" Margin="10,0,0,0" Minimum="{Binding min}" Maximum="{Binding max}" Value="{Binding Value}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRVector2VM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"  Text="X" Padding="0,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="1"   HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20">
+                        <TextBox.Text>
+                            <Binding Path="Value.X" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                    <TextBlock Grid.Column="2"  Text="Y" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" >
+                        <TextBox.Text>
+                            <Binding Path="Value.Y" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRVector3VM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"  Text="X" Padding="0,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="1"   HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" >
+                        <TextBox.Text>
+                            <Binding Path="X" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                    <TextBlock Grid.Column="2"  Text="Y" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" >
+                        <TextBox.Text>
+                            <Binding Path="Y" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                    <TextBlock Grid.Column="4"  Text="Z" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}" >
+                        <TextBox.Text>
+                            <Binding Path="Z" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRVector4VM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="15*" MinWidth="15"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"  Text="X" Padding="0,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="1"   HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20">
+                        <TextBox.Text>
+                            <Binding Path="Value.X" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                    <TextBlock Grid.Column="2"  Text="Y" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" >
+                        <TextBox.Text>
+                            <Binding Path="Value.Y" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                    <TextBlock Grid.Column="4"  Text="Z" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" >
+                        <TextBox.Text>
+                            <Binding Path="Value.Z" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                    <TextBlock Grid.Column="6"  Text="W" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="7" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" >
+                        <TextBox.Text>
+                            <Binding Path="Value.W" UpdateSourceTrigger="Default">
+                                <Binding.ValidationRules>
+                                    <local:StringToFloatValidation />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </local:NumericTextBox>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRColorVM}">
+            <Grid Margin="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition SharedSizeGroup="InspectorSecondLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <xceed:ColorPicker Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" SelectedColor="{Binding SelectedColor}" />
+                <TextBlock Grid.Column="2" Grid.Row="1" Margin="0,5,0,0" Text="Alpha" TextAlignment="Center" />
+                <local:NumericTextBox Grid.Column="3" Grid.Row="1" Margin="0,5,0,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="10" >
+                    <TextBox.Text>
+                        <Binding Path="Alpha" UpdateSourceTrigger="Default">
+                            <Binding.ValidationRules>
+                                <local:StringToFloatValidation />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </local:NumericTextBox>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRQuaternionVM}">
+                    <Grid Margin="2" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="15*" MinWidth="15"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="15*" MinWidth="15"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="15*" MinWidth="15"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0"  Text="X" Padding="0,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="1"   HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}">
+                                <TextBox.Text>
+                                    <Binding Path="X" UpdateSourceTrigger="Default">
+                                        <Binding.ValidationRules>
+                                            <local:StringToFloatValidation />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </local:NumericTextBox>
+                            <TextBlock Grid.Column="2"  Text="Y" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}">
+                                <TextBox.Text>
+                                    <Binding Path="Y" UpdateSourceTrigger="Default">
+                                        <Binding.ValidationRules>
+                                            <local:StringToFloatValidation />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </local:NumericTextBox>
+                            <TextBlock Grid.Column="4"  Text="Z" Padding="10,0,5,0" VerticalAlignment="Center" />
+                    <local:NumericTextBox Grid.Column="5" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" MinWidth="20" local:EnterkeyHelpers.EnterKeyCommand="{Binding EnterkeyBinding}">
+                                <TextBox.Text>
+                                    <Binding Path="Z" UpdateSourceTrigger="Default">
+                                        <Binding.ValidationRules>
+                                            <local:StringToFloatValidation />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </local:NumericTextBox>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VREnumVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition SharedSizeGroup="InspectorSecondLeftColumn"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <!--<ComboBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:LightType}}}" SelectedValue="{Binding Value}" IsSynchronizedWithCurrentItem="True"/>-->
+                <ComboBox IsReadOnly="False" Grid.Column="1" Margin="10,0,0,0" ItemsSource="{Binding EnumBindingSource}" DisplayMemberPath="Label" SelectedValue="{Binding Value,Mode=TwoWay}" SelectedValuePath="ID"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRAnimationVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn" Width="10"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Width="10" Height="10" Template="{StaticResource XButton}" ToolTip="Remove Animation">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding AnimationRemove}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <TextBlock Grid.Column="1" Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox Grid.Column="2" Margin="10,0,0,0" IsReadOnly="True" Text="{Binding Path=Value}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRFilePathVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Margin="10,0,0,0" IsReadOnly="True" Text="{Binding Path=Value}" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type local:VRTextureFilePathVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <!--<ColumnDefinition />-->
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Top" />
+                <Button Grid.Column="1" Width="10" Height="10" Template="{StaticResource RoundButton}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding ShowTextureImageView}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <!--<Image Grid.Column="1" Margin="10,0,0,0" Source="{Binding Path=Value , Converter={StaticResource StirngToImageConverter}}"  service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />-->
+                <TextBox x:Name="imageTextbox" Grid.Column="2" Margin="5,0,0,0" Text="{Binding Path=Value}" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}"/>
+                <!--<Image Grid.Row="1" Source="{Binding Path=Value,Converter={StaticResource StirngToImageConverter}}" Width="{Binding Width,ElementName=imageTextbox}" Height="30" />-->
+                <!--<TextBox IsReadOnly="True" Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />-->
+            </Grid>
+        </DataTemplate>
+        <!--<DataTemplate DataType="{x:Type local:VRScriptFilePathVM}">
+            <Grid Margin="2" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="InspectorLeftColumn"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=ParamLabel}" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Margin="10,0,0,0" Text="{Binding Path=Value}" IsReadOnly="True" service:DragDrop.IsDropTarget="True" service:DragDrop.DropHandler="{Binding}" />
+            </Grid>
+        </DataTemplate>-->
+        <DataTemplate DataType="{x:Type local:PropertyGroupViewModel}">
+            <Grid Margin="2">
+                <Expander IsExpanded="False" Margin="10,0,0,0">
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding VRParams}">
+                    </ItemsControl>
+                    <Expander.Header>
+                        <BulletDecorator>
+                            <!--<BulletDecorator.Bullet>
+                                <Image Source="{Binding PropertyGroupname}" Width="16" Height="16" />
+                            </BulletDecorator.Bullet>-->
+                            <TextBlock Text="{Binding PropertyGroupname}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#f6f6f6f6" Margin="10,0,0,0" />
+                        </BulletDecorator>
+                    </Expander.Header>
+                </Expander>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Expander x:Name="Expander" IsExpanded="True">
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding VRParams}" >
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+        <Expander.Header>
+            <BulletDecorator>
+                <!--<BulletDecorator.Bullet>
+                    <Image Source="{Binding PropertyGroupname}" Width="16" Height="16" />
+                </BulletDecorator.Bullet>-->
+                <TextBlock Text="{Binding PropertyGroupname}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#f6f6f6f6" Margin="10,0,0,0" />
+            </BulletDecorator>
+        </Expander.Header>
+        <!--<Expander.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="DeleteComponent" Command="{Binding DeleteCommand}" />
+            </ContextMenu>
+        </Expander.ContextMenu>-->
+    </Expander>
+</UserControl>

@@ -1,0 +1,30 @@
+	public int GetExpanded( );
+	public void SetExpanded(int value);
+
+
+
+	public int GetLayer( );
+	public void SetLayer(int value);
+
+
+
+	public int GetLocked( );
+	public void SetLocked(int value);
+
+
+
+	public string GetName( );
+	public void SetName(string value);
+
+
+
+	public int GetSelected( );
+	public void SetSelected(int value);
+
+
+
+	public int GetShow( );
+	public void SetShow(int value);
+
+
+

@@ -1,0 +1,32 @@
+	float GetEffectiveRange( );
+	void SetEffectiveRange(float value);
+
+
+	int GetLightFallOff( );
+	void SetLightFallOff(int value);
+
+
+	float GetLightIntensity( );
+	void SetLightIntensity(float value);
+
+
+	int GetLightRange( );
+	void SetLightRange(int value);
+
+
+	int GetLightType( );
+	void SetLightType(int value);
+
+
+	float GetPickerSize( );
+	void SetPickerSize(float value);
+
+
+	float GetSpotAngle( );
+	void SetSpotAngle(float value);
+
+
+	float GetSpotAngleSmooth( );
+	void SetSpotAngleSmooth(float value);
+
+

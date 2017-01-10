@@ -1,0 +1,216 @@
+
+float PropertyLight::GetEffectiveRange( )
+{
+	if (ENG_CAPI_PropertyLight_GetEffectiveRange)
+	{
+		return ENG_CAPI_PropertyLight_GetEffectiveRange(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyLight::SetEffectiveRange(  float value)
+{
+	if (ENG_CAPI_PropertyLight_SetEffectiveRange)
+	{
+		ENG_CAPI_PropertyLight_SetEffectiveRange(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetEffectiveRange is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyLight::GetLightFallOff( )
+{
+	if (ENG_CAPI_PropertyLight_GetLightFallOff)
+	{
+		return ENG_CAPI_PropertyLight_GetLightFallOff(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyLight::SetLightFallOff(  int value)
+{
+	if (ENG_CAPI_PropertyLight_SetLightFallOff)
+	{
+		ENG_CAPI_PropertyLight_SetLightFallOff(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetLightFallOff is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyLight::GetLightIntensity( )
+{
+	if (ENG_CAPI_PropertyLight_GetLightIntensity)
+	{
+		return ENG_CAPI_PropertyLight_GetLightIntensity(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyLight::SetLightIntensity(  float value)
+{
+	if (ENG_CAPI_PropertyLight_SetLightIntensity)
+	{
+		ENG_CAPI_PropertyLight_SetLightIntensity(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetLightIntensity is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyLight::GetLightRange( )
+{
+	if (ENG_CAPI_PropertyLight_GetLightRange)
+	{
+		return ENG_CAPI_PropertyLight_GetLightRange(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyLight::SetLightRange(  int value)
+{
+	if (ENG_CAPI_PropertyLight_SetLightRange)
+	{
+		ENG_CAPI_PropertyLight_SetLightRange(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetLightRange is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyLight::GetLightType( )
+{
+	if (ENG_CAPI_PropertyLight_GetLightType)
+	{
+		return ENG_CAPI_PropertyLight_GetLightType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyLight::SetLightType(  int value)
+{
+	if (ENG_CAPI_PropertyLight_SetLightType)
+	{
+		ENG_CAPI_PropertyLight_SetLightType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetLightType is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyLight::GetPickerSize( )
+{
+	if (ENG_CAPI_PropertyLight_GetPickerSize)
+	{
+		return ENG_CAPI_PropertyLight_GetPickerSize(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyLight::SetPickerSize(  float value)
+{
+	if (ENG_CAPI_PropertyLight_SetPickerSize)
+	{
+		ENG_CAPI_PropertyLight_SetPickerSize(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetPickerSize is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyLight::GetSpotAngle( )
+{
+	if (ENG_CAPI_PropertyLight_GetSpotAngle)
+	{
+		return ENG_CAPI_PropertyLight_GetSpotAngle(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyLight::SetSpotAngle(  float value)
+{
+	if (ENG_CAPI_PropertyLight_SetSpotAngle)
+	{
+		ENG_CAPI_PropertyLight_SetSpotAngle(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetSpotAngle is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyLight::GetSpotAngleSmooth( )
+{
+	if (ENG_CAPI_PropertyLight_GetSpotAngleSmooth)
+	{
+		return ENG_CAPI_PropertyLight_GetSpotAngleSmooth(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyLight::SetSpotAngleSmooth(  float value)
+{
+	if (ENG_CAPI_PropertyLight_SetSpotAngleSmooth)
+	{
+		ENG_CAPI_PropertyLight_SetSpotAngleSmooth(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyLight_SetSpotAngleSmooth is not Linked", 0, 0.0f );
+	}
+}
+
+
+

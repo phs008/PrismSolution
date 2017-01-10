@@ -1,0 +1,245 @@
+#line 1 "enginedata\hls11\Default.Vertex.hls"
+
+//  PhaseShading = 0,
+//	PhaseEnvMap = 1,
+//  PhaseFlat = 2,
+//	PhaseDepth = 3,
+//	PhaseShadowMap = 4,
+//	PhaseMirror = 5,
+//	PhasePosition = 6,
+//	PhaseNormal = 7,
+//	PhaseLinearDepth = 8,
+
+
+cbuffer SHADER_EXTERN
+{
+	float4x4 ViewProj;
+	float4x4 World;
+	float4x4 WorldInverse;
+	float4x4 View;
+	float4x4 Proj;
+	float4 CameraPos;
+	float4 SunLight;
+
+	float4 DrawPhase;
+	float4x4 ShadowMapMatrix;
+	float4 UseShadowMap;
+	float4 ShadowMapDepthMax; 
+	float4 ShadowMapDepthMin; 
+
+	float4 UseMatrixPalette;
+	float4x4 MatrixPalette[200];
+	
+};
+
+
+//#include "Common.Vertex.inc"
+
+
+// if normal.w == 0  no normal
+// if tangent.w == 0  no tangent
+// if UV.w == 0 no UV
+
+
+// 입력정점 형식
+struct VS_INPUT
+{
+    float3 Position : POSITION0;
+    float4 UV : TEXCOORD0;
+    float4 Normal : NORMAL; 
+    float4 Tangent : NORMAL1;
+    float4 Diffuse : NORMAL2;
+    float4  Weight    : BLENDWEIGHT;
+    float4  PaletteIndex    : BLENDINDICES;
+};
+
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION0;
+	float4 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+	float4 InPosition : TEXCOORD1;
+	float4 ViewPosition : TEXCOORD2;
+	float4 ShadowPosition : TEXCOORD3;
+	float4 CameraPosition : POSITION1;
+	float4 Normal : NORMAL0; 
+    float4 Tangent : NORMAL1;
+    float4 Binormal : NORMAL2;
+	float4 Diffuse : NORMAL3;
+};
+
+
+/*
+	PhaseRender = 0,
+	PhaseEnvMap = 1,
+	PhaseFrame = 2,
+	PhaseDepth = 3,
+	PhaseShadowMap = 4,
+	PhaseMirror = 5,
+	PhasePosition = 6,
+	PhaseNormal = 7,
+*/
+
+
+	// shadow map function
+
+	
+
+
+float4x4 CalcPalette(float4 paletteIndex, float4 weight)
+{
+	float4x4 worldSkin = MatrixPalette[paletteIndex.x] * weight.x; 
+	if (weight.y > 0.001)
+		worldSkin += MatrixPalette[paletteIndex.y] * weight.y ;
+	if (weight.z > 0.001)
+		worldSkin += MatrixPalette[paletteIndex.z] * weight.z ;
+	if (weight.w > 0.001)
+		worldSkin += MatrixPalette[paletteIndex.w] * weight.w ;
+
+    return worldSkin ;
+}
+
+
+
+
+float4 GetShadowPosition(float4 posWorld)
+{
+	float4 shadowPos = mul(posWorld, ShadowMapMatrix);
+
+	return shadowPos;
+}
+
+
+
+VS_OUTPUT VS(VS_INPUT In)
+{
+    VS_OUTPUT   Out;
+    
+    float4 posWorld;
+    posWorld.xyz = In.Position;
+    posWorld.w = 1.0;    
+
+	float4x4 world;
+	if (UseMatrixPalette.x > 0.001)
+	{
+		world = CalcPalette( In.PaletteIndex, In.Weight) ; //* World;
+		posWorld = mul(posWorld, world );
+	}
+	else
+	{
+		world = World;
+		posWorld = mul(posWorld, world );
+	}
+
+	float3 posWorldSave = posWorld.xyz / posWorld.w;
+	Out.InPosition = float4(posWorldSave, 1.0);
+
+
+	if (In.Normal.w > 0.001)
+	{
+		float3 normalTrans = mul( In.Normal.xyz, (float3x3)(world)) ;
+		normalTrans = normalize(normalTrans);
+		Out.Normal.xyz = normalTrans.xyz;
+		Out.Normal.w = In.Normal.w;
+	}
+	else
+		Out.Normal = In.Normal;
+
+
+	Out.Diffuse = In.Diffuse;
+	Out.UV = In.UV;
+
+
+	if (DrawPhase.x >= 3.9 && DrawPhase.x <= 4.1 ) //  PhaseShadowMap  
+	{
+		
+		Out.ShadowPosition = GetShadowPosition(posWorld) ;
+		Out.CameraPosition = Out.ShadowPosition;
+		Out.ViewPosition = Out.ShadowPosition;
+		Out.Position = Out.ViewPosition;
+	}
+	else
+	{
+		if (UseShadowMap.x > 0.9)   
+		{
+			Out.ShadowPosition = GetShadowPosition(Out.InPosition) ;
+		}
+
+		posWorld = mul(posWorld, View); 
+		
+		Out.UV.z = posWorld.z / posWorld.w;
+		Out.CameraPosition = posWorld;
+		
+		Out.ViewPosition = mul(posWorld, Proj); 
+		Out.Position = Out.ViewPosition ;
+
+		if (UseShadowMap.x < 0.1)   
+		{
+			//Out.ShadowPosition = Out.ViewPosition;
+		}
+		
+	}
+
+	
+	//if ((In.Tangent.x * In.Tangent.x + In.Tangent.y * In.Tangent.y + In.Tangent.z * In.Tangent.z) > 0.001)
+	// changed to following fast w check 
+	if ( (In.Tangent.w > 0.001 || In.Tangent.w < -0.001) && In.Normal.w > 0.001 ) // TANGENT_V4
+	{
+		// tangent space로 변환
+		float3 tangent = normalize(mul( (float3)In.Tangent.xyz, (float3x3)(world) ));
+		// cross product 를 이용
+		Out.Tangent.xyz = tangent;
+		Out.Tangent.w = In.Tangent.w; //  1.0; TANGENT_V4 
+
+		// cross product 를 이용
+		if (In.Tangent.w > 0.0)
+			Out.Binormal.xyz = normalize( cross(tangent, Out.Normal.xyz) );  
+		else
+			Out.Binormal.xyz = normalize( cross(-tangent, Out.Normal.xyz) ); 
+		Out.Binormal.w = 1.0;
+		
+	}
+	else
+	{
+		Out.Tangent = float4(0.0, 0.0, 0.0, 0.0);
+		Out.Binormal = float4(0.0, 0.0, 0.0, 0.0);
+	}
+	
+    
+	return Out;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+		//Out.CameraDir = posWorldSave - CameraPos ;
+		//Out.CameraDir = normalize(mul( surfaceSpace , Out.CameraDir  ) );
+		//Out.Normal = normalize(mul( surfaceSpace , Out.Normal  ) );
+		//Out.CameraDir = (float3)posWorld - CameraPos ;
+		//Out.CameraDir = normalize( Out.CameraDir ) ;
+
+		// goes to per pixel fragment shader
+		//float3x3 surfaceSpace = float3x3(tangent, Out.Binormal, Out.Normal);   // column major 로 들어감
+		//Out.Light = normalize(mul( surfaceSpace, SunLight));  // column vector 이므로 순서 반대로 변환해야함 
+		//Out.Light = SunLight;
+	//float4 Diffuse : NORMAL3;
+         
+	// tangent space로 변환 끝
+	//float f = dot(-SunLight.xyz , normalTrans ) ;
+	//if (f < 0)
+	//	f = 0;
+	//Out.Diffuse = float4(f,f,f,1.0);
+	

@@ -1,0 +1,25 @@
+	public float GetShadowDarkness( );
+	public void SetShadowDarkness(float value);
+
+
+
+	public float GetShadowMapAlias( );
+	public void SetShadowMapAlias(float value);
+
+
+
+	public float GetShadowMapDepthMax( );
+	public void SetShadowMapDepthMax(float value);
+
+
+
+	public float GetShadowMapDepthMin( );
+	public void SetShadowMapDepthMin(float value);
+
+
+
+	public int GetUseShadowMap( );
+	public void SetUseShadowMap(int value);
+
+
+

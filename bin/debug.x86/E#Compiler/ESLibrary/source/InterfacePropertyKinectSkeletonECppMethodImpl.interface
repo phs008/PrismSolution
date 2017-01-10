@@ -1,0 +1,81 @@
+
+int PropertyKinectSkeleton::GetLeftHand( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetLeftHand)
+	{
+		return ENG_CAPI_PropertyKinectSkeleton_GetLeftHand(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyKinectSkeleton::SetLeftHand(  int value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetLeftHand)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetLeftHand(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetLeftHand is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyKinectSkeleton::GetRightHand( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetRightHand)
+	{
+		return ENG_CAPI_PropertyKinectSkeleton_GetRightHand(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyKinectSkeleton::SetRightHand(  int value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetRightHand)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetRightHand(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetRightHand is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyKinectSkeleton::GetTracked( )
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_GetTracked)
+	{
+		return ENG_CAPI_PropertyKinectSkeleton_GetTracked(Owner->id , GroupIndex);
+	}
+	else
+		return 0;
+}
+
+
+void PropertyKinectSkeleton::SetTracked(  int value)
+{
+	if (ENG_CAPI_PropertyKinectSkeleton_SetTracked)
+	{
+		ENG_CAPI_PropertyKinectSkeleton_SetTracked(Owner->id,  GroupIndex,  value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectSkeleton_SetTracked is not Linked", 0, 0.0f );
+	}
+}
+
+
+

@@ -1,0 +1,74 @@
+
+
+Vector3* PropertyOcean::GetOceanWaterColor( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanWaterColor)
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ENG_CAPI_PropertyOcean_GetOceanWaterColor(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector3 *r = new Vector3;
+		*r = Vector3( ::Vector3(0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyOcean::SetOceanWaterColor(  Vector3 *value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanWaterColor)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanWaterColor(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanWaterColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector2* PropertyOcean::GetOceanWindDir( )
+{
+	if (ENG_CAPI_PropertyOcean_GetOceanWindDir)
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ENG_CAPI_PropertyOcean_GetOceanWindDir(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ::Vector2(0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyOcean::SetOceanWindDir(  Vector2 *value)
+{
+	if (ENG_CAPI_PropertyOcean_SetOceanWindDir)
+	{
+		ENG_CAPI_PropertyOcean_SetOceanWindDir(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyOcean_SetOceanWindDir is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,148 @@
+
+
+Color* PropertyCamera::GetBackColor( )
+{
+	if (ENG_CAPI_PropertyCamera_GetBackColor)
+	{
+		Color *r = new Color;
+		*r = Color( ENG_CAPI_PropertyCamera_GetBackColor(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Color *r = new Color;
+		*r = Color( ::Color(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyCamera::SetBackColor(  Color *value)
+{
+	if (ENG_CAPI_PropertyCamera_SetBackColor)
+	{
+		ENG_CAPI_PropertyCamera_SetBackColor(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetBackColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector2* PropertyCamera::GetOffset( )
+{
+	if (ENG_CAPI_PropertyCamera_GetOffset)
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ENG_CAPI_PropertyCamera_GetOffset(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ::Vector2(0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyCamera::SetOffset(  Vector2 *value)
+{
+	if (ENG_CAPI_PropertyCamera_SetOffset)
+	{
+		ENG_CAPI_PropertyCamera_SetOffset(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetOffset is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector2* PropertyCamera::GetViewPortCenter( )
+{
+	if (ENG_CAPI_PropertyCamera_GetViewPortCenter)
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ENG_CAPI_PropertyCamera_GetViewPortCenter(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ::Vector2(0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyCamera::SetViewPortCenter(  Vector2 *value)
+{
+	if (ENG_CAPI_PropertyCamera_SetViewPortCenter)
+	{
+		ENG_CAPI_PropertyCamera_SetViewPortCenter(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetViewPortCenter is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector2* PropertyCamera::GetViewPortSize( )
+{
+	if (ENG_CAPI_PropertyCamera_GetViewPortSize)
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ENG_CAPI_PropertyCamera_GetViewPortSize(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Vector2 *r = new Vector2;
+		*r = Vector2( ::Vector2(0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyCamera::SetViewPortSize(  Vector2 *value)
+{
+	if (ENG_CAPI_PropertyCamera_SetViewPortSize)
+	{
+		ENG_CAPI_PropertyCamera_SetViewPortSize(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyCamera_SetViewPortSize is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+D:\VRAuthor\tool\bin\release.x86\WPFXCommand.dll
+D:\VRAuthor\tool\bin\release.x86\WPFXCommand.pdb
+D:\VRAuthor\tool\reference\WPFXCommand\obj\Release\WPFXCommand.dll
+D:\VRAuthor\tool\reference\WPFXCommand\obj\Release\WPFXCommand.pdb
+D:\EVRAT\tool\bin\release.x86\WPFXCommand.dll
+D:\EVRAT\tool\bin\release.x86\WPFXCommand.pdb
+D:\EVRAT\tool\reference\WPFXCommand\obj\Release\WPFXCommand.csprojResolveAssemblyReference.cache
+D:\EVRAT\tool\reference\WPFXCommand\obj\Release\WPFXCommand.dll
+D:\EVRAT\tool\reference\WPFXCommand\obj\Release\WPFXCommand.pdb

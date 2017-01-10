@@ -1,0 +1,24 @@
+	int GetIcosahedronInteration( );
+	void SetIcosahedronInteration(int value);
+
+
+	int GetLatitutionalCut( );
+	void SetLatitutionalCut(int value);
+
+
+	int GetLongitutionalCut( );
+	void SetLongitutionalCut(int value);
+
+
+	float GetRadius( );
+	void SetRadius(float value);
+
+
+	int GetUseIcosahedron( );
+	void SetUseIcosahedron(int value);
+
+
+	int GetUseRect( );
+	void SetUseRect(int value);
+
+

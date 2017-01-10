@@ -1,0 +1,55 @@
+%argtype% Engine_%group%_Get%prop%(UID obj %propindexprevcomma% )
+{
+	Component::ComponentBase *base = Component::Link< Component::ComponentBase >::LookupPointer(obj);
+	if (base && base->KindOf(Dictionary::%containerClassname%))
+	{
+		%namespace%::%containerClassname% *obj = static_cast<%namespace%::%containerClassname% *>(base);
+		String result;
+		if ((&obj->%groupvar%%propindexaccess%) != NULL)
+		{
+			obj->%groupvar%%propindexaccess%.%prop%.ToString(result);
+			return result;
+		}
+		else
+		{
+			Debugger::GetLogger().Log("Cannot Access obj->%groupvar%%propindexaccess% in Engine_%group%_Get%prop%" );
+			return %default%;
+		}
+	}
+	else
+	{
+		Debugger::GetLogger().Log("Script Lookup Errror %containerClassname% (%s) in Engine_%group%_Get%prop%", (const char *)Utility::StringConversion::ToString( obj )); 
+		return %default%;
+	}
+}
+
+
+
+
+
+void Engine_%group%_Set%prop%(UID obj , %propindexcomma% %argtype% value)
+{
+	Component::ComponentBase *base = Component::Link< Component::ComponentBase >::LookupPointer(obj);
+	if (base && base->KindOf(Dictionary::%containerClassname%))
+	{
+		%namespace%::%containerClassname% *obj = static_cast<%namespace%::%containerClassname% *>(base);
+		if ((&obj->%groupvar%%propindexaccess%) != NULL)
+		{
+			obj->%groupvar%%propindexaccess%.%prop%.FromString(value);
+			obj->%groupvar%%propindexaccess%.%prop%.ApplyChange();
+		}
+		else
+		{
+			Debugger::GetLogger().Log("Cannot Access obj->%groupvar%%propindexaccess% in Engine_%group%_Set%prop%" );
+		}
+	}
+	else
+	{
+		Debugger::GetLogger().Log("Script Lookup Errror %containerClassname% (%s) in Engine_%group%_Set%prop%", (const char *)Utility::StringConversion::ToString( obj )); 
+	}
+
+}
+
+
+
+

@@ -1,0 +1,12 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyUI_SetPivot)(eng_obj_ptr obj,  EngineMath3D::Vector2 value);
+EXTERN_C DLLAPI EngineMath3D::Vector2 (*ENG_CAPI_PropertyUI_GetPivot)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyUI_SetPixelPerfect)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyUI_GetPixelPerfect)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyUI_SetSize)(eng_obj_ptr obj,  EngineMath3D::Vector2 value);
+EXTERN_C DLLAPI EngineMath3D::Vector2 (*ENG_CAPI_PropertyUI_GetSize)(eng_obj_ptr obj );
+
+

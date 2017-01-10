@@ -1,0 +1,40 @@
+	public int GetBillboardType( );
+	public void SetBillboardType(int value);
+
+
+
+	public int GetCullType( );
+	public void SetCullType(int value);
+
+
+
+	public int GetFixedOrder( );
+	public void SetFixedOrder(int value);
+
+
+
+	public Vector3 GetPosition( );
+	public void SetPosition(Vector3 value);
+
+
+
+	public Quaternion GetRotation( );
+	public void SetRotation(Quaternion value);
+
+
+
+	public Vector3 GetScale( );
+	public void SetScale(Vector3 value);
+
+
+
+	public int GetShow( );
+	public void SetShow(int value);
+
+
+
+	public int GetSortType( );
+	public void SetSortType(int value);
+
+
+

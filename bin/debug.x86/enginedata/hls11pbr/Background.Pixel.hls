@@ -1,0 +1,351 @@
+
+
+cbuffer SHADER_EXTERN
+{
+	float4 BackgroundType;
+	float4 Orthographic;
+	float4 DrawGrid;
+
+	float4 BackColor;
+	float4x4 ViewInverse;
+	float4x4 ProjInverse;
+	float4x4 ViewProjInverse;
+
+	float4 CameraDir;
+	float4 CameraPos;
+	float4 GridInterval;
+
+	float4x4 BackgroundSunMatrix;
+	float4 BackgroundSunSize;
+
+};
+
+	//float4 ZoomTangent;
+	//float4 AspectRatio;  
+	//float4 OrthographicViewSize; 
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float4 InPosition : TEXCOORD0;
+};
+
+
+/*
+아래 slot number가 dx11에서 bug 있으므로  아래 comment된 코드와 병용해야 함
+
+sampler TextureBackground : register(s0);
+sampler TextureGridDirection : register(s1);
+sampler TextureSun : register(s2);
+*/
+
+
+Texture2D TextureBackground : register(t0);
+SamplerState TextureBackgroundSampler : register(s0);
+
+Texture2D TextureGridDirection : register(t1);
+SamplerState TextureGridDirectionSampler : register(s1);
+
+
+Texture2D TextureSun : register(t2);
+SamplerState TextureSunSampler : register(s2);
+
+
+
+
+
+
+float2 ConvCubeCoord(float3 r)
+{
+	r = normalize(r);
+	float dirx = abs(r.x);
+	float diry = abs(r.y);
+	float dirz = abs(r.z);
+	
+	float2 uv = float2(0.0, 0.0);
+	if (dirx >= diry && dirx >= dirz)
+	{
+		if (r.x >= 0.0)
+		{
+			uv.x = r.z / r.x / 8.0 + 1.0/8.0;
+			uv.y = r.y / r.x / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = r.z / r.x / 8.0 + 5.0/8.0;
+			uv.y = - r.y / r.x / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (dirz >= diry && dirz >= dirx)
+	{
+		if (r.z >= 0.0)
+		{
+			uv.x = - r.x / r.z / 8.0 + 3.0/8.0;
+			uv.y = r.y / r.z / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = - r.x / r.z / 8.0 + 7.0/8.0;
+			uv.y = - r.y / r.z / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (diry >= dirz && diry >= dirx)
+	{
+		if (r.y >= 0.0)
+		{
+			uv.x = - r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 5.0/6.0;
+		}
+		else
+		{
+			uv.x = r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 1.0/6.0;
+		}
+	}
+
+	uv.y = 1.0 - uv.y;
+	return uv;
+}
+
+
+
+
+
+
+float2 ConvERPCoord(float3 v)
+{
+
+	float PI = 3.1415926535;
+	
+	float2 uv;
+	v = normalize(v);
+	uv.x = atan(v.z / v.x);
+	if (v.x < 0)
+		uv.x += PI;
+	if (uv.x < 0)
+		uv.x += PI * 2.0;
+	
+	uv.x = fmod(uv.x , PI * 2.0 );
+
+	uv.y = acos( v.y );
+
+	uv = float2(uv.x / (PI * 2.0) , uv.y / PI  );
+
+	return uv;
+
+}
+
+
+
+
+
+
+
+float4 GetGridColor(float3 linefrom, float3 linedir, float multiple)
+{
+	float gridInterval = GridInterval.x * multiple;
+
+	float cuty = 0.0;
+	float4 gridBlack = float4(0.0, 0.0, 0.0, 0.0);
+	float4 gridWhite = float4(0.2, 0.2, 0.2, 0.0);
+	float fogDistMax = 50.0 * multiple;
+	float fogDistMin = 1.0 * multiple;
+
+	if (linedir.y == 0.0)
+	{
+		return gridBlack;
+	}
+
+	float3 y1;
+	float3 y0;
+	if (linedir.y > 0.0)
+	{
+		y1 = linefrom;
+		y0 = linefrom + linedir;
+	}
+	else
+	{
+		y1 = linefrom + linedir;
+		y0 = linefrom;
+	}
+
+	float a = (cuty - y0.y) / (y1.y - y0.y);
+	float3 intersect = (y1 - y0) * a + y0;
+	float3 distv = intersect - linefrom;
+
+	if (dot(linedir, distv) < 0.0)
+	{
+		return gridBlack;
+	}
+
+	// linear
+	//float dist = sqrt(distv.x * distv.x + distv.y * distv.y + distv.z * distv.z);
+	//float fog = (fogDistMax - dist) / (fogDistMax - fogDistMin);
+
+	float dist = (distv.x * distv.x + distv.y * distv.y + distv.z * distv.z);
+	float fog = (fogDistMax*fogDistMax - dist) / (fogDistMax*fogDistMax - fogDistMin*fogDistMin);
+
+	if (fog < 0.0)
+		fog = 0.0;
+	if (fog > 1.0)
+		fog = 0.0;
+
+
+	float modx = intersect.x  / gridInterval - floor(intersect.x / gridInterval) ;
+	float modz = intersect.z  / gridInterval - floor(intersect.z / gridInterval) ;
+
+	float DirectionOpacity = 0.2;
+	float DirectionSize = 0.2;
+
+	float4 direction;
+	direction = float4(0.0, 0.0, 0.0, 0.0);
+	if (modx < DirectionSize && modz < DirectionSize)
+	{
+		direction = TextureGridDirection.Sample(TextureGridDirectionSampler, float2(modz / DirectionSize, 1.0 - modx / DirectionSize) );
+		direction.xyz *= direction.w;
+		direction.w *= DirectionOpacity;
+	}
+
+
+	if (  ((modx < 0.5) && (modz < 0.5) )
+		|| ( (modx > 0.5) && (modz > 0.5)  ) )
+		return gridBlack * fog + direction;   
+	else
+		return gridWhite * fog + direction;  
+
+}
+
+
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	float4 color;
+
+
+	float3 CubeDir = float3(0.0, 0.0, 0.0);
+
+	if ( ((BackgroundType.x == 2.0 || BackgroundType.x == 3.0) && Orthographic.x == 0.0)
+		||  (DrawGrid.x == 1.0 && Orthographic.x == 0.0) )
+	{
+		float2 screenCoord = Out.InPosition.xy;
+
+		float4 vp = float4(screenCoord.x, screenCoord.y, 0.99, 1.0);
+		float4 vppos = mul( vp, ViewProjInverse) ;
+		vppos.xyz = vppos.xyz/vppos.w;
+		vppos.w = 1.0;
+
+		CubeDir = vppos.xyz - CameraPos; 
+		CubeDir = normalize(CubeDir);
+	}
+
+	if (BackgroundType.x == 1.0)
+	{
+		float2 uv = Out.InPosition.xy / 2.0 + 0.5;
+		uv.y = 1.0 - uv.y;
+		color = TextureBackground.Sample(TextureBackgroundSampler, uv.xy);
+	}
+	else
+	if (BackgroundType.x == 2.0 || BackgroundType.x == 3.0)
+	{
+	
+		if (Orthographic.x == 0.0)
+		{
+			float2 uvc;
+			if (BackgroundType.x == 2.0)
+				uvc = ConvCubeCoord(CubeDir); 
+			else  // 3.0
+				uvc = ConvERPCoord(CubeDir); 
+
+			color = TextureBackground.Sample(TextureBackgroundSampler, uvc);
+
+			float4 suncolor = float4( 0, 0, 0 , 0);
+			float3 suncoord = mul(CubeDir.xyz, (float3x3) BackgroundSunMatrix); 
+
+			if (suncoord.x <= BackgroundSunSize.x && suncoord.x >= -BackgroundSunSize.x
+			   && suncoord.y <= BackgroundSunSize.y && suncoord.y >= -BackgroundSunSize.y
+			   && suncoord.z > 0.0 )
+			{
+				float2 sunuv;
+				sunuv.x = (suncoord.x/BackgroundSunSize.x)/2.0 + 0.5;
+				sunuv.y = -((suncoord.y/BackgroundSunSize.y)/2.0 + 0.5);
+				suncolor = TextureSun.Sample(TextureSunSampler, sunuv);
+			}
+			//test color.xyz = suncoord.xyz;
+
+			float sunIntensity = 1.0;
+			sunIntensity = (suncoord.z);
+			sunIntensity = clamp(sunIntensity, 0.0, 1.0);
+			//sunIntensity = sunIntensity ;// * sunIntensity  ; //* sunIntensity
+			sunIntensity = sunIntensity * sunIntensity * sunIntensity;
+
+			//test color.xyz = sunIntensity;
+
+			//float4 sunenv = float4(sunIntensity, sunIntensity, sunIntensity, 1.0);
+			float4 sunenv = float4(sunIntensity, sunIntensity, sunIntensity * 0.7, 1.0);  // yellow 
+			color = max(color , sunenv) * (1.0 - suncolor.w)  + suncolor * suncolor.w;  
+			color.w = 1.0;
+
+		}
+		else
+		{
+			color = BackColor;
+		}
+		
+		
+	}
+	else
+	{
+		color = BackColor;
+	}
+
+	if (DrawGrid.x == 1.0)
+	{
+		if (Orthographic.x == 0.0)
+		{
+			float multiple = trunc(CameraPos.y / 5.0);
+			if (multiple < 1.0)
+				multiple = 1.0;
+
+			float4 gridColor = GetGridColor( CameraPos, CubeDir, multiple );
+			color = color + gridColor;
+		}
+		else
+		{
+
+			float4 vp0 = float4(0.0, 0.0, 0.0, 1.0);
+			float4 vppos0 = mul( vp0, ViewProjInverse) ;
+			float4 vp1 = float4(1.0, 1.0, 0.0, 1.0);
+			float4 vppos1 = mul( vp1, ViewProjInverse) ;
+			vppos1 = vppos1 - vppos0;
+			float len = sqrt(vppos1.x * vppos1.x + vppos1.y * vppos1.y );
+			float multiple = trunc(len / 5.0);
+			if (multiple < 1.0)
+				multiple = 1.0;
+
+			float2 screenCoord = Out.InPosition.xy;
+			float4 vp = float4(screenCoord.x, screenCoord.y, 0.0, 1.0);
+			float4 vppos = mul( vp, ViewProjInverse) ;
+			vppos.xyz = vppos.xyz/vppos.w;
+			vppos.w = 1.0;
+
+			float3 pos =  vppos; 
+
+			float4 gridColor = GetGridColor(pos, CameraDir, multiple );
+			color = color + gridColor;
+		}
+
+	}
+
+	return color;
+}
+
+
+
+
+

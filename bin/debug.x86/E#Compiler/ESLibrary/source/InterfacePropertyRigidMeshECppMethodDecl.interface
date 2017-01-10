@@ -1,0 +1,8 @@
+	string GetMaterial( );
+	void SetMaterial(const char * value);
+
+
+	string GetMesh( );
+	void SetMesh(const char * value);
+
+

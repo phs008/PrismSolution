@@ -1,0 +1,148 @@
+
+
+Color* PropertyMaterial::GetAlbedoColor( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetAlbedoColor)
+	{
+		Color *r = new Color;
+		*r = Color( ENG_CAPI_PropertyMaterial_GetAlbedoColor(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Color *r = new Color;
+		*r = Color( ::Color(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyMaterial::SetAlbedoColor(  Color *value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetAlbedoColor)
+	{
+		ENG_CAPI_PropertyMaterial_SetAlbedoColor(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetAlbedoColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Color* PropertyMaterial::GetAmbientColor( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetAmbientColor)
+	{
+		Color *r = new Color;
+		*r = Color( ENG_CAPI_PropertyMaterial_GetAmbientColor(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Color *r = new Color;
+		*r = Color( ::Color(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyMaterial::SetAmbientColor(  Color *value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetAmbientColor)
+	{
+		ENG_CAPI_PropertyMaterial_SetAmbientColor(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetAmbientColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Color* PropertyMaterial::GetDiffuseColor( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetDiffuseColor)
+	{
+		Color *r = new Color;
+		*r = Color( ENG_CAPI_PropertyMaterial_GetDiffuseColor(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Color *r = new Color;
+		*r = Color( ::Color(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyMaterial::SetDiffuseColor(  Color *value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetDiffuseColor)
+	{
+		ENG_CAPI_PropertyMaterial_SetDiffuseColor(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetDiffuseColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+
+
+
+Vector4* PropertyMaterial::GetNormalMapDirection( )
+{
+	if (ENG_CAPI_PropertyMaterial_GetNormalMapDirection)
+	{
+		Vector4 *r = new Vector4;
+		*r = Vector4( ENG_CAPI_PropertyMaterial_GetNormalMapDirection(Owner->id  , GroupIndex) );
+		return r;
+	}
+	else
+	{
+		Vector4 *r = new Vector4;
+		*r = Vector4( ::Vector4(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyMaterial::SetNormalMapDirection(  Vector4 *value)
+{
+	if (ENG_CAPI_PropertyMaterial_SetNormalMapDirection)
+	{
+		ENG_CAPI_PropertyMaterial_SetNormalMapDirection(Owner->id, GroupIndex,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyMaterial_SetNormalMapDirection is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

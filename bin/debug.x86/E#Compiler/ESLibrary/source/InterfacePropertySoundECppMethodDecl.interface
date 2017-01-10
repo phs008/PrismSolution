@@ -1,0 +1,16 @@
+	int GetPlaying( );
+	void SetPlaying(int value);
+
+
+	int GetRepeat( );
+	void SetRepeat(int value);
+
+
+	float GetVolume( );
+	void SetVolume(float value);
+
+
+	string GetWaveFile( );
+	void SetWaveFile(const char * value);
+
+

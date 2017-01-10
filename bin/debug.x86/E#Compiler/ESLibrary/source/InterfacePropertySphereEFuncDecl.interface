@@ -1,0 +1,30 @@
+
+void (*ENG_CAPI_PropertySphere_SetIcosahedronInteration)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySphere_GetIcosahedronInteration)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySphere_SetLatitutionalCut)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySphere_GetLatitutionalCut)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySphere_SetLongitutionalCut)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySphere_GetLongitutionalCut)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySphere_SetRadius)(eng_obj_ptr obj,  float value) = NULL;
+float (*ENG_CAPI_PropertySphere_GetRadius)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySphere_SetUseIcosahedron)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySphere_GetUseIcosahedron)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertySphere_SetUseRect)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertySphere_GetUseRect)(eng_obj_ptr obj  ) = NULL;
+
+

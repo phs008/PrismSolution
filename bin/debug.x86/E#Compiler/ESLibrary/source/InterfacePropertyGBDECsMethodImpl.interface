@@ -1,0 +1,10 @@
+	public string GetGestureGBD( );
+	public void SetGestureGBD(string value);
+
+
+
+	public int GetUseGBD( );
+	public void SetUseGBD(int value);
+
+
+

@@ -1,0 +1,5 @@
+
+void (*ENG_CAPI_PropertyScript_SetScript)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyScript_GetScript)(eng_obj_ptr obj  ) = NULL;
+
+

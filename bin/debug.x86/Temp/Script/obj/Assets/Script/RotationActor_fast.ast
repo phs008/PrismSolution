@@ -1,0 +1,976 @@
+(V COMPILATION_UNIT 1
+  NIL
+  NIL
+  (V EXTERN_ALIAS_DIRECTIVES_OPT 0
+    NIL
+    NIL)
+  (V USING_DIRECTIVES_OPT 0
+    NIL
+    NIL)
+  (V NAMESPACE_MEMBER_DECLARATIONS 0
+    $1899
+    NIL
+    (V NAMESPACE_MEMBER_DECLARATION 1
+      $1899
+      NIL
+      (V TYPE_DECLARATION 0
+        $1899
+        NIL
+        (V CLASS_DECLARATION 0
+          $1899
+          NIL
+          (V ATTRIBUTES_OPT 0
+            NIL
+            NIL)
+          (V MODIFIERS_OPT 1
+            NIL
+            NIL
+            (V MODIFIERS 0
+              NIL
+              NIL
+              (V MODIFIER 1
+                NIL
+                NIL
+                (T "public" 1))))
+          (V PARTIAL_OPT 0
+            NIL
+            NIL)
+          (T "class" 1)
+          (T "RotationActor_fast" 1)
+          (V TYPE_PARAMETER_LIST_OPT 0
+            NIL
+            NIL)
+          (V CLASS_BASE_OPT 1
+            NIL
+            NIL
+            (V CLASS_BASE 0
+              NIL
+              NIL
+              (T ":" 1)
+              (V CLASS_TYPE 0
+                $1753
+                NIL
+                (V TYPE_NAME 0
+                  $1753
+                  NIL
+                  (V NAMESPACE_OR_TYPE_NAME 0
+                    NIL
+                    NIL
+                    (T "EActor" 1)
+                    (V TYPE_ARGUMENT_LIST_OPT 0
+                      NIL
+                      NIL))))))
+          (V TYPE_PARAMETER_CONSTRAINTS_CLAUSES_OPT 0
+            NIL
+            NIL)
+          (V CLASS_BODY 0
+            NIL
+            NIL
+            (T "{" 2)
+            (V CLASS_MEMBER_DECLARATIONS_OPT 1
+              NIL
+              NIL
+              (V CLASS_MEMBER_DECLARATIONS 1
+                NIL
+                NIL
+                (V CLASS_MEMBER_DECLARATIONS 0
+                  NIL
+                  NIL
+                  (V CLASS_MEMBER_DECLARATION 1
+                    NIL
+                    NIL
+                    (V FIELD_DECLARATION 0
+                      NIL
+                      NIL
+                      (V ATTRIBUTES_OPT 0
+                        NIL
+                        NIL)
+                      (V MODIFIERS_OPT 0
+                        NIL
+                        NIL)
+                      (V TYPE 1
+                        $4
+                        NIL
+                        (V REFERENCE_TYPE 0
+                          $4
+                          NIL
+                          (V CLASS_TYPE 0
+                            $4
+                            NIL
+                            (V TYPE_NAME 0
+                              $4
+                              NIL
+                              (V NAMESPACE_OR_TYPE_NAME 0
+                                NIL
+                                NIL
+                                (T "Container" 3)
+                                (V TYPE_ARGUMENT_LIST_OPT 0
+                                  NIL
+                                  NIL))))))
+                      (V VARIABLE_DECLARATORS 0
+                        NIL
+                        NIL
+                        (V VARIABLE_DECLARATOR 0
+                          NIL
+                          NIL
+                          (T "T" 3)))
+                      (T ";" 3))))
+                (V CLASS_MEMBER_DECLARATION 2
+                  $1901
+                  NIL
+                  (V METHOD_DECLARATION 0
+                    $1901
+                    NIL
+                    (V ATTRIBUTES_OPT 0
+                      NIL
+                      NIL)
+                    (V MODIFIERS_OPT 1
+                      NIL
+                      NIL
+                      (V MODIFIERS 1
+                        NIL
+                        NIL
+                        (V MODIFIERS 0
+                          NIL
+                          NIL
+                          (V MODIFIER 1
+                            NIL
+                            NIL
+                            (T "public" 4)))
+                        (V MODIFIER 9
+                          NIL
+                          NIL
+                          (T "override" 4))))
+                    (V RETURN_TYPE 0
+                      NIL
+                      NIL
+                      (V TYPE 0
+                        $1654
+                        NIL
+                        (V VALUE_TYPE 0
+                          $1654
+                          NIL
+                          (V STRUCT_TYPE 1
+                            $1654
+                            NIL
+                            (V SIMPLE_TYPE 0
+                              $1654
+                              NIL
+                              (V NUMERIC_TYPE 0
+                                $1654
+                                NIL
+                                (V INTEGRAL_TYPE 4
+                                  $1654
+                                  NIL
+                                  (T "int" 4))))))))
+                    (V MEMBER_NAME 0
+                      NIL
+                      NIL
+                      (T "Update" 4)
+                      (V TYPE_PARAMETER_LIST_OPT 0
+                        NIL
+                        NIL))
+                    (T "(" 4)
+                    (V FORMAL_PARAMETER_LIST_OPT 0
+                      NIL
+                      NIL)
+                    (T ")" 4)
+                    (V TYPE_PARAMETER_CONSTRAINTS_CLAUSES_OPT 0
+                      NIL
+                      NIL)
+                    (V METHOD_BODY 1
+                      $1902
+                      NIL
+                      (V BLOCK 0
+                          $1902
+                        NIL
+                        (T "{" 5)
+                        (V STATEMENT_LIST_OPT 1
+                          CS-TY-VOID
+                          NIL
+                          (V STATEMENT_LIST 1
+                            CS-TY-VOID
+                            NIL
+                            (V STATEMENT_LIST 0
+                              CS-TY-VOID
+                              NIL
+                              (V STATEMENT 1
+                                NIL
+                                NIL
+                                (V DECLARATION_STATEMENT 0
+                                  NIL
+                                  NIL
+                                  (V LOCAL_VARIABLE_DECLARATION 0
+                                    NIL
+                                    NIL
+                                    (V TYPE 1
+                                      $1040
+                                      NIL
+                                      (V REFERENCE_TYPE 0
+                                        $1040
+                                        NIL
+                                        (V CLASS_TYPE 0
+                                          $1040
+                                          NIL
+                                          (V TYPE_NAME 0
+                                            $1040
+                                            NIL
+                                            (V NAMESPACE_OR_TYPE_NAME 0
+                                              NIL
+                                              NIL
+                                              (T "TransformGroup" 6)
+                                              (V TYPE_ARGUMENT_LIST_OPT 0
+                                                NIL
+                                                NIL))))))
+                                    (V LOCAL_VARIABLE_DECLARATORS 0
+                                      NIL
+                                      NIL
+                                      (V LOCAL_VARIABLE_DECLARATOR 1
+                                        NIL
+                                        NIL
+                                        (T "trans" 6)
+                                        (T "=" 6)
+                                        (V LOCAL_VARIABLE_INITIALIZER 0
+                                          $1040
+                                          NIL
+                                          (V EXPRESSION 0
+                                            $1040
+                                            NIL
+                                            (V CONDITIONAL_EXPRESSION 0
+                                              $1040
+                                              NIL
+                                              (V NULL_COALESCING_EXPRESSION 0
+                                                $1040
+                                                NIL
+                                                (V CONDITIONAL_OR_EXPRESSION 0
+                                                  $1040
+                                                  NIL
+                                                  (V CONDITIONAL_AND_EXPRESSION 0
+                                                    $1040
+                                                    NIL
+                                                    (V INCLUSIVE_OR_EXPRESSION 0
+                                                      $1040
+                                                      NIL
+                                                      (V EXCLUSIVE_OR_EXPRESSION 0
+                                                        $1040
+                                                        NIL
+                                                        (V AND_EXPRESSION 0
+                                                          $1040
+                                                          NIL
+                                                          (V EQUALITY_EXPRESSION 0
+                                                            $1040
+                                                            NIL
+                                                            (V RELATIONAL_EXPRESSION 0
+                                                              $1040
+                                                              NIL
+                                                              (V SHIFT_EXPRESSION 0
+                                                                $1040
+                                                                NIL
+                                                                (V ADDITIVE_EXPRESSION 0
+                                                                  $1040
+                                                                  NIL
+                                                                  (V MULTIPLICATIVE_EXPRESSION 0
+                                                                    $1040
+                                                                    NIL
+                                                                    (V UNARY_EXPRESSION 7
+                                                                      $1040
+                                                                      NIL
+                                                                      (V CAST_EXPRESSION 0
+                                                                        $1040
+                                                                        NIL
+                                                                        (T "(" 6)
+                                                                        (V TYPE 1
+                                                                          $1040
+                                                                          NIL
+                                                                          (V REFERENCE_TYPE 0
+                                                                            $1040
+                                                                            NIL
+                                                                            (V CLASS_TYPE 0
+                                                                              $1040
+                                                                              NIL
+                                                                              (V TYPE_NAME 0
+                                                                                $1040
+                                                                                NIL
+                                                                                (V NAMESPACE_OR_TYPE_NAME 0
+                                                                                  NIL
+                                                                                  NIL
+                                                                                  (T "TransformGroup" 6)
+                                                                                  (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                                    NIL
+                                                                                    NIL))))))
+                                                                        (T ")" 6)
+                                                                        (V UNARY_EXPRESSION 0
+                                                                          $767
+                                                                          $8
+                                                                          (V PRIMARY_EXPRESSION 1
+                                                                            $767
+                                                                            $8
+                                                                            (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 4
+                                                                              $767
+                                                                              $8
+                                                                              (V INVOCATION_EXPRESSION 0
+                                                                                $767
+                                                                                $8
+                                                                                (V PRIMARY_EXPRESSION 1
+                                                                                  (METHOD
+                                                                                    $8
+                                                                                    $0)
+                                                                                  NIL
+                                                                                  (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 3
+                                                                                    (METHOD
+                                                                                      $8
+                                                                                      $0)
+                                                                                    NIL
+                                                                                    (V MEMBER_ACCESS 0
+                                                                                      (METHOD
+                                                                                        $8
+                                                                                        $0)
+                                                                                      NIL
+                                                                                      (V PRIMARY_EXPRESSION 1
+                                                                                        $1900
+                                                                                        NIL
+                                                                                        (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 1
+                                                                                          $1900
+                                                                                          NIL
+                                                                                          (V SIMPLE_NAME 0
+                                                                                            $1900
+                                                                                            NIL
+                                                                                            (T "T" 6)
+                                                                                            (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                                              NIL
+                                                                                              NIL))))
+                                                                                      (T "." 6)
+                                                                                      (T "FindComponentByType" 6)
+                                                                                      (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                                        NIL
+                                                                                        NIL))))
+                                                                                (T "(" 6)
+                                                                                (V ARGUMENT_LIST_OPT 1
+                                                                                  NIL
+                                                                                  NIL
+                                                                                  (V ARGUMENT_LIST 0
+                                                                                    NIL
+                                                                                    NIL
+                                                                                    (V ARGUMENT 0
+                                                                                      $1677
+                                                                                      NIL
+                                                                                      (V EXPRESSION 0
+                                                                                        $1677
+                                                                                        NIL
+                                                                                        (V CONDITIONAL_EXPRESSION 0
+                                                                                          $1677
+                                                                                          NIL
+                                                                                          (V NULL_COALESCING_EXPRESSION 0
+                                                                                            $1677
+                                                                                            NIL
+                                                                                            (V CONDITIONAL_OR_EXPRESSION 0
+                                                                                              $1677
+                                                                                              NIL
+                                                                                              (V CONDITIONAL_AND_EXPRESSION 0
+                                                                                                $1677
+                                                                                                NIL
+                                                                                                (V INCLUSIVE_OR_EXPRESSION 0
+                                                                                                  $1677
+                                                                                                  NIL
+                                                                                                  (V EXCLUSIVE_OR_EXPRESSION 0
+                                                                                                    $1677
+                                                                                                    NIL
+                                                                                                    (V AND_EXPRESSION 0
+                                                                                                      $1677
+                                                                                                      NIL
+                                                                                                      (V EQUALITY_EXPRESSION 0
+                                                                                                        $1677
+                                                                                                        NIL
+                                                                                                        (V RELATIONAL_EXPRESSION 0
+                                                                                                          $1677
+                                                                                                          NIL
+                                                                                                          (V SHIFT_EXPRESSION 0
+                                                                                                            $1677
+                                                                                                            NIL
+                                                                                                            (V ADDITIVE_EXPRESSION 0
+                                                                                                              $1677
+                                                                                                              NIL
+                                                                                                              (V MULTIPLICATIVE_EXPRESSION 0
+                                                                                                                $1677
+                                                                                                                NIL
+                                                                                                                (V UNARY_EXPRESSION 0
+                                                                                                                  $1677
+                                                                                                                  NIL
+                                                                                                                  (V PRIMARY_EXPRESSION 1
+                                                                                                                    $1677
+                                                                                                                    NIL
+                                                                                                                    (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 0
+                                                                                                                      $1677
+                                                                                                                      NIL
+                                                                                                                      (V LITERAL 4
+                                                                                                                        $1677
+                                                                                                                        NIL
+                                                                                                                        (T "\"TransformGroup\"" 6)))))))))))))))))))))
+                                                                                (T ")" 6))))))))))))))))))))))))
+                                  (T ";" 6))))
+                            (V STATEMENT 2
+                              NIL
+                              NIL
+                              (V EMBEDDED_STATEMENT 3
+                                NIL
+                                NIL
+                                (V SELECTION_STATEMENT 0
+                                  NIL
+                                  NIL
+                                  (V IF_STATEMENT 1
+                                    NIL
+                                    NIL
+                                    (T "if" 7)
+                                    (T "(" 7)
+                                    (V BOOLEAN_EXPRESSION 0
+                                      $1424
+                                      NIL
+                                      (V EXPRESSION 0
+                                        $1424
+                                        NIL
+                                        (V CONDITIONAL_EXPRESSION 0
+                                          $1424
+                                          NIL
+                                          (V NULL_COALESCING_EXPRESSION 0
+                                            $1424
+                                            NIL
+                                            (V CONDITIONAL_OR_EXPRESSION 0
+                                              $1424
+                                              NIL
+                                              (V CONDITIONAL_AND_EXPRESSION 0
+                                                $1424
+                                                NIL
+                                                (V INCLUSIVE_OR_EXPRESSION 0
+                                                  $1424
+                                                  NIL
+                                                  (V EXCLUSIVE_OR_EXPRESSION 0
+                                                    $1424
+                                                    NIL
+                                                    (V AND_EXPRESSION 0
+                                                      $1424
+                                                      NIL
+                                                      (V EQUALITY_EXPRESSION 2
+                                                        $1424
+                                                        NIL
+                                                        (V EQUALITY_EXPRESSION 0
+                                                          $1903
+                                                          NIL
+                                                          (V RELATIONAL_EXPRESSION 0
+                                                            $1903
+                                                            NIL
+                                                            (V SHIFT_EXPRESSION 0
+                                                              $1903
+                                                              NIL
+                                                              (V ADDITIVE_EXPRESSION 0
+                                                                $1903
+                                                                NIL
+                                                                (V MULTIPLICATIVE_EXPRESSION 0
+                                                                  $1903
+                                                                  NIL
+                                                                  (V UNARY_EXPRESSION 0
+                                                                    $1903
+                                                                    NIL
+                                                                    (V PRIMARY_EXPRESSION 1
+                                                                      $1903
+                                                                      NIL
+                                                                      (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 1
+                                                                        $1903
+                                                                        NIL
+                                                                        (V SIMPLE_NAME 0
+                                                                          $1903
+                                                                          NIL
+                                                                          (T "trans" 7)
+                                                                          (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                            NIL
+                                                                            NIL))))))))))
+                                                        (T "!=" 7)
+                                                        (V RELATIONAL_EXPRESSION 0
+                                                          CS-TY-NULL
+                                                          NIL
+                                                          (V SHIFT_EXPRESSION 0
+                                                            CS-TY-NULL
+                                                            NIL
+                                                            (V ADDITIVE_EXPRESSION 0
+                                                              CS-TY-NULL
+                                                              NIL
+                                                              (V MULTIPLICATIVE_EXPRESSION 0
+                                                                CS-TY-NULL
+                                                                NIL
+                                                                (V UNARY_EXPRESSION 0
+                                                                  CS-TY-NULL
+                                                                  NIL
+                                                                  (V PRIMARY_EXPRESSION 1
+                                                                    CS-TY-NULL
+                                                                    NIL
+                                                                    (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 0
+                                                                      CS-TY-NULL
+                                                                      NIL
+                                                                      (V LITERAL 5
+                                                                        CS-TY-NULL
+                                                                        NIL
+                                                                        (T "null" 7)))))))))))))))))))
+                                    (T ")" 7)
+                                    (V EMBEDDED_STATEMENT 0
+                                      $1904
+                                      NIL
+                                      (V BLOCK 0
+                                          $1904
+                                        NIL
+                                        (T "{" 8)
+                                        (V STATEMENT_LIST_OPT 1
+                                          CS-TY-VOID
+                                          NIL
+                                          (V STATEMENT_LIST 1
+                                            CS-TY-VOID
+                                            NIL
+                                            (V STATEMENT_LIST 1
+                                              CS-TY-VOID
+                                              NIL
+                                              (V STATEMENT_LIST 0
+                                                CS-TY-VOID
+                                                NIL
+                                                (V STATEMENT 1
+                                                  NIL
+                                                  NIL
+                                                  (V DECLARATION_STATEMENT 0
+                                                    NIL
+                                                    NIL
+                                                    (V LOCAL_VARIABLE_DECLARATION 0
+                                                      NIL
+                                                      NIL
+                                                      (V TYPE 1
+                                                        $1193
+                                                        NIL
+                                                        (V REFERENCE_TYPE 0
+                                                          $1193
+                                                          NIL
+                                                          (V CLASS_TYPE 0
+                                                            $1193
+                                                            NIL
+                                                            (V TYPE_NAME 0
+                                                              $1193
+                                                              NIL
+                                                              (V NAMESPACE_OR_TYPE_NAME 0
+                                                                NIL
+                                                                NIL
+                                                                (T "Vector3" 9)
+                                                                (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                  NIL
+                                                                  NIL))))))
+                                                      (V LOCAL_VARIABLE_DECLARATORS 0
+                                                        NIL
+                                                        NIL
+                                                        (V LOCAL_VARIABLE_DECLARATOR 0
+                                                          NIL
+                                                          NIL
+                                                          (T "Pos" 9))))
+                                                    (T ";" 9))))
+                                              (V STATEMENT 2
+                                                NIL
+                                                NIL
+                                                (V EMBEDDED_STATEMENT 2
+                                                  NIL
+                                                  NIL
+                                                  (V EXPRESSION_STATEMENT 0
+                                                    NIL
+                                                    NIL
+                                                    (V STATEMENT_EXPRESSION 0
+                                                      CS-TY-VOID
+                                                      $1095
+                                                      (V INVOCATION_EXPRESSION 0
+                                                        CS-TY-VOID
+                                                        $1095
+                                                        (V PRIMARY_EXPRESSION 1
+                                                          (METHOD
+                                                            $1095
+                                                            $0)
+                                                          NIL
+                                                          (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 3
+                                                            (METHOD
+                                                              $1095
+                                                              $0)
+                                                            NIL
+                                                            (V MEMBER_ACCESS 0
+                                                              (METHOD
+                                                                $1095
+                                                                $0)
+                                                              NIL
+                                                              (V PRIMARY_EXPRESSION 1
+                                                                $1903
+                                                                NIL
+                                                                (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 1
+                                                                  $1903
+                                                                  NIL
+                                                                  (V SIMPLE_NAME 0
+                                                                    $1903
+                                                                    NIL
+                                                                    (T "trans" 10)
+                                                                    (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                      NIL
+                                                                      NIL))))
+                                                              (T "." 10)
+                                                              (T "Rotate" 10)
+                                                              (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                NIL
+                                                                NIL))))
+                                                        (T "(" 10)
+                                                        (V ARGUMENT_LIST_OPT 1
+                                                          NIL
+                                                          NIL
+                                                          (V ARGUMENT_LIST 1
+                                                            NIL
+                                                            NIL
+                                                            (V ARGUMENT_LIST 1
+                                                              NIL
+                                                              NIL
+                                                              (V ARGUMENT_LIST 0
+                                                                NIL
+                                                                NIL
+                                                                (V ARGUMENT 0
+                                                                  $1654
+                                                                  NIL
+                                                                  (V EXPRESSION 0
+                                                                    $1654
+                                                                    NIL
+                                                                    (V CONDITIONAL_EXPRESSION 0
+                                                                      $1654
+                                                                      NIL
+                                                                      (V NULL_COALESCING_EXPRESSION 0
+                                                                        $1654
+                                                                        NIL
+                                                                        (V CONDITIONAL_OR_EXPRESSION 0
+                                                                          $1654
+                                                                          NIL
+                                                                          (V CONDITIONAL_AND_EXPRESSION 0
+                                                                            $1654
+                                                                            NIL
+                                                                            (V INCLUSIVE_OR_EXPRESSION 0
+                                                                              $1654
+                                                                              NIL
+                                                                              (V EXCLUSIVE_OR_EXPRESSION 0
+                                                                                $1654
+                                                                                NIL
+                                                                                (V AND_EXPRESSION 0
+                                                                                  $1654
+                                                                                  NIL
+                                                                                  (V EQUALITY_EXPRESSION 0
+                                                                                    $1654
+                                                                                    NIL
+                                                                                    (V RELATIONAL_EXPRESSION 0
+                                                                                      $1654
+                                                                                      NIL
+                                                                                      (V SHIFT_EXPRESSION 0
+                                                                                        $1654
+                                                                                        NIL
+                                                                                        (V ADDITIVE_EXPRESSION 0
+                                                                                          $1654
+                                                                                          NIL
+                                                                                          (V MULTIPLICATIVE_EXPRESSION 0
+                                                                                            $1654
+                                                                                            NIL
+                                                                                            (V UNARY_EXPRESSION 0
+                                                                                              $1654
+                                                                                              NIL
+                                                                                              (V PRIMARY_EXPRESSION 1
+                                                                                                $1654
+                                                                                                NIL
+                                                                                                (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 0
+                                                                                                  $1654
+                                                                                                  NIL
+                                                                                                  (V LITERAL 1
+                                                                                                    $1654
+                                                                                                    NIL
+                                                                                                    (T "20" 10))))))))))))))))))))
+                                                              (T "," 10)
+                                                              (V ARGUMENT 0
+                                                                $1654
+                                                                NIL
+                                                                (V EXPRESSION 0
+                                                                  $1654
+                                                                  NIL
+                                                                  (V CONDITIONAL_EXPRESSION 0
+                                                                    $1654
+                                                                    NIL
+                                                                    (V NULL_COALESCING_EXPRESSION 0
+                                                                      $1654
+                                                                      NIL
+                                                                      (V CONDITIONAL_OR_EXPRESSION 0
+                                                                        $1654
+                                                                        NIL
+                                                                        (V CONDITIONAL_AND_EXPRESSION 0
+                                                                          $1654
+                                                                          NIL
+                                                                          (V INCLUSIVE_OR_EXPRESSION 0
+                                                                            $1654
+                                                                            NIL
+                                                                            (V EXCLUSIVE_OR_EXPRESSION 0
+                                                                              $1654
+                                                                              NIL
+                                                                              (V AND_EXPRESSION 0
+                                                                                $1654
+                                                                                NIL
+                                                                                (V EQUALITY_EXPRESSION 0
+                                                                                  $1654
+                                                                                  NIL
+                                                                                  (V RELATIONAL_EXPRESSION 0
+                                                                                    $1654
+                                                                                    NIL
+                                                                                    (V SHIFT_EXPRESSION 0
+                                                                                      $1654
+                                                                                      NIL
+                                                                                      (V ADDITIVE_EXPRESSION 0
+                                                                                        $1654
+                                                                                        NIL
+                                                                                        (V MULTIPLICATIVE_EXPRESSION 0
+                                                                                          $1654
+                                                                                          NIL
+                                                                                          (V UNARY_EXPRESSION 0
+                                                                                            $1654
+                                                                                            NIL
+                                                                                            (V PRIMARY_EXPRESSION 1
+                                                                                              $1654
+                                                                                              NIL
+                                                                                              (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 0
+                                                                                                $1654
+                                                                                                NIL
+                                                                                                (V LITERAL 1
+                                                                                                  $1654
+                                                                                                  NIL
+                                                                                                  (T "0" 10))))))))))))))))))))
+                                                            (T "," 10)
+                                                            (V ARGUMENT 0
+                                                              $1193
+                                                              $1084
+                                                              (V EXPRESSION 0
+                                                                $1193
+                                                                $1084
+                                                                (V CONDITIONAL_EXPRESSION 0
+                                                                  $1193
+                                                                  $1084
+                                                                  (V NULL_COALESCING_EXPRESSION 0
+                                                                    $1193
+                                                                    $1084
+                                                                    (V CONDITIONAL_OR_EXPRESSION 0
+                                                                      $1193
+                                                                      $1084
+                                                                      (V CONDITIONAL_AND_EXPRESSION 0
+                                                                        $1193
+                                                                        $1084
+                                                                        (V INCLUSIVE_OR_EXPRESSION 0
+                                                                          $1193
+                                                                          $1084
+                                                                          (V EXCLUSIVE_OR_EXPRESSION 0
+                                                                            $1193
+                                                                            $1084
+                                                                            (V AND_EXPRESSION 0
+                                                                              $1193
+                                                                              $1084
+                                                                              (V EQUALITY_EXPRESSION 0
+                                                                                $1193
+                                                                                $1084
+                                                                                (V RELATIONAL_EXPRESSION 0
+                                                                                  $1193
+                                                                                  $1084
+                                                                                  (V SHIFT_EXPRESSION 0
+                                                                                    $1193
+                                                                                    $1084
+                                                                                    (V ADDITIVE_EXPRESSION 0
+                                                                                      $1193
+                                                                                      $1084
+                                                                                      (V MULTIPLICATIVE_EXPRESSION 0
+                                                                                        $1193
+                                                                                        $1084
+                                                                                        (V UNARY_EXPRESSION 0
+                                                                                          $1193
+                                                                                          $1084
+                                                                                          (V PRIMARY_EXPRESSION 1
+                                                                                            $1193
+                                                                                            $1084
+                                                                                            (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 4
+                                                                                              $1193
+                                                                                              $1084
+                                                                                              (V INVOCATION_EXPRESSION 0
+                                                                                                $1193
+                                                                                                $1084
+                                                                                                (V PRIMARY_EXPRESSION 1
+                                                                                                  (METHOD
+                                                                                                    $1084
+                                                                                                    $0)
+                                                                                                  NIL
+                                                                                                  (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 3
+                                                                                                    (METHOD
+                                                                                                      $1084
+                                                                                                      $0)
+                                                                                                    NIL
+                                                                                                    (V MEMBER_ACCESS 0
+                                                                                                      (METHOD
+                                                                                                        $1084
+                                                                                                        $0)
+                                                                                                      NIL
+                                                                                                      (V PRIMARY_EXPRESSION 1
+                                                                                                        $1903
+                                                                                                        NIL
+                                                                                                        (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 1
+                                                                                                          $1903
+                                                                                                          NIL
+                                                                                                          (V SIMPLE_NAME 0
+                                                                                                            $1903
+                                                                                                            NIL
+                                                                                                            (T "trans" 10)
+                                                                                                            (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                                                              NIL
+                                                                                                              NIL))))
+                                                                                                      (T "." 10)
+                                                                                                      (T "GetPosition" 10)
+                                                                                                      (V TYPE_ARGUMENT_LIST_OPT 0
+                                                                                                        NIL
+                                                                                                        NIL))))
+                                                                                                (T "(" 10)
+                                                                                                (V ARGUMENT_LIST_OPT 0
+                                                                                                  NIL
+                                                                                                  NIL)
+                                                                                                (T ")" 10)))))))))))))))))))))
+                                                        (T ")" 10)))
+                                                    (T ";" 10)))))
+                                            (V STATEMENT 2
+                                              CS-TY-VOID
+                                              NIL
+                                              (V EMBEDDED_STATEMENT 5
+                                                CS-TY-VOID
+                                                NIL
+                                                (V JUMP_STATEMENT 3
+                                                  CS-TY-VOID
+                                                  NIL
+                                                  (V RETURN_STATEMENT 0
+                                                    CS-TY-VOID
+                                                    NIL
+                                                    (T "return" 11)
+                                                    (V EXPRESSION_OPT 1
+                                                      $1654
+                                                      NIL
+                                                      (V EXPRESSION 0
+                                                        $1654
+                                                        NIL
+                                                        (V CONDITIONAL_EXPRESSION 0
+                                                          $1654
+                                                          NIL
+                                                          (V NULL_COALESCING_EXPRESSION 0
+                                                            $1654
+                                                            NIL
+                                                            (V CONDITIONAL_OR_EXPRESSION 0
+                                                              $1654
+                                                              NIL
+                                                              (V CONDITIONAL_AND_EXPRESSION 0
+                                                                $1654
+                                                                NIL
+                                                                (V INCLUSIVE_OR_EXPRESSION 0
+                                                                  $1654
+                                                                  NIL
+                                                                  (V EXCLUSIVE_OR_EXPRESSION 0
+                                                                    $1654
+                                                                    NIL
+                                                                    (V AND_EXPRESSION 0
+                                                                      $1654
+                                                                      NIL
+                                                                      (V EQUALITY_EXPRESSION 0
+                                                                        $1654
+                                                                        NIL
+                                                                        (V RELATIONAL_EXPRESSION 0
+                                                                          $1654
+                                                                          NIL
+                                                                          (V SHIFT_EXPRESSION 0
+                                                                            $1654
+                                                                            NIL
+                                                                            (V ADDITIVE_EXPRESSION 0
+                                                                              $1654
+                                                                              NIL
+                                                                              (V MULTIPLICATIVE_EXPRESSION 0
+                                                                                $1654
+                                                                                NIL
+                                                                                (V UNARY_EXPRESSION 0
+                                                                                  $1654
+                                                                                  NIL
+                                                                                  (V PRIMARY_EXPRESSION 1
+                                                                                    $1654
+                                                                                    NIL
+                                                                                    (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 0
+                                                                                      $1654
+                                                                                      NIL
+                                                                                      (V LITERAL 1
+                                                                                        $1654
+                                                                                        NIL
+                                                                                        (T "1" 11)))))))))))))))))))
+                                                    (T ";" 11)))))))
+                                        (T "}" 12)))
+                                    (T "else" 13)
+                                    (V EMBEDDED_STATEMENT 5
+                                      CS-TY-VOID
+                                      NIL
+                                      (V JUMP_STATEMENT 3
+                                        CS-TY-VOID
+                                        NIL
+                                        (V RETURN_STATEMENT 0
+                                          CS-TY-VOID
+                                          NIL
+                                          (T "return" 14)
+                                          (V EXPRESSION_OPT 1
+                                            $1654
+                                            NIL
+                                            (V EXPRESSION 0
+                                              $1654
+                                              NIL
+                                              (V CONDITIONAL_EXPRESSION 0
+                                                $1654
+                                                NIL
+                                                (V NULL_COALESCING_EXPRESSION 0
+                                                  $1654
+                                                  NIL
+                                                  (V CONDITIONAL_OR_EXPRESSION 0
+                                                    $1654
+                                                    NIL
+                                                    (V CONDITIONAL_AND_EXPRESSION 0
+                                                      $1654
+                                                      NIL
+                                                      (V INCLUSIVE_OR_EXPRESSION 0
+                                                        $1654
+                                                        NIL
+                                                        (V EXCLUSIVE_OR_EXPRESSION 0
+                                                          $1654
+                                                          NIL
+                                                          (V AND_EXPRESSION 0
+                                                            $1654
+                                                            NIL
+                                                            (V EQUALITY_EXPRESSION 0
+                                                              $1654
+                                                              NIL
+                                                              (V RELATIONAL_EXPRESSION 0
+                                                                $1654
+                                                                NIL
+                                                                (V SHIFT_EXPRESSION 0
+                                                                  $1654
+                                                                  NIL
+                                                                  (V ADDITIVE_EXPRESSION 0
+                                                                    $1654
+                                                                    NIL
+                                                                    (V MULTIPLICATIVE_EXPRESSION 0
+                                                                      $1654
+                                                                      NIL
+                                                                      (V UNARY_EXPRESSION 0
+                                                                        $1654
+                                                                        NIL
+                                                                        (V PRIMARY_EXPRESSION 1
+                                                                          $1654
+                                                                          NIL
+                                                                          (V PRIMARY_NO_ARRAY_CREATION_EXPRESSION 0
+                                                                            $1654
+                                                                            NIL
+                                                                            (V LITERAL 1
+                                                                              $1654
+                                                                              NIL
+                                                                              (T "0" 14)))))))))))))))))))
+                                          (T ";" 14))))))))))
+                        (T "}" 15)))))))
+            (T "}" 16))
+          (V SEMI_OPT 0
+            NIL
+            NIL))))))

@@ -1,0 +1,319 @@
+﻿<UserControl xmlns:ToolBarModule="clr-namespace:VRCAT.ToolBarModule"  
+             x:Class="VRCAT.ToolBarModule.ToolBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:local="clr-namespace:VRCAT.ToolBarModule"
+             x:Name="toolbarmodule"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <UserControl.Resources>
+        <local:MultiBindConverter x:Key="Multibindconverter" />
+        <local:MultiBindReverseConverter x:Key="MultiBindReverseConverter" />
+        <Style x:Key="{x:Static ToolBar.MenuStyleKey}" TargetType="Menu">
+            <Setter Property="Background" Value="#141414" />
+            <Setter Property="Foreground" Value="#595959" />
+        </Style>
+        <Style x:Key="MenuItemStyle" TargetType="MenuItem" >
+            <Setter Property="Foreground" Value="#595959" />
+        </Style>
+        <Style x:Key="GizmoButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="SlateGray"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="border" Property="Background" Value="DarkSlateGray"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PlayBtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ImageBrush x:Key="UndoImageBrush" ImageSource="pack://siteOfOrigin:,,,/Plugins/Image/undo.png"/>
+        <ImageBrush x:Key="RedoImageBrush" ImageSource="pack://siteOfOrigin:,,,/Plugins/Image/redo.png"/>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <!--<CommandBinding Command="{x:Static }"-->
+    </UserControl.CommandBindings>
+    <DockPanel>
+        <Menu HorizontalAlignment="Stretch" Background="#212121" DockPanel.Dock="Top">
+            <MenuItem Header="_File" HorizontalAlignment="Center" Foreground="#F6F6F6">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding FileMenuClick}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <local:CustomMenuItem Header="New Scene" >
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="N" Modifiers="Ctrl" Command="{Binding KeyBindingCommand}" CommandParameter="New Scene"/>
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <local:CustomMenuItem Header="Open Scene">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding KeyBindingCommand}" CommandParameter="Open Scene"/>
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <Separator/>
+                <local:CustomMenuItem Header="Save Scene" >
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding KeyBindingCommand}" CommandParameter="Save Scene"/>
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <local:CustomMenuItem Header="Save Scene as" >
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="S" Modifiers="Shift+Ctrl" Command="{Binding KeyBindingCommand}" CommandParameter="Save Scene as"/>
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <Separator/>
+                <local:CustomMenuItem Header="New Project">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="N" Modifiers="Shift+Control" Command="{Binding KeyBindingCommand}" CommandParameter="New Project" />
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <local:CustomMenuItem Header="Open Project">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="O" Modifiers="Shift+Control" Command="{Binding KeyBindingCommand}" CommandParameter="Open Project" />
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <Separator/>
+                <local:CustomMenuItem Header="Build Settings" IsEnabled="False"/>
+                <local:CustomMenuItem Header="Build">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="B" Modifiers="Shift" Command="{Binding KeyBindingCommand}" CommandParameter="Build" />
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <Separator/>
+                <local:CustomMenuItem Header="ProjectSetting">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="P" Modifiers="Control+Alt" Command="{Binding KeyBindingCommand}" CommandParameter="ProjectSetting" />
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+                <Separator/>
+                <local:CustomMenuItem Header="Exit">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="F4" Modifiers="Alt" Command="{Binding KeyBindingCommand}" CommandParameter="Exit" />
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+            </MenuItem>
+            <MenuItem Header="_Edit" HorizontalAlignment="Center" Foreground="#F6F6F6">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding EditMenuClick}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="Copy" InputGestureText="Control + C" />
+                <MenuItem Header="Paste" InputGestureText="Control + V" />
+                <Separator/>
+                <local:CustomMenuItem Header="Undo" IsEnabled="False" />
+                <local:CustomMenuItem Header="Redo" IsEnabled="False"/>
+                <Separator/>
+                <local:CustomMenuItem Header="Cut" IsEnabled="False" />
+                <Separator/>
+                <local:CustomMenuItem Header="Duplicate" IsEnabled="False"/>
+                <local:CustomMenuItem Header="Delete" IsEnabled="False"/>
+                <Separator/>
+                <local:CustomMenuItem Header="Frame Selected" IsEnabled="False"/>
+                <local:CustomMenuItem Header="Lock View To Selected" IsEnabled="False"/>
+                <local:CustomMenuItem Header="Find" IsEnabled="False"/>
+                <local:CustomMenuItem Header="Select All" IsEnabled="False"/>
+                <local:CustomMenuItem Header="Build Play" />
+            </MenuItem>
+            <MenuItem Header="_Asset" HorizontalAlignment="Center" Foreground="#F6F6F6">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding AssetMenuClick}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="Create">
+                    <MenuItem Header="Script" IsEnabled="False"/>
+                    <MenuItem Header="Shader" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="Audio Mixer" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="Material" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="Animator Controller" IsEnabled="False"/>
+                    <MenuItem Header="Animation" IsEnabled="False"/>
+                    <MenuItem Header="Animator Override Contrtoller" IsEnabled="False"/>
+                    <MenuItem Header="Avatar Mask" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="Physic Material" IsEnabled="False"/>
+                    <MenuItem Header="Physic2D Material" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="GUI Skin" IsEnabled="False"/>
+                    <MenuItem Header="Custom Font" IsEnabled="False"/>
+                    <MenuItem Header="Shader Variant Collection" IsEnabled="False"/>
+                </MenuItem>
+                <local:CustomMenuItem Header="ShowExplorer">
+                    <local:CustomMenuItem.InputBindings>
+                        <KeyBinding Key="E" Modifiers="Windows" Command="{Binding KeyBindingCommand}" CommandParameter="ShowExplorer" />
+                    </local:CustomMenuItem.InputBindings>
+                </local:CustomMenuItem>
+            </MenuItem>
+            <MenuItem Header="_GameObject" HorizontalAlignment="Center" Foreground="#F6F6F6">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding GameObjectMenuClick}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="Create Empty Object" InputGestureText="Ctrl+Shift+N" IsEnabled="False"/>
+                <MenuItem Header="Create Empty Object Child" InputGestureText="Alt+Shift+N" IsEnabled="False"/>
+                <Separator/>
+                <MenuItem Header="3D Object" InputGestureText="">
+                    <MenuItem Header="Container" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Camera" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Light" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Sphere" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Plane" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Quad" InputGestureText="" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="Ragdoll" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Cloth" InputGestureText="" IsEnabled="False"/>
+                    <Separator/>
+                    <MenuItem Header="Terrain" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Tree" InputGestureText="" IsEnabled="False"/>
+                    <MenuItem Header="Wind Zone" InputGestureText="" IsEnabled="False"/>
+                </MenuItem>
+                <MenuItem Header="2D Object" InputGestureText="" IsEnabled="False"/>
+                <Separator/>
+            </MenuItem>
+            <MenuItem Header="_Component" HorizontalAlignment="Center" Foreground="#F6F6F6">
+                <MenuItem Header="Mesh" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Effects" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Physics" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Physics 2D" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Navigation" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Audio" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Rendering" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Layout" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="Miscellaneous" InputGestureText="" IsEnabled="False"/>
+                <MenuItem Header="UI" InputGestureText=""/>
+            </MenuItem>
+            <MenuItem Header="_View" HorizontalAlignment="Center" Foreground="#F6F6F6">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding ViewMenuClick}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <MenuItem Header="Layout"/>
+                <Separator/>
+                <MenuItem Header="Scene" IsEnabled="True"/>
+                <MenuItem Header="Inspector" IsEnabled="True"/>
+                <MenuItem Header="Hierarchy" IsEnabled="False"/>
+                <MenuItem Header="Project" IsEnabled="False"/>
+                <Separator/>
+                <MenuItem Header="3Dof emulation" IsEnabled="True"/>
+                <MenuItem Header="1Dof emulation" IsEnabled="True"/>
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Bottom">
+            <Border Background="#212121" HorizontalAlignment="Stretch"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                <local:CustomToggleBtn x:Name="Position" IsChecked="{Binding PositionBtnISChecked}" Style="{StaticResource GizmoButtonStyle}" ToolTip="Position" >
+                    <Image Source="pack://siteOfOrigin:,,,/Plugins/Image/position.png" Width="15" Height="15"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding GizmoBtnClickCommand}" CommandParameter="Position"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <local:CustomToggleBtn.InputBindings>
+                        <KeyBinding Key="Q" Modifiers="Ctrl" Command="{Binding GizmoBtnClickCommand}" CommandParameter="Position" CommandTarget="{Binding}" />
+                    </local:CustomToggleBtn.InputBindings>
+                </local:CustomToggleBtn>
+                <local:CustomToggleBtn x:Name="Rotation" IsChecked="{Binding RotationBtnIsChecked}" Style="{StaticResource GizmoButtonStyle}" ToolTip="Rotation">
+                    <Image Source="pack://siteOfOrigin:,,,/Plugins/Image/rotation.png" Width="15" Height="15"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding GizmoBtnClickCommand}" CommandParameter="Rotation"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <local:CustomToggleBtn.InputBindings>
+                        <KeyBinding Key="W" Modifiers="Ctrl" Command="{Binding GizmoBtnClickCommand}" CommandParameter="Rotation"/>
+                    </local:CustomToggleBtn.InputBindings>
+                </local:CustomToggleBtn>
+                <local:CustomToggleBtn x:Name="Scale" IsChecked="{Binding ScaleBtnIsChecked}" Style="{StaticResource GizmoButtonStyle}" ToolTip="Scale">
+                    <Image Source="pack://siteOfOrigin:,,,/Plugins/Image/scale.png" Width="15" Height="15"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding GizmoBtnClickCommand}" CommandParameter="Scale"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <local:CustomToggleBtn.InputBindings>
+                        <KeyBinding Key="E"  Modifiers="Ctrl" Command="{Binding GizmoBtnClickCommand}" CommandParameter="Scale"/>
+                    </local:CustomToggleBtn.InputBindings>
+                </local:CustomToggleBtn>
+                <local:CustomBtn x:Name="Undo" Background="Transparent" ToolTip="Undo">
+                    <Image Source="pack://siteOfOrigin:,,,/Plugins/Image/undo.png" Width="15" Height="15" />
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding UndoCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <local:CustomBtn.InputBindings>
+                        <KeyBinding Key="Z" Modifiers="Ctrl" Command="{Binding UndoCommand}"/>
+                    </local:CustomBtn.InputBindings>
+                </local:CustomBtn>
+                <local:CustomBtn x:Name="Redo" Background="Transparent" ToolTip="Redo">
+                    <Image Source="pack://siteOfOrigin:,,,/Plugins/Image/redo.png" Width="15" Height="15"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <prism:InvokeCommandAction Command="{Binding RedoCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <local:CustomBtn.InputBindings>
+                        <KeyBinding Key="Y" Modifiers="Ctrl" Command="{Binding RedoCommand}"/>
+                    </local:CustomBtn.InputBindings>
+                </local:CustomBtn>
+            </StackPanel>
+            <local:CustomBtn HorizontalAlignment="Center" x:Name="Play" Width="55" Height="30" BorderBrush="Transparent" Style="{StaticResource PlayBtnStyle}">
+                <local:CustomBtn.Background>
+                    <ImageBrush ImageSource="pack://siteOfOrigin:,,,/Plugins/Image/but_play.png"/>
+                </local:CustomBtn.Background>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <prism:InvokeCommandAction Command="{Binding PlayModelBtnCommand}" CommandParameter="Play"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <local:CustomBtn.InputBindings>
+                    <KeyBinding Key="Space" Modifiers="Shift" Command="{Binding PlayModelBtnCommand}" CommandParameter="Play"/>
+                </local:CustomBtn.InputBindings>
+            </local:CustomBtn>
+        </Grid>
+    </DockPanel>
+</UserControl>
+

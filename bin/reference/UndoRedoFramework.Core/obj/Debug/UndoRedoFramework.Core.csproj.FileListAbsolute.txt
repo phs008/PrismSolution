@@ -1,0 +1,14 @@
+C:\Users\Joshua\Desktop\wpfundoredo-79962\Main\UndoRedoFramework\UndoRedoFramework.Core\bin\Debug\UndoRedoFramework.Core.dll
+C:\Users\Joshua\Desktop\wpfundoredo-79962\Main\UndoRedoFramework\UndoRedoFramework.Core\bin\Debug\UndoRedoFramework.Core.pdb
+C:\Users\Joshua\Desktop\wpfundoredo-79962\Main\UndoRedoFramework\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\Desktop\wpfundoredo-79962\Main\UndoRedoFramework\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.dll
+C:\Users\Joshua\Desktop\wpfundoredo-79962\Main\UndoRedoFramework\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.pdb
+D:\VRAuthor\tool\bin\debug.x86\UndoRedoFramework.Core.dll
+D:\VRAuthor\tool\bin\debug.x86\UndoRedoFramework.Core.pdb
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.dll
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.pdb
+D:\EVRAT\tool\bin\debug.x86\UndoRedoFramework.Core.dll
+D:\EVRAT\tool\bin\debug.x86\UndoRedoFramework.Core.pdb
+D:\EVRAT\tool\reference\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.csprojResolveAssemblyReference.cache
+D:\EVRAT\tool\reference\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.dll
+D:\EVRAT\tool\reference\UndoRedoFramework.Core\obj\Debug\UndoRedoFramework.Core.pdb

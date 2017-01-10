@@ -1,0 +1,27 @@
+
+string PropertyVRDevice::GetDeviceID( )
+{
+	if (ENG_CAPI_PropertyVRDevice_GetDeviceID)
+	{
+		return ENG_CAPI_PropertyVRDevice_GetDeviceID(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyVRDevice::SetDeviceID(  const char * value)
+{
+	if (ENG_CAPI_PropertyVRDevice_SetDeviceID)
+	{
+		ENG_CAPI_PropertyVRDevice_SetDeviceID(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyVRDevice_SetDeviceID is not Linked", 0, 0.0f );
+	}
+}
+
+
+

@@ -1,0 +1,12 @@
+	int GetLeftHand( );
+	void SetLeftHand(int value);
+
+
+	int GetRightHand( );
+	void SetRightHand(int value);
+
+
+	int GetTracked( );
+	void SetTracked(int value);
+
+

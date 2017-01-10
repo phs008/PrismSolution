@@ -1,0 +1,180 @@
+	public Color GetAlbedoColor( );
+	public void SetAlbedoColor(Color value);
+
+
+
+	public int GetAlphaBlending( );
+	public void SetAlphaBlending(int value);
+
+
+
+	public float GetAlphaTest( );
+	public void SetAlphaTest(float value);
+
+
+
+	public float GetAmbient( );
+	public void SetAmbient(float value);
+
+
+
+	public Color GetAmbientColor( );
+	public void SetAmbientColor(Color value);
+
+
+
+	public float GetAmbientColorRate( );
+	public void SetAmbientColorRate(float value);
+
+
+
+	public int GetCullBackFace( );
+	public void SetCullBackFace(int value);
+
+
+
+	public float GetDiffuse( );
+	public void SetDiffuse(float value);
+
+
+
+	public Color GetDiffuseColor( );
+	public void SetDiffuseColor(Color value);
+
+
+
+	public int GetFog( );
+	public void SetFog(int value);
+
+
+
+	public float GetGlossiness( );
+	public void SetGlossiness(float value);
+
+
+
+	public int GetIsPBRMaterial( );
+	public void SetIsPBRMaterial(int value);
+
+
+
+	public int GetMagFilter( );
+	public void SetMagFilter(int value);
+
+
+
+	public float GetMetalliness( );
+	public void SetMetalliness(float value);
+
+
+
+	public int GetMinFilter( );
+	public void SetMinFilter(int value);
+
+
+
+	public Vector4 GetNormalMapDirection( );
+	public void SetNormalMapDirection(Vector4 value);
+
+
+
+	public float GetOpacity( );
+	public void SetOpacity(float value);
+
+
+
+	public string GetPixelShader( );
+	public void SetPixelShader(string value);
+
+
+
+	public float GetRoughness( );
+	public void SetRoughness(float value);
+
+
+
+	public int GetShadingModel( );
+	public void SetShadingModel(int value);
+
+
+
+	public float GetShadowDarkness( );
+	public void SetShadowDarkness(float value);
+
+
+
+	public float GetShininess( );
+	public void SetShininess(float value);
+
+
+
+	public float GetSmoothness( );
+	public void SetSmoothness(float value);
+
+
+
+	public float GetSpecular( );
+	public void SetSpecular(float value);
+
+
+
+	public string GetTextureDiffuse( );
+	public void SetTextureDiffuse(string value);
+
+
+
+	public string GetTextureEnv( );
+	public void SetTextureEnv(string value);
+
+
+
+	public string GetTextureEtc(int index);
+	public void SetTextureEtc(string value, int index);
+
+
+
+	public string GetTextureGlossiness( );
+	public void SetTextureGlossiness(string value);
+
+
+
+	public string GetTextureNormal( );
+	public void SetTextureNormal(string value);
+
+
+
+	public string GetTextureRoughness( );
+	public void SetTextureRoughness(string value);
+
+
+
+	public string GetTextureShininess( );
+	public void SetTextureShininess(string value);
+
+
+
+	public string GetTextureSpecular( );
+	public void SetTextureSpecular(string value);
+
+
+
+	public int GetUseAlbedoTexture( );
+	public void SetUseAlbedoTexture(int value);
+
+
+
+	public int GetUseMetalSmoothnessTexture( );
+	public void SetUseMetalSmoothnessTexture(int value);
+
+
+
+	public string GetVertexShader( );
+	public void SetVertexShader(string value);
+
+
+
+	public int GetWireFrame( );
+	public void SetWireFrame(int value);
+
+
+

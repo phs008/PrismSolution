@@ -1,0 +1,2 @@
+			MAP_METHOD(%group%, Get%prop%);
+			MAP_METHOD(%group%, Set%prop%);

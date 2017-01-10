@@ -1,0 +1,70 @@
+#line 1 "enginedata\hls11\Plane.Pixel.hlp"
+
+
+cbuffer SHADER_EXTERN
+{
+	int DrawPhase;
+	float4 ClipPlane;
+
+	float4 Opacity;
+
+	float4 PlaneFogFactor;
+	float4 PlaneFogColor;
+};
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+	float3 InPosition : TEXCOORD1;
+};
+
+
+
+sampler Texture1 : register(s0); 
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	float4 color;
+
+	color = tex2D(Texture1, Out.UV.xy);
+	color.w *= Opacity.x;
+
+	// PhaseDepth
+	if (DrawPhase == 3)
+		color.w = Out.UV.z;
+		
+	if (ClipPlane.x != 0.0 || ClipPlane.y != 0.0 || ClipPlane.z != 0.0)
+	{
+		if (Out.InPosition.x * ClipPlane.x + Out.InPosition.y * ClipPlane.y + Out.InPosition.z * ClipPlane.z + ClipPlane.w <= 0)
+			discard;	
+	}
+	
+	if (PlaneFogFactor.x <= 19.0) // fogLinear
+	{
+		float rate = (Out.UV.z - PlaneFogFactor.y) / (PlaneFogFactor.z - PlaneFogFactor.y);
+		if (rate < 0.0) 
+			rate = 0.0;
+		else
+		if (rate > 1.0)
+			rate = 1.0;
+		
+		//color.xyz = color.xyz * (1-rate) + PlaneFogColor.xyz * rate;
+		color.w = color.w * (1-rate);
+	}
+	//else  // otherwise not implemented
+		
+
+	return color;
+}
+
+
+
+
+

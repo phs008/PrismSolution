@@ -1,0 +1,5 @@
+	public int GetImageType( );
+	public void SetImageType(int value);
+
+
+

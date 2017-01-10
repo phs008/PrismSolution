@@ -1,0 +1,15 @@
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\bin\Release\UndoRedoFramework.Core.XML
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\bin\Release\UndoRedoFramework.Core.dll
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\bin\Release\UndoRedoFramework.Core.pdb
+D:\VRAuthor\tool\bin\release.x86\UndoRedoFramework.Core.dll
+D:\VRAuthor\tool\bin\release.x86\UndoRedoFramework.Core.pdb
+D:\VRAuthor\tool\bin\release.x86\UndoRedoFramework.Core.XML
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\obj\Release\UndoRedoFramework.Core.dll
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\obj\Release\UndoRedoFramework.Core.pdb
+D:\VRAuthor\tool\reference\UndoRedoFramework.Core\obj\Release\UndoRedoFramework.Core.csprojResolveAssemblyReference.cache
+D:\EVRAT\tool\bin\release.x86\UndoRedoFramework.Core.dll
+D:\EVRAT\tool\bin\release.x86\UndoRedoFramework.Core.pdb
+D:\EVRAT\tool\bin\release.x86\UndoRedoFramework.Core.XML
+D:\EVRAT\tool\reference\UndoRedoFramework.Core\obj\Release\UndoRedoFramework.Core.csprojResolveAssemblyReference.cache
+D:\EVRAT\tool\reference\UndoRedoFramework.Core\obj\Release\UndoRedoFramework.Core.dll
+D:\EVRAT\tool\reference\UndoRedoFramework.Core\obj\Release\UndoRedoFramework.Core.pdb

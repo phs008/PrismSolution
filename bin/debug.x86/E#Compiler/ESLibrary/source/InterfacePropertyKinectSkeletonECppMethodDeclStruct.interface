@@ -1,0 +1,75 @@
+	Vector3* GetAnkleLeft();
+	void SetAnkleLeft(Vector3 *value);
+
+	Vector3* GetAnkleRight();
+	void SetAnkleRight(Vector3 *value);
+
+	Vector3* GetElbowLeft();
+	void SetElbowLeft(Vector3 *value);
+
+	Vector3* GetElbowRight();
+	void SetElbowRight(Vector3 *value);
+
+	Vector3* GetFootLeft();
+	void SetFootLeft(Vector3 *value);
+
+	Vector3* GetFootRight();
+	void SetFootRight(Vector3 *value);
+
+	Vector3* GetHandLeft();
+	void SetHandLeft(Vector3 *value);
+
+	Vector3* GetHandRight();
+	void SetHandRight(Vector3 *value);
+
+	Vector3* GetHandTipLeft();
+	void SetHandTipLeft(Vector3 *value);
+
+	Vector3* GetHandTipRight();
+	void SetHandTipRight(Vector3 *value);
+
+	Vector3* GetHead();
+	void SetHead(Vector3 *value);
+
+	Vector3* GetHipLeft();
+	void SetHipLeft(Vector3 *value);
+
+	Vector3* GetHipRight();
+	void SetHipRight(Vector3 *value);
+
+	Vector3* GetKneeLeft();
+	void SetKneeLeft(Vector3 *value);
+
+	Vector3* GetKneeRight();
+	void SetKneeRight(Vector3 *value);
+
+	Vector3* GetNeck();
+	void SetNeck(Vector3 *value);
+
+	Vector3* GetShoulderLeft();
+	void SetShoulderLeft(Vector3 *value);
+
+	Vector3* GetShoulderRight();
+	void SetShoulderRight(Vector3 *value);
+
+	Vector3* GetSpineBase();
+	void SetSpineBase(Vector3 *value);
+
+	Vector3* GetSpineMid();
+	void SetSpineMid(Vector3 *value);
+
+	Vector3* GetSpineShoulder();
+	void SetSpineShoulder(Vector3 *value);
+
+	Vector3* GetThumbLeft();
+	void SetThumbLeft(Vector3 *value);
+
+	Vector3* GetThumbRight();
+	void SetThumbRight(Vector3 *value);
+
+	Vector3* GetWristLeft();
+	void SetWristLeft(Vector3 *value);
+
+	Vector3* GetWristRight();
+	void SetWristRight(Vector3 *value);
+

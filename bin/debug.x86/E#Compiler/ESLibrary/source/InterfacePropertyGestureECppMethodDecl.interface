@@ -1,0 +1,24 @@
+	float GetConfidence( );
+	void SetConfidence(float value);
+
+
+	int GetDetected( );
+	void SetDetected(int value);
+
+
+	string GetGestureName( );
+	void SetGestureName(const char * value);
+
+
+	int GetGesturePerson( );
+	void SetGesturePerson(int value);
+
+
+	int GetGestureType( );
+	void SetGestureType(int value);
+
+
+	int GetPersonNumber( );
+	void SetPersonNumber(int value);
+
+

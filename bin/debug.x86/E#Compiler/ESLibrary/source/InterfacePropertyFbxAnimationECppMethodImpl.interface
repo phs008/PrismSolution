@@ -1,0 +1,54 @@
+
+string PropertyFbxAnimation::GetActiveAnimation( )
+{
+	if (ENG_CAPI_PropertyFbxAnimation_GetActiveAnimation)
+	{
+		return ENG_CAPI_PropertyFbxAnimation_GetActiveAnimation(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyFbxAnimation::SetActiveAnimation(  const char * value)
+{
+	if (ENG_CAPI_PropertyFbxAnimation_SetActiveAnimation)
+	{
+		ENG_CAPI_PropertyFbxAnimation_SetActiveAnimation(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFbxAnimation_SetActiveAnimation is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+float PropertyFbxAnimation::GetAnimationSpeed( )
+{
+	if (ENG_CAPI_PropertyFbxAnimation_GetAnimationSpeed)
+	{
+		return ENG_CAPI_PropertyFbxAnimation_GetAnimationSpeed(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyFbxAnimation::SetAnimationSpeed(  float value)
+{
+	if (ENG_CAPI_PropertyFbxAnimation_SetAnimationSpeed)
+	{
+		ENG_CAPI_PropertyFbxAnimation_SetAnimationSpeed(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFbxAnimation_SetAnimationSpeed is not Linked", 0, 0.0f );
+	}
+}
+
+
+

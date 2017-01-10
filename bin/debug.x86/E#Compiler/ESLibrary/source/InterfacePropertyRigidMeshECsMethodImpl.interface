@@ -1,0 +1,10 @@
+	public string GetMaterial( );
+	public void SetMaterial(string value);
+
+
+
+	public string GetMesh( );
+	public void SetMesh(string value);
+
+
+

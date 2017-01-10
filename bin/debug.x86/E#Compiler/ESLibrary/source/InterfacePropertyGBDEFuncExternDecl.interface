@@ -1,0 +1,8 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyGBD_SetGestureGBD)(eng_obj_ptr obj,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyGBD_GetGestureGBD)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyGBD_SetUseGBD)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyGBD_GetUseGBD)(eng_obj_ptr obj );
+
+

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F4F90EDC-DA03-489A-B64A-4A55CB211D08}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>VRCATWrapper</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="FrontlinePropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="FrontlinePropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)..\..\bin\debug.x86\</OutDir>
+    <IntDir>
+    </IntDir>
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\bin\release.x86\</OutDir>
+    <IntDir>$(SolutionDir)..\..\bin\release.x86\obj\</IntDir>
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_WIN32;_WINDOWS;WIN32PC;_WIN32PC;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_LUA_INTERFACE;_DX;_SCRIPT_INTERFACE;_NO_INHERITANCE_PATTERN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>Stdafx.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CodeBaseD.lib;ComponentBaseD.lib;PlatformD.lib;TexImageD.lib;LuaScriptBaseD.lib;FbxImporterD.lib;VRDIClientLibD.lib;VRDILibD.lib;EGUID.lib;Fbx\lib\vs2015\x86\debug\libfbxsdk-md.lib;dsound.lib;dinput8.lib;d3dx9.lib;d3d9.lib;d3d11.lib;d3dx11.lib;D3DCompiler.lib;d3dxof.lib;dxguid.lib;winmm.lib;comctl32.lib;strmiids.lib;comsuppw.lib;Imm32.lib;ws2_32.lib;Iphlpapi.lib;Netapi32.lib;dxerr.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_WIN32;_WINDOWS;WIN32PC;_WIN32PC;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_LUA_INTERFACE;_DX;_SCRIPT_INTERFACE;_NO_INHERITANCE_PATTERN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CodeBase.lib;ComponentBase.lib;Platform.lib;TexImage.lib;LuaScriptBase.lib;FbxImporter.lib;VRDIClientLib.lib;VRDILib.lib;EGUI.lib;Fbx\lib\vs2015\x86\release\libfbxsdk-md.lib;dsound.lib;dinput8.lib;dxerr.lib;d3dx9.lib;d3d9.lib;d3d11.lib;d3dx11.lib;D3DCompiler.lib;d3dxof.lib;dxguid.lib;winmm.lib;comctl32.lib;strmiids.lib;comsuppw.lib;Imm32.lib;ws2_32.lib;Iphlpapi.lib;Netapi32.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MarshalHelper.h" />
+    <ClInclude Include="MCamera.h" />
+    <ClInclude Include="MCameraComponent.h" />
+    <ClInclude Include="MColor.h" />
+    <ClInclude Include="MCommonHeader.h" />
+    <ClInclude Include="MContext.h" />
+    <ClInclude Include="MContainer.h" />
+    <ClInclude Include="MContainerComponent.h" />
+    <ClInclude Include="MContainerComponentEnum.h" />
+    <ClInclude Include="MCube.h" />
+    <ClInclude Include="MCubeComponent.h" />
+    <ClInclude Include="MEngineConfig.h" />
+    <ClInclude Include="MFbx.h" />
+    <ClInclude Include="MFbxComponent.h" />
+    <ClInclude Include="MGizmoHandler.h" />
+    <ClInclude Include="MGuiButton.h" />
+    <ClInclude Include="MGUITexture.h" />
+    <ClInclude Include="MKinectImageComponent.h" />
+    <ClInclude Include="MKinectSkeletonComponent.h" />
+    <ClInclude Include="MLight.h" />
+    <ClInclude Include="MLightComponent.h" />
+    <ClInclude Include="MLogger_old.h" />
+    <ClInclude Include="MLogHandler.h" />
+    <ClInclude Include="MMaterial.h" />
+    <ClInclude Include="MMemFile.h" />
+    <ClInclude Include="MOceanComponent.h" />
+    <ClInclude Include="MProperty.h" />
+    <ClInclude Include="MPropertyGroup.h" />
+    <ClInclude Include="MQuaternion.h" />
+    <ClInclude Include="MRange.h" />
+    <ClInclude Include="MRenderWindow.h" />
+    <ClInclude Include="MResourceAnimation.h" />
+    <ClInclude Include="MResourceMaterial.h" />
+    <ClInclude Include="MResTexture.h" />
+    <ClInclude Include="MRigidMeshComponent.h" />
+    <ClInclude Include="MRuntimeComponent.h" />
+    <ClInclude Include="MScriptComponent.h" />
+    <ClInclude Include="MSoundComponent.h" />
+    <ClInclude Include="MSphere.h" />
+    <ClInclude Include="MTransformGroupComponent.h" />
+    <ClInclude Include="MUIComponent.h" />
+    <ClInclude Include="MUIImage.h" />
+    <ClInclude Include="MUITest.h" />
+    <ClInclude Include="MVector2.h" />
+    <ClInclude Include="MVector3.h" />
+    <ClInclude Include="MVector4.h" />
+    <ClInclude Include="MWorld.h" />
+    <ClInclude Include="MWorldComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="MarshalHelper.cpp" />
+    <ClCompile Include="MCamera.cpp" />
+    <ClCompile Include="MCameraComponent.cpp" />
+    <ClCompile Include="MColor.cpp" />
+    <ClCompile Include="MContext.cpp" />
+    <ClCompile Include="MContainer.cpp" />
+    <ClCompile Include="MContainerComponent.cpp" />
+    <ClCompile Include="MCube.cpp" />
+    <ClCompile Include="MCubeComponent.cpp" />
+    <ClCompile Include="MEngineConfig.cpp" />
+    <ClCompile Include="MFbx.cpp" />
+    <ClCompile Include="MFbxComponent.cpp" />
+    <ClCompile Include="MGizmoHandler.cpp" />
+    <ClCompile Include="MGuiButton.cpp" />
+    <ClCompile Include="MGUITexture.cpp" />
+    <ClCompile Include="MKinectImageComponent.cpp" />
+    <ClCompile Include="MKinectSkeletonComponent.cpp" />
+    <ClCompile Include="MLight.cpp" />
+    <ClCompile Include="MLightComponent.cpp" />
+    <ClCompile Include="MLogger_old.cpp" />
+    <ClCompile Include="MLogHandler.cpp" />
+    <ClCompile Include="MMaterial.cpp" />
+    <ClCompile Include="MMemFile.cpp" />
+    <ClCompile Include="MOceanComponent.cpp" />
+    <ClCompile Include="MProperty.cpp" />
+    <ClCompile Include="MPropertyGroup.cpp" />
+    <ClCompile Include="MQuaternion.cpp" />
+    <ClCompile Include="MRange.cpp" />
+    <ClCompile Include="MRenderWindow.cpp" />
+    <ClCompile Include="MResourceAnimation.cpp" />
+    <ClCompile Include="MResourceMaterial.cpp" />
+    <ClCompile Include="MResTexture.cpp" />
+    <ClCompile Include="MRigidMeshComponent.cpp" />
+    <ClCompile Include="MRuntimeComponent.cpp" />
+    <ClCompile Include="MScriptComponent.cpp" />
+    <ClCompile Include="MSoundComponent.cpp" />
+    <ClCompile Include="MSphere.cpp" />
+    <ClCompile Include="MTransformGroupComponent.cpp" />
+    <ClCompile Include="MUIComponent.cpp" />
+    <ClCompile Include="MUIImage.cpp" />
+    <ClCompile Include="MUITest.cpp" />
+    <ClCompile Include="MVector2.cpp" />
+    <ClCompile Include="MVector3.cpp" />
+    <ClCompile Include="MVector4.cpp" />
+    <ClCompile Include="MWorld.cpp" />
+    <ClCompile Include="MWorldComponent.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

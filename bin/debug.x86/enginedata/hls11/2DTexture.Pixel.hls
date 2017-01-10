@@ -1,0 +1,67 @@
+#line 1 "enginedata\hls11\2DTexture.Pixel.hlp"
+
+cbuffer SHADER_EXTERN
+{
+	float4 AlphaTest;
+	float4 Opacity;
+	float4 AmbientColor; 
+	float4 AmbientColorRate;
+};
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+};
+
+
+
+
+
+// lookup tag for dx9 code  
+/*
+아래 slot number가 dx11에서 bug 있으므로  아래 comment된 코드와 병용해야 함
+
+sampler Texture1 : register(s0);
+*/
+
+Texture2D Texture1 : register(t0);
+SamplerState Texture1Sampler : register(s0);
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	// test 
+	//return float4(1.0, 0.0, 0.0, 1.0);
+
+	float4 color;
+	
+
+	if (AmbientColorRate.x < 1.0)
+	{
+		color = Texture1.Sample(Texture1Sampler, Out.UV.xy);
+		
+		color.xyz = color.xyz * (1.0-AmbientColorRate) + AmbientColor.xyz * AmbientColorRate;
+		color.w = color.w * Opacity.x;
+	}
+	else
+	{	
+		color = AmbientColor;
+		color.w = color.w * Opacity.x;
+	}
+
+	if (color.w < AlphaTest.x)
+	{
+		discard;
+	}
+
+	return color;
+	
+}
+
+
+
+

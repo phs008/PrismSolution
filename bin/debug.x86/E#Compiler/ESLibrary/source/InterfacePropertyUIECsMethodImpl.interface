@@ -1,0 +1,15 @@
+	public Vector2 GetPivot( );
+	public void SetPivot(Vector2 value);
+
+
+
+	public int GetPixelPerfect( );
+	public void SetPixelPerfect(int value);
+
+
+
+	public Vector2 GetSize( );
+	public void SetSize(Vector2 value);
+
+
+

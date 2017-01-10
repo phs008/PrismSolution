@@ -1,0 +1,54 @@
+
+string PropertyFbxNodeMesh::GetFbxMeshFile( )
+{
+	if (ENG_CAPI_PropertyFbxNodeMesh_GetFbxMeshFile)
+	{
+		return ENG_CAPI_PropertyFbxNodeMesh_GetFbxMeshFile(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyFbxNodeMesh::SetFbxMeshFile(  const char * value)
+{
+	if (ENG_CAPI_PropertyFbxNodeMesh_SetFbxMeshFile)
+	{
+		ENG_CAPI_PropertyFbxNodeMesh_SetFbxMeshFile(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFbxNodeMesh_SetFbxMeshFile is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyFbxNodeMesh::GetIndependentMaterial( )
+{
+	if (ENG_CAPI_PropertyFbxNodeMesh_GetIndependentMaterial)
+	{
+		return ENG_CAPI_PropertyFbxNodeMesh_GetIndependentMaterial(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyFbxNodeMesh::SetIndependentMaterial(  const char * value)
+{
+	if (ENG_CAPI_PropertyFbxNodeMesh_SetIndependentMaterial)
+	{
+		ENG_CAPI_PropertyFbxNodeMesh_SetIndependentMaterial(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFbxNodeMesh_SetIndependentMaterial is not Linked", 0, 0.0f );
+	}
+}
+
+
+

@@ -1,0 +1,162 @@
+
+float PropertyGesture::GetConfidence( )
+{
+	if (ENG_CAPI_PropertyGesture_GetConfidence)
+	{
+		return ENG_CAPI_PropertyGesture_GetConfidence(Owner->id );
+	}
+	else
+		return 0.0f;
+}
+
+
+void PropertyGesture::SetConfidence(  float value)
+{
+	if (ENG_CAPI_PropertyGesture_SetConfidence)
+	{
+		ENG_CAPI_PropertyGesture_SetConfidence(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGesture_SetConfidence is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyGesture::GetDetected( )
+{
+	if (ENG_CAPI_PropertyGesture_GetDetected)
+	{
+		return ENG_CAPI_PropertyGesture_GetDetected(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyGesture::SetDetected(  int value)
+{
+	if (ENG_CAPI_PropertyGesture_SetDetected)
+	{
+		ENG_CAPI_PropertyGesture_SetDetected(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGesture_SetDetected is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+string PropertyGesture::GetGestureName( )
+{
+	if (ENG_CAPI_PropertyGesture_GetGestureName)
+	{
+		return ENG_CAPI_PropertyGesture_GetGestureName(Owner->id );
+	}
+	else
+		return "";
+}
+
+
+void PropertyGesture::SetGestureName(  const char * value)
+{
+	if (ENG_CAPI_PropertyGesture_SetGestureName)
+	{
+		ENG_CAPI_PropertyGesture_SetGestureName(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGesture_SetGestureName is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyGesture::GetGesturePerson( )
+{
+	if (ENG_CAPI_PropertyGesture_GetGesturePerson)
+	{
+		return ENG_CAPI_PropertyGesture_GetGesturePerson(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyGesture::SetGesturePerson(  int value)
+{
+	if (ENG_CAPI_PropertyGesture_SetGesturePerson)
+	{
+		ENG_CAPI_PropertyGesture_SetGesturePerson(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGesture_SetGesturePerson is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyGesture::GetGestureType( )
+{
+	if (ENG_CAPI_PropertyGesture_GetGestureType)
+	{
+		return ENG_CAPI_PropertyGesture_GetGestureType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyGesture::SetGestureType(  int value)
+{
+	if (ENG_CAPI_PropertyGesture_SetGestureType)
+	{
+		ENG_CAPI_PropertyGesture_SetGestureType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGesture_SetGestureType is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+int PropertyGesture::GetPersonNumber( )
+{
+	if (ENG_CAPI_PropertyGesture_GetPersonNumber)
+	{
+		return ENG_CAPI_PropertyGesture_GetPersonNumber(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyGesture::SetPersonNumber(  int value)
+{
+	if (ENG_CAPI_PropertyGesture_SetPersonNumber)
+	{
+		ENG_CAPI_PropertyGesture_SetPersonNumber(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyGesture_SetPersonNumber is not Linked", 0, 0.0f );
+	}
+}
+
+
+

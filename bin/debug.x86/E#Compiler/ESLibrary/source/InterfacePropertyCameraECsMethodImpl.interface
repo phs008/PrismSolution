@@ -1,0 +1,125 @@
+	public float GetAspectRatio( );
+	public void SetAspectRatio(float value);
+
+
+
+	public Color GetBackColor( );
+	public void SetBackColor(Color value);
+
+
+
+	public string GetBackgroundTextureFile( );
+	public void SetBackgroundTextureFile(string value);
+
+
+
+	public int GetBackgroundType( );
+	public void SetBackgroundType(int value);
+
+
+
+	public int GetClearColor( );
+	public void SetClearColor(int value);
+
+
+
+	public int GetClearDepth( );
+	public void SetClearDepth(int value);
+
+
+
+	public float GetDepthOfField( );
+	public void SetDepthOfField(float value);
+
+
+
+	public int GetDrawGrid( );
+	public void SetDrawGrid(int value);
+
+
+
+	public int GetEnableCulling( );
+	public void SetEnableCulling(int value);
+
+
+
+	public float GetFarViewPlane( );
+	public void SetFarViewPlane(float value);
+
+
+
+	public float GetFarViewPlaneSky( );
+	public void SetFarViewPlaneSky(float value);
+
+
+
+	public float GetFocalLength( );
+	public void SetFocalLength(float value);
+
+
+
+	public float GetFocusingDistance( );
+	public void SetFocusingDistance(float value);
+
+
+
+	public float GetGridAlpha( );
+	public void SetGridAlpha(float value);
+
+
+
+	public float GetGridInterval( );
+	public void SetGridInterval(float value);
+
+
+
+	public int GetLayerFilter( );
+	public void SetLayerFilter(int value);
+
+
+
+	public float GetNearViewPlane( );
+	public void SetNearViewPlane(float value);
+
+
+
+	public Vector2 GetOffset( );
+	public void SetOffset(Vector2 value);
+
+
+
+	public float GetOrthographicViewSize( );
+	public void SetOrthographicViewSize(float value);
+
+
+
+	public float GetRenderOrder( );
+	public void SetRenderOrder(float value);
+
+
+
+	public int GetStereoCamera( );
+	public void SetStereoCamera(int value);
+
+
+
+	public float GetStereoEyeOffset( );
+	public void SetStereoEyeOffset(float value);
+
+
+
+	public Vector2 GetViewPortCenter( );
+	public void SetViewPortCenter(Vector2 value);
+
+
+
+	public Vector2 GetViewPortSize( );
+	public void SetViewPortSize(Vector2 value);
+
+
+
+	public int GetWireFrame( );
+	public void SetWireFrame(int value);
+
+
+

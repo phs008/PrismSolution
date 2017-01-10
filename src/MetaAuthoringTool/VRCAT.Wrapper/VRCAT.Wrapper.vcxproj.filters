@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="MarshalHelper.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="MColor.h">
+      <Filter>EngineProxy\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MVector2.h">
+      <Filter>EngineProxy\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MVector3.h">
+      <Filter>EngineProxy\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MVector4.h">
+      <Filter>EngineProxy\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MProperty.h">
+      <Filter>EngineProxy\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="MPropertyGroup.h">
+      <Filter>EngineProxy\Property</Filter>
+    </ClInclude>
+    <ClInclude Include="MWorld.h">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MRenderWindow.h">
+      <Filter>EngineProxy\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="MCamera.h">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MLight.h">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MQuaternion.h">
+      <Filter>EngineProxy\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MFbx.h">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MCube.h">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClInclude>
+    <ClInclude Include="MMaterial.h">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClInclude>
+    <ClInclude Include="MResourceMaterial.h">
+      <Filter>EngineProxy\ResourcePool</Filter>
+    </ClInclude>
+    <ClInclude Include="MResourceAnimation.h">
+      <Filter>EngineProxy\ResourcePool</Filter>
+    </ClInclude>
+    <ClInclude Include="MContainerComponentEnum.h">
+      <Filter>EngineProxy\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="MContainerComponent.h">
+      <Filter>EngineProxy\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="MContainer.h">
+      <Filter>EngineProxy\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="MWorldComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MCameraComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MFbxComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MTransformGroupComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MScriptComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MLightComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MContext.h">
+      <Filter>EngineProxy\Context</Filter>
+    </ClInclude>
+    <ClInclude Include="MCommonHeader.h" />
+    <ClInclude Include="MRange.h">
+      <Filter>EngineProxy\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MCubeComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MRigidMeshComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MSphere.h">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClInclude>
+    <ClInclude Include="MUIComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MUIImage.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MUITest.h">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClInclude>
+    <ClInclude Include="MKinectSkeletonComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MKinectImageComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MEngineConfig.h">
+      <Filter>EngineProxy\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="MMemFile.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="MSoundComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MOceanComponent.h">
+      <Filter>EngineProxy\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MRuntimeComponent.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="MResTexture.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="MLogger_old.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="MLogHandler.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="MGizmoHandler.h">
+      <Filter>EngineProxy\Gizmo</Filter>
+    </ClInclude>
+    <ClInclude Include="MGuiButton.h">
+      <Filter>EngineProxy\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MGUITexture.h">
+      <Filter>EngineProxy\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="MarshalHelper.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="MColor.cpp">
+      <Filter>EngineProxy\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MVector2.cpp">
+      <Filter>EngineProxy\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MVector3.cpp">
+      <Filter>EngineProxy\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MVector4.cpp">
+      <Filter>EngineProxy\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MProperty.cpp">
+      <Filter>EngineProxy\Property</Filter>
+    </ClCompile>
+    <ClCompile Include="MPropertyGroup.cpp">
+      <Filter>EngineProxy\Property</Filter>
+    </ClCompile>
+    <ClCompile Include="MWorld.cpp">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MRenderWindow.cpp">
+      <Filter>EngineProxy\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="MCamera.cpp">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MLight.cpp">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MQuaternion.cpp">
+      <Filter>EngineProxy\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MFbx.cpp">
+      <Filter>EngineProxy\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MCube.cpp">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClCompile>
+    <ClCompile Include="MMaterial.cpp">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClCompile>
+    <ClCompile Include="MResourceMaterial.cpp">
+      <Filter>EngineProxy\ResourcePool</Filter>
+    </ClCompile>
+    <ClCompile Include="MResourceAnimation.cpp">
+      <Filter>EngineProxy\ResourcePool</Filter>
+    </ClCompile>
+    <ClCompile Include="MContainerComponent.cpp">
+      <Filter>EngineProxy\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="MContainer.cpp">
+      <Filter>EngineProxy\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="MWorldComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MCameraComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MFbxComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MTransformGroupComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MScriptComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MLightComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MContext.cpp">
+      <Filter>EngineProxy\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="MRange.cpp">
+      <Filter>EngineProxy\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="MCubeComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MRigidMeshComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MSphere.cpp">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClCompile>
+    <ClCompile Include="MUIComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MUIImage.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MUITest.cpp">
+      <Filter>EngineProxy\EmptyModel</Filter>
+    </ClCompile>
+    <ClCompile Include="MKinectSkeletonComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MKinectImageComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MEngineConfig.cpp">
+      <Filter>EngineProxy\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="MMemFile.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="MSoundComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MOceanComponent.cpp">
+      <Filter>EngineProxy\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MRuntimeComponent.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="MResTexture.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="MLogger_old.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="MLogHandler.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="MGizmoHandler.cpp">
+      <Filter>EngineProxy\Gizmo</Filter>
+    </ClCompile>
+    <ClCompile Include="MGuiButton.cpp">
+      <Filter>EngineProxy\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MGUITexture.cpp">
+      <Filter>EngineProxy\GUI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Util">
+      <UniqueIdentifier>{8d82d646-791c-41da-8642-5ee2b4ec650b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy">
+      <UniqueIdentifier>{344f1caa-47ff-4f92-830d-fc37143894c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Math">
+      <UniqueIdentifier>{db18cc92-9892-4238-a42b-d715022f6ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Renderer">
+      <UniqueIdentifier>{b7cf1fe9-0cf6-4f89-9b73-0a9165f4e6cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Scene">
+      <UniqueIdentifier>{27b0d29c-a678-402a-8725-b3df6bdbb405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\EmptyModel">
+      <UniqueIdentifier>{25221fc6-807a-491a-9eba-8dfbcb3ded0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\ResourcePool">
+      <UniqueIdentifier>{b59f3b78-6d8b-4822-992c-b9c31272c374}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Gizmo">
+      <UniqueIdentifier>{54dc7a05-a291-4c6e-b628-53fb4576e463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Container">
+      <UniqueIdentifier>{68d3c263-c0a9-467f-9306-c12235551867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Property">
+      <UniqueIdentifier>{52b8fa1f-4360-45e8-8b17-09869399b706}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Component">
+      <UniqueIdentifier>{99d896b9-ca7b-4b6c-99d8-628bfae2a351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Context">
+      <UniqueIdentifier>{9c59ec73-c65e-4911-bb99-36870312db3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\Config">
+      <UniqueIdentifier>{814573b4-3135-48e2-8400-c92d42ce9547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineProxy\GUI">
+      <UniqueIdentifier>{96f24a94-c868-43bf-ac25-6e0e136de7dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

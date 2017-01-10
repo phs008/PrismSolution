@@ -1,0 +1,5 @@
+
+void (*ENG_CAPI_PropertyVRDevice_SetDeviceID)(eng_obj_ptr obj,  const char * value) = NULL;
+const char * (*ENG_CAPI_PropertyVRDevice_GetDeviceID)(eng_obj_ptr obj  ) = NULL;
+
+

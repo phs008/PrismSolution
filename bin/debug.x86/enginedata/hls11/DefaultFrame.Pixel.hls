@@ -1,0 +1,38 @@
+
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+};
+
+
+
+
+
+
+sampler TextureFrameColor : register(s0);
+
+//sampler TextureFrameDepth : register(s1);
+
+
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	float4 color;
+
+	color = tex2D(TextureFrameColor, Out.UV.xy);
+	
+	color.w = 1.0;
+
+	return color;
+}
+
+
+

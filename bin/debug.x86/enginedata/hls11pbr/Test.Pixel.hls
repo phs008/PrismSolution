@@ -1,0 +1,804 @@
+#line 1 "enginedata\hls11\Test.Pixel.hlp"
+
+//include "Common.Fragment.inc"
+
+
+
+cbuffer SHADER_EXTERN
+{
+	int DrawPhase;
+	float4 UseShadowMap;
+	float4 ClipPlane;
+
+	float4x4 LightAmbient;
+	float4x4 LightSpecular;
+	float4x4 LightDiffuse;
+
+	float4 MaterialAmbient;
+	float4 MaterialSpecular;
+	float4 MaterialDiffuse;
+
+	float4 AmbientColor;
+	float4 AmbientColorRate;
+
+	float4 Glossiness;
+
+	float4 CameraPos;
+
+	float4x4 LightFactor;
+	
+	float4x4 LightFactorSpotDirection;
+
+	float4x4 LightFactorSpotFactor;
+
+	float4 Opacity;
+
+	float4 FogFactor;
+	float4 FogColor;
+
+	float4 SunLight;	
+	
+	float4 ShadowMapAlias;
+	
+	float4x4 ObjectWorld;
+	float4 NormalMapDirection;
+};
+
+
+
+
+// 출력정점 형식
+
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float3 UV : TEXCOORD0;  // uv.z 는 depth 로 사용 한다 !!
+	float4 InPosition : TEXCOORD1;
+	float4 ViewPosition : TEXCOORD2;  
+	float4 ShadowPosition : TEXCOORD3;
+	float4 CameraPosition : TEXCOORD4;
+	float3 Normal : NORMAL0; 
+    float3 Tangent : NORMAL1;
+    float3 Binormal : NORMAL2;
+	
+};
+
+
+
+
+
+// lookup tag for dx9 code  
+/*
+아래 slot number가 dx11에서 bug 있으므로  아래 comment된 코드와 병용해야 함
+
+sampler Texture1 : register(s0);
+sampler Texture2 : register(s1);
+sampler Texture3 : register(s2);
+sampler Texture4 : register(s3);
+sampler TextureShadowMap : register(s4); // must assign to textureNo 3 
+sampler TextureEnv : register(s5); // must assign to textureNo 3 
+sampler TextureNormal : register(s6); // must assign to textureNo 3 
+sampler TextureSpecular : register(s7); // must assign to textureNo 3 
+*/
+
+// 5.1EX
+Texture2D Texture1 : register(t0);
+SamplerState Texture1Sampler : register(s0);
+
+Texture2D Texture2 : register(t1);
+SamplerState Texture2Sampler : register(s1);
+
+Texture2D Texture3 : register(t2);
+SamplerState Texture3Sampler : register(s2);
+
+Texture2D Texture4 : register(t3);
+SamplerState Texture4Sampler : register(s3);
+
+
+Texture2D TextureShadowMap : register(t4);
+SamplerState TextureShadowMapSampler : register(s4);
+
+Texture2D TextureEnv : register(t5);
+SamplerState TextureEnvSampler : register(s5);
+
+Texture2D TextureNormal : register(t6);
+SamplerState TextureNormalSampler : register(s6);
+
+Texture2D TextureSpecular : register(t7);
+SamplerState TextureSpecularSampler : register(s7);
+
+
+
+
+float3x3 SurfaceSpace; 
+float3x3 SurfaceSpaceInverse; 
+
+
+int UseSurfaceSpace = 0;
+
+
+//y = diff / (x*angle+1) * (x*angle+1) ;
+
+
+const float MinDistance = 0.5;
+float Falloff_0(float lightdist)
+{
+	return MinDistance / lightdist;
+}
+
+float Falloff_1(float lightdist)
+{
+	return (MinDistance*MinDistance) / (lightdist*lightdist);
+}
+
+float Falloff_2(float lightdist)
+{
+	return  1.0/((lightdist+1.0)*(lightdist+1.0));
+}
+
+float Falloff_3(float lightdist, float falloff)
+{
+	return  1.0/((lightdist*falloff+1.0)*(lightdist*falloff+1.0));
+}
+
+
+float2 ConvCubeCoord(float3 r)
+{
+	r = normalize(r);
+	float dirx = abs(r.x);
+	float diry = abs(r.y);
+	float dirz = abs(r.z);
+	
+	float2 uv = float2(0.0, 0.0);
+	if (dirx >= diry && dirx >= dirz)
+	{
+		if (r.x >= 0.0)
+		{
+			uv.x = r.z / r.x / 8.0 + 1.0/8.0;
+			uv.y = r.y / r.x / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = r.z / r.x / 8.0 + 5.0/8.0;
+			uv.y = - r.y / r.x / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (dirz >= diry && dirz >= dirx)
+	{
+		if (r.z >= 0.0)
+		{
+			uv.x = - r.x / r.z / 8.0 + 3.0/8.0;
+			uv.y = r.y / r.z / 6.0 + 3.0/6.0;
+		}
+		else
+		{
+			uv.x = - r.x / r.z / 8.0 + 7.0/8.0;
+			uv.y = - r.y / r.z / 6.0 + 3.0/6.0;
+		}
+	}
+	else
+	if (diry >= dirz && diry >= dirx)
+	{
+		if (r.y >= 0.0)
+		{
+			uv.x = - r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 5.0/6.0;
+		}
+		else
+		{
+			uv.x = r.x / r.y / 8.0 + 3.0/8.0;
+			uv.y = - r.z / r.y / 6.0 + 1.0/6.0;
+		}
+	}
+
+	uv.y = 1.0 - uv.y;
+	return uv;
+}
+
+
+
+float4 HighLight(float3 pos, float3 normal, float3 cameraDir, int index, float4 specularmap)
+{
+	float3 lightdir;
+	float falloff = 1.0;
+	float spot = 1.0;
+	
+
+	if (LightFactor[index].w == 1.0)
+	{
+		lightdir = (float3)(LightFactor[index]);
+	}
+	else  // 2.0
+	if (LightFactor[index].w == 2.0)
+	{
+		float3 lightpos = (float3)(LightFactor[index]);
+		lightdir = pos - lightpos;
+		float lightdist = length(lightdir);
+		
+		falloff = Falloff_2(lightdist);
+			
+		lightdir = normalize(lightdir);
+	}
+	else  // 3.0
+	{
+		float3 lightpos = (float3)(LightFactor[index]);
+		lightdir = pos - lightpos;
+		float3 pixdir = -(float3)(LightFactorSpotDirection[index]);
+		float lightdist = length(lightdir);
+		lightdir = normalize(lightdir);
+		pixdir = normalize(pixdir);
+		
+		float angle_in = LightFactorSpotFactor[index].x;
+		float angle_in_double =  angle_in * angle_in;
+		float angle_out = LightFactorSpotFactor[index].y;
+		float angle_out_double =  angle_out * angle_out;
+		falloff = Falloff_3(lightdist, LightFactorSpotFactor[index].z) ;
+		
+		float angle_light = dot(pixdir, lightdir);
+		float angle_light_double = 1.0 - angle_light * angle_light;
+		if (angle_light_double >= angle_out_double)
+			spot = 0.0;
+		else
+		if (angle_light_double < angle_out_double && angle_light_double > angle_in_double)
+		{
+			spot = (angle_out - sqrt(angle_light_double)) / (angle_out - angle_in);
+		}
+	}
+	
+	
+	float normalDiffuse = dot(-lightdir, normal);
+	if (normalDiffuse < 0.0)
+		normalDiffuse = 0.0;
+
+	float4 diffuse = spot * normalDiffuse * LightDiffuse[index] * MaterialDiffuse.x;
+
+	float highlighter = (dot(reflect(-lightdir, normal), cameraDir));
+	if (highlighter < 0.0)
+		highlighter = 0.0;
+	float4 highlight = highlighter * LightSpecular[index] * specularmap * MaterialSpecular.x + diffuse;  // LightAmbient[index] +  one time add
+
+	return highlight * falloff;
+}
+
+
+
+
+
+
+float4 HighLightSpace(float3 pos, float3 ls_normal, float3 cameraDir, int index, float4 specularmap)
+{
+	float3 lightdir;
+	float falloff = 1.0;
+	float spot = 1.0;
+	
+	if (LightFactor[index].w == 1.0)
+	{
+		lightdir = (float3)(LightFactor[index]);
+		
+		lightdir = normalize(mul( SurfaceSpace, lightdir));  
+	}
+	else  // 2.0
+	if (LightFactor[index].w == 2.0)
+	{
+		float3 lightpos = (float3)(LightFactor[index]);
+		lightdir = pos - lightpos;
+		
+		float lightdist = length(lightdir);
+		
+		
+		falloff = Falloff_2(lightdist);
+			
+		lightdir = normalize(mul( SurfaceSpace, lightdir));  
+	}
+	else  // 3.0
+	{
+		float3 lightpos = (float3)(LightFactor[index].xyz);
+		lightdir = pos - lightpos; 
+		float3 pixdir = -(float3)(LightFactorSpotDirection[index]);
+		float lightdist = length(lightdir);
+
+		lightdir = normalize(mul( SurfaceSpace, lightdir));  
+
+		pixdir = normalize(mul( SurfaceSpace, pixdir));  
+		
+		float angle_in = LightFactorSpotFactor[index].x;
+		float angle_in_double =  angle_in * angle_in;
+		float angle_out = LightFactorSpotFactor[index].y;
+		float angle_out_double =  angle_out * angle_out;
+		falloff = Falloff_3(lightdist, LightFactorSpotFactor[index].z) ;
+		
+		float angle_light = dot(pixdir, lightdir);
+		float angle_light_double = 1.0 - angle_light * angle_light;
+		if (angle_light_double >= angle_out_double)
+			spot = 0.0;
+		else
+		if (angle_light_double < angle_out_double && angle_light_double > angle_in_double)
+		{
+			spot = (angle_out - sqrt(angle_light_double)) / (angle_out - angle_in);
+		}
+	}
+	
+	float normalDiffuse = dot(-lightdir, ls_normal);
+	if (normalDiffuse < 0.0)
+		normalDiffuse = 0.0;
+	
+	
+	float4 diffuse = spot * normalDiffuse * LightDiffuse[index] * MaterialDiffuse.x;
+
+	float highlighter = (dot(reflect(-lightdir, ls_normal), cameraDir));
+	if (highlighter < 0.0)
+		highlighter = 0.0;
+	float4 highlight = highlighter * LightSpecular[index] * specularmap * MaterialSpecular.x  * specularmap + diffuse;  // LightAmbient[index] +  one time add
+
+
+	return highlight * falloff;
+}
+
+
+
+
+
+
+
+float UnpackDepth (float4 colour)
+{
+    const float4 bitShifts = float4(1.0,
+									1.0 / 255.0,
+									1.0 / (255.0 * 255.0),
+									1.0 / (255.0 * 255.0 * 255.0));
+    return dot(colour, bitShifts);
+}
+
+
+
+float4 PackDepth (float depth)
+{
+    const float4 bias = float4(1.0 / 255.0,
+				                1.0 / 255.0,
+				                1.0 / 255.0,
+				                0.0);
+    float r = depth;
+    float g = frac(r * 255.0);
+    float b = frac(g * 255.0);
+    float a = frac(b * 255.0);
+    float4 colour = float4(r, g, b, a);
+    
+    return colour - (colour.yzww * bias);
+}
+
+
+
+/*
+GLSL CODE
+
+float UnpackDepth (float4 colour)
+{
+    const float4 bitShifts = float4(1.0,
+                    1.0 / 255.0,
+                    1.0 / (255.0 * 255.0),
+                    1.0 / (255.0 * 255.0 * 255.0));
+    return dot(colour, bitShifts);
+}
+
+
+float4 PackDepth (float depth)
+{
+    const float4 bias = float4(1.0 / 255.0,
+                1.0 / 255.0,
+                1.0 / 255.0,
+                0.0);
+
+    float r = depth;
+    float g = fract(r * 255.0);
+    float b = fract(g * 255.0);
+    float a = fract(b * 255.0);
+    float4 colour = float4(r, g, b, a);
+    
+    return colour - (colour.yzww * bias);
+}
+*/
+
+
+float4 PhaseShadowMapDepth(float4 shadowPosition, float2 uv)
+{
+	float depth = shadowPosition.z / shadowPosition.w;   // z is not normalized
+	return PackDepth(depth);  //float4(depth, depth, depth, 1.0); old
+}
+
+
+
+
+float4 GetAmbientTextureColor(float2 uv)
+{
+	float4 decal;
+
+	if (AmbientColorRate.x < 1.0)
+	{
+		decal = Texture1.Sample(Texture1Sampler, uv);
+		//decal = float4(1.0,0.0,0.0,1.0); test
+		decal.xyz = decal.xyz * (1.0-AmbientColorRate.x) + AmbientColor.xyz * AmbientColorRate.x;
+	}
+	else
+		decal = AmbientColor;
+		
+	return decal;
+}
+	
+
+
+float4 CalcShadowLevel(float4 shadowPosition, float3 normal, float3 light)
+{
+	float4 shadowLevel = float4(1.0, 1.0, 1.0, 1.0);
+	
+	float4 minShadow; 
+	minShadow.xyz = MaterialAmbient.x * LightAmbient[0].xyz; //ShadowDarkness; //LightAmbient[0];
+	minShadow.w = 0.0;
+	
+	
+	if (UseShadowMap.x > 0.9 && UseShadowMap.x < 1.1)  // shadow mapping lispm render
+	{
+		float facing = dot(normal, light);
+		
+		if (facing < -0.2)
+		{
+			float2 shadowuv ;
+			shadowuv.x = shadowPosition.x / shadowPosition.w / 2.0 + 0.5;
+			shadowuv.y = -shadowPosition.y / shadowPosition.w / 2.0 + 0.5;
+			
+			if (shadowuv.x >= 0.0 && shadowuv.x <= 1.0 && shadowuv.y >= 0.0 && shadowuv.y <= 1.0 )
+			{
+				float4 decalShadow;
+				decalShadow = TextureShadowMap.Sample(TextureShadowMapSampler, shadowuv);
+				
+				float depth = shadowPosition.z  / shadowPosition.w; // z is not normalized
+				depth -= ShadowMapAlias.x * 2.0; //0.01; 
+				
+				if (depth >= 0.0 && shadowPosition.z >= 0.0)
+				{
+
+					float decalShadowMap = UnpackDepth(decalShadow);  // float decalShadowMap = decalShadow.x;
+					float shadowCalc = depth;
+					
+					if (decalShadowMap < shadowCalc)
+					{
+						shadowLevel =  minShadow; // soft (shadowCalc-decalShadowMap);
+					}
+						
+
+				}
+			}
+		}
+		else
+		{
+			shadowLevel = minShadow;
+		}
+	}
+	else
+	if (UseShadowMap.x > 1.9 && UseShadowMap.x < 2.1)  // shadow mapping BOX render
+	{
+		//float facing = -1.0;
+		//float facing = dot(normal, light);
+		
+		//if (facing < -0.2) // no test for facing
+		{
+			float2 shadowuv ;
+			shadowuv.x = shadowPosition.x / shadowPosition.w / 2.0 + 0.5;
+			shadowuv.y = -shadowPosition.y / shadowPosition.w / 2.0 + 0.5;
+			
+			if (shadowuv.x >= 0.0 && shadowuv.x <= 1.0 && shadowuv.y >= 0.0 && shadowuv.y <= 1.0 )
+			{
+				float4 decalShadow;
+				decalShadow = TextureShadowMap.Sample(TextureShadowMapSampler, shadowuv);
+				
+				float depth = shadowPosition.z  / shadowPosition.w; // z is normalized
+				depth -= ShadowMapAlias.x; //0.005;
+
+				float shadowCalc = depth;
+				float decalShadowMap = UnpackDepth(decalShadow);  // float decalShadowMap = decalShadow.x;
+									
+				if (depth >= 0.0 && shadowPosition.z >= 0.0)
+				{	
+					
+					if (decalShadowMap < shadowCalc)
+					{
+						shadowLevel =  minShadow; // soft (shadowCalc-decalShadowMap);
+					}
+					
+				}
+
+			}
+		}
+		//else
+			//shadowLevel = minShadow;
+	}
+	
+	return shadowLevel;
+}
+
+
+
+
+float3 PhaseCalcHighlightShadow(float3 decal0, float4 shadowPosition, float4 position, float3 normal, float3 cameraDir, float3 light , float4 specularmap)
+{
+	float3 decal;
+	
+	float4 shadowLevel = CalcShadowLevel(shadowPosition, normal, light);
+	
+	if (shadowLevel.w < 0.95)
+	{	
+		float4 highlight = float4(1.0,1.0,1.0,1.0);
+		if (LightFactor[1].w != 0.0)
+			highlight += HighLight(position.xyz, normal, cameraDir, 1, specularmap);
+		if (LightFactor[2].w != 0.0)
+			highlight += HighLight(position.xyz, normal, cameraDir, 2, specularmap);
+		if (LightFactor[3].w != 0.0)
+			highlight += HighLight(position.xyz, normal, cameraDir, 3, specularmap);
+			
+	
+		decal.xyz = decal0.xyz * shadowLevel.xyz * highlight.xyz;
+		
+	}
+	else
+	{
+		float4 highlight = float4(0.0,0.0,0.0,1.0);
+		
+		if (LightFactor[0].w != 0.0)
+		{
+			highlight += LightAmbient[0] * MaterialAmbient.x;
+			highlight += HighLight(position.xyz, normal, cameraDir, 0, specularmap);
+		}
+		
+		if (LightFactor[1].w != 0.0)
+			highlight += HighLight(position.xyz, normal, cameraDir, 1, specularmap);
+		if (LightFactor[2].w != 0.0)
+			highlight += HighLight(position.xyz, normal, cameraDir, 2, specularmap);
+		if (LightFactor[3].w != 0.0)
+			highlight += HighLight(position.xyz, normal, cameraDir, 3, specularmap);
+		
+	
+		decal.xyz = decal0.xyz * (highlight.xyz);
+	}
+	
+	return decal;
+	
+	
+}
+
+
+
+
+
+
+
+
+
+float4 PhaseCalcFog(float4 decal0, float3 uv)
+{
+	float4 decal;
+
+	if (FogFactor.x < 0.1) // fogNone
+		decal = decal0;
+	else
+	//if (FogFactor.x <= 0.9) // fogLinear
+	{
+		float rate = (uv.z - FogFactor.y) / (FogFactor.z - FogFactor.y);
+		if (rate < 0.0) 
+			rate = 0.0;
+		else
+		if (rate > 1.0)
+			rate = 1.0;
+		
+		decal.xyz = decal0.xyz * (1.0-rate) + FogColor.xyz * rate;
+	}
+	
+	return decal;
+	
+}
+
+
+
+
+
+
+float3 GetGlossTexture(float3 decal0, float3 normal, float3 cameraDir, float4 glossinessmap)
+{
+	if (Glossiness.x > 0.001)
+	{
+		//R = 2*(V dot N)*N - V
+		float3 reflectionDir =  (normal * dot(normal, -cameraDir) * 2.0 + cameraDir) ;
+		
+		//if (UseSurfaceSpace == 1)
+		//{
+			//reflectionDir = mul( SurfaceSpaceInverse, reflectionDir); 
+		//}
+		
+		reflectionDir = normalize(reflectionDir);
+		
+		//float4 reflection = textureCube(TextureEnv, reflectionDir) ;
+		float2 uv = ConvCubeCoord(reflectionDir); 
+		float4 reflection = TextureEnv.Sample(TextureEnvSampler, uv);
+		return decal0.xyz * (1.0 - glossinessmap.xyz * Glossiness.x) + reflection.xyz * ( glossinessmap.xyz * Glossiness.x );
+	}
+	else
+		return decal0;
+}
+
+
+
+
+float3 GetNormalMapNormal(float3 normal, float2 uv)
+{
+	if (UseSurfaceSpace == 0)
+		return normal;
+	
+	float3 textureNormal = TextureNormal.Sample(TextureNormalSampler, uv).xyz;
+	if (textureNormal.x < 0.01 && textureNormal.y < 0.01 && textureNormal.z < 0.01)
+		return normal;
+
+	textureNormal = normalize(2.0 * textureNormal - 1.0); 
+	textureNormal.x = textureNormal.x * NormalMapDirection.x;
+	textureNormal.y = textureNormal.y * NormalMapDirection.y;
+	textureNormal.z = textureNormal.z * NormalMapDirection.z;
+		
+	/*
+	float3x3 worldSkin;
+	worldSkin[0] = Out.World1.xyz; 
+	worldSkin[1] = Out.World2.xyz; 
+	worldSkin[2] = float3(Out.World1.w, Out.World2.w, Out.Binormal.w ); 
+	*/
+	//float4x4 worldSkin = float4x4 (Out.WorldSkin1, Out.WorldSkin2, Out.WorldSkin3, Out.WorldSkin4) ;
+	
+	textureNormal = normalize(mul( SurfaceSpaceInverse, textureNormal));  
+	//textureNormal = normalize(mul( textureNormal, (float3x3)(ObjectWorld)));  
+	
+	return textureNormal;
+}
+	
+
+
+float4 GetSpecularMap(float2 uv)
+{
+	return TextureSpecular.Sample(TextureSpecularSampler, uv);
+}
+		
+
+/*
+	PhaseRender = 0,
+	PhaseEnvMap = 1,
+	PhaseFrame = 2,
+	PhaseDepth = 3,
+	PhaseShadowMap = 4,
+	PhaseMirror = 5,
+	PhasePosition = 6,
+	PhaseNormal = 7,
+	PhaseLinearDepth = 8,
+*/
+
+
+
+float4 PS(VS_OUTPUT Out) : SV_Target
+{
+	// debug 	return float4(Out.Binormal.xyz, 1.0);
+	// debug 	return float4(Out.Tangent.xyz, 1.0);
+
+	if (Out.Tangent.x * Out.Tangent.x + Out.Tangent.y * Out.Tangent.y + Out.Tangent.z * Out.Tangent.z < 0.001)
+	{
+		UseSurfaceSpace = 0;
+		SurfaceSpace = 0.0;
+		SurfaceSpaceInverse = 0.0;
+	}
+	else
+	{
+		UseSurfaceSpace = 1;
+		SurfaceSpace = float3x3( normalize(Out.Tangent), normalize(Out.Binormal), normalize(Out.Normal));   // column major 로 들어감
+		
+		//Do have this inverse transformation, we simply have to take the matrix inverse, which in this case 
+		// (an orthogonal matrix, i.e each vector is perpendicular to the others. See “going further” below) is also its transpose, much cheaper to compute :
+		SurfaceSpaceInverse = transpose(SurfaceSpace);
+	}
+		
+
+	float3 cameraDir = normalize(Out.InPosition.xyz - CameraPos.xyz);  
+	float3 sunlightDir = SunLight;
+	float3 normalDir = Out.Normal;
+	
+
+	// PhaseNormal
+	if (DrawPhase == 7)  
+	{
+		float3 linearNormal = normalize( Out.Normal.xyz ) * 0.5 + 0.5;
+		return float4(linearNormal.xyz, 1.0);
+	}
+	
+	// PhasePosition
+	if (DrawPhase == 6)  
+	{
+		float3 linearPosition = normalize( Out.CameraPosition.xyz ) * 0.5 + 0.5;
+		return float4(linearPosition.xyz, 1.0);
+	}
+
+	// PhaseLinearDepth
+	if (DrawPhase == 8)  
+	{
+		float linearDepth = length( Out.CameraPosition.xyz );
+		float minDistance = 0.1;
+		linearDepth = (linearDepth <= minDistance)? 1.0 : minDistance/linearDepth;  // when using ViewSpace
+		return PackDepth(linearDepth);
+	}
+	
+	
+	// PhaseShadowMap  
+	if (DrawPhase == 4)  
+	{
+		return PhaseShadowMapDepth(Out.ShadowPosition, Out.UV.xy);
+	}
+	
+
+	float4 decal;
+	
+	// PhaseDepth  
+	if (DrawPhase == 3)  
+	{
+		//Out.UV.z;  0..~~
+		// Out.ViewPosition.z / Out.ViewPosition.w;  0.. 1.0
+		
+		float minDistance = 0.1;
+		//float depth = Out.ViewPosition.z / Out.ViewPosition.w;  // when using ProjectionSpace 
+		float depth = (Out.UV.z <= minDistance)? 1.0 : minDistance/Out.UV.z;  // when using ViewSpace
+		
+		//decal = float4(depth, depth, depth, 1.0f); // no pack
+		decal = PackDepth(depth);
+	
+		return decal;
+	}
+	
+	
+	
+	normalDir = GetNormalMapNormal(normalDir, Out.UV.xy);
+	
+	float4 specularmap = GetSpecularMap(Out.UV.xy);
+	
+	// PhaseRender
+	
+	decal = GetAmbientTextureColor(Out.UV.xy);
+	decal.xyz = PhaseCalcHighlightShadow(decal.xyz, Out.ShadowPosition, Out.InPosition, normalDir, cameraDir, sunlightDir, specularmap);
+
+	float4 glossinessmap = specularmap;
+	decal.xyz = GetGlossTexture(decal.xyz, normalDir, cameraDir, glossinessmap);
+	
+	if (DrawPhase == 3 )   // PhaseDepth
+		decal.w = Out.UV.z;
+	else
+		decal.w = decal.w * Opacity.x;
+
+		
+	float3 clippos = Out.InPosition.xyz;
+	if (ClipPlane.x != 0.0 || ClipPlane.y != 0.0 || ClipPlane.z != 0.0)
+	{
+		if (clippos.x * ClipPlane.x + clippos.y * ClipPlane.y + clippos.z * ClipPlane.z + ClipPlane.w <= 0.0)
+			discard; 
+	}
+	
+	
+	
+
+	decal = PhaseCalcFog(decal, Out.UV.xyz);
+
+	return decal;
+	
+}
+
+
+
+
+/*
+
+	if (UseSurfaceSpace == 1)
+	{
+		//cameraDir = normalize(mul( SurfaceSpace, cameraDir  )) ;
+		//sunlightDir = normalize(mul( SurfaceSpace, sunlightDir  )) ;
+		//normalDir = normalize(mul( SurfaceSpace, normalDir  )) ;
+	}
+
+*/

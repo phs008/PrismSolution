@@ -1,0 +1,12 @@
+	float GetDepth( );
+	void SetDepth(float value);
+
+
+	float GetHeight( );
+	void SetHeight(float value);
+
+
+	float GetWidth( );
+	void SetWidth(float value);
+
+

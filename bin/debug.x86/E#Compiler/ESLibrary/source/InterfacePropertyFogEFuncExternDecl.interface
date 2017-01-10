@@ -1,0 +1,16 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFog_SetFogColor)(eng_obj_ptr obj,  EngineMath3D::Color value);
+EXTERN_C DLLAPI EngineMath3D::Color (*ENG_CAPI_PropertyFog_GetFogColor)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFog_SetFogFarPlane)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyFog_GetFogFarPlane)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFog_SetFogMode)(eng_obj_ptr obj,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyFog_GetFogMode)(eng_obj_ptr obj );
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyFog_SetFogNearPlane)(eng_obj_ptr obj,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyFog_GetFogNearPlane)(eng_obj_ptr obj );
+
+

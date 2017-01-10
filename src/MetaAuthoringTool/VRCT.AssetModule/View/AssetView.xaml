@@ -1,0 +1,200 @@
+﻿<UserControl x:Class="VRCAT.AssetModule.AssetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:Xcmd="clr-namespace:WPFXCommand;assembly=WPFXCommand"
+             xmlns:service="bucketplay.com"
+             xmlns:my="clr-namespace:VRCAT.AssetModule"
+             mc:Ignorable="d" 
+		     x:Name="AssetViewControl"
+             d:DesignHeight="300" d:DesignWidth="300" >
+	<UserControl.Resources>
+		<my:FileExtensionConverter x:Key="FileExtensionConverter"/>
+		<service:DatabindingDebugConverter x:Key="DatabindingDebugConverter" />
+
+		<HierarchicalDataTemplate x:Key="DirectoryTemplate" ItemsSource="{Binding SubDirectorys}">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="pack://siteOfOrigin:,,,/Plugins/Image/folderImage.jpg" Width="10" Height="10" />
+                <service:EditableTextBlock Text="{Binding Name}" Margin="4,0" HorizontalAlignment="Center" IsInEditMode="{Binding IsEditMode,Mode=TwoWay}"/>
+            </StackPanel>
+		</HierarchicalDataTemplate>
+
+        <!--<HierarchicalDataTemplate x:Key="FileTemplate">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                --><!--<Image Grid.Row="0" Source="{Binding MetaData.ThumbNailImage}" Width="50" Height="50" HorizontalAlignment="Center" />--><!--
+                <Image Grid.Row="0" Source="{Binding FullPath,Converter={StaticResource FileExtensionConverter}}" Width="50" Height="50" HorizontalAlignment="Center" />
+                <service:EditableTextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="NoWrap" HorizontalAlignment="Center" TextAlignment="Justify" IsInEditMode="{Binding IsEditMode,Mode=TwoWay}" Width="80" />
+            </Grid>
+        </HierarchicalDataTemplate>-->
+
+        <DataTemplate x:Key="largeViewTemplate">
+            <StackPanel ToolTip="{Binding FullPath}">
+                <Image Source="{Binding FullPath,Converter={StaticResource FileExtensionConverter}}" Width="100" Height="100"  Margin="5" />
+                <service:EditableTextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="NoWrap"  TextAlignment="Center" IsInEditMode="{Binding IsEditMode,Mode=TwoWay}" Width="100" Margin="5,0,5,5" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="mediumViewTemplate">
+            <StackPanel ToolTip="{Binding FullPath}">
+                <Image Source="{Binding FullPath,Converter={StaticResource FileExtensionConverter}}" Width="60" Height="60" HorizontalAlignment="Center" Margin="5" />
+                <service:EditableTextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="NoWrap"  TextAlignment="Center" IsInEditMode="{Binding IsEditMode,Mode=TwoWay}" Width="100" Margin="5,0,5,5" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="smallViewTemplate">
+            <StackPanel ToolTip="{Binding FullPath}">
+                <Image Source="{Binding FullPath,Converter={StaticResource FileExtensionConverter}}" Width="30" Height="30" HorizontalAlignment="Center" Margin="5" />
+                <service:EditableTextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="NoWrap" TextAlignment="Center" IsInEditMode="{Binding IsEditMode,Mode=TwoWay}" Width="100" Margin="5,0,5,5" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="detailViewTemplate">
+            <DockPanel ToolTip="{Binding FullPath}" >
+                <Image DockPanel.Dock="Left" Source="{Binding FullPath,Converter={StaticResource FileExtensionConverter}}" Width="30" Height="30" Margin="5" />
+                <service:EditableTextBlock DockPanel.Dock="Left" Text="{Binding Name}" VerticalAlignment="Center" TextWrapping="NoWrap" TextAlignment="Justify" IsInEditMode="{Binding IsEditMode,Mode=TwoWay}"  Margin="5,0,0,0" />
+            </DockPanel>
+        </DataTemplate>
+
+        <ItemsPanelTemplate x:Key="detailViewPaenelTemplate">
+            <StackPanel IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="commonViewPanelTemplate">
+            <WrapPanel IsItemsHost="True"/>
+        </ItemsPanelTemplate>
+        
+        
+    </UserControl.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="200*"/>
+		</Grid.ColumnDefinitions>
+        <TreeView x:Name="AssetTreeView"
+              Grid.Column="0"
+              ItemsSource="{Binding DirectoryItem , IsAsync=True}"
+			  ItemTemplate="{StaticResource DirectoryTemplate}"
+              IsTextSearchEnabled="True"
+              MinWidth="300"
+              service:DragDrop.IsDragSource="True"
+              service:DragDrop.IsDropTarget="True"
+              service:DragDrop.DropHandler="{Binding}"
+              Xcmd:KeyDown.Command="{Binding DirectoryKeyDown}"
+              Xcmd:KeyDown.CommandParameter="{Binding ElementName=AssetTreeView,Path=SelectedItem}"
+              PreviewMouseRightButtonUp="AssetTreeView_PreviewMouseRightButtonUp"
+              VirtualizingStackPanel.IsVirtualizing="True"
+              >
+            <!-- TODO : TreeView Hierarchy 에 대한 다중 VM 적용 가능 방법 -->
+			<!--<TreeView.ItemTemplate>
+				<HierarchicalDataTemplate ItemsSource="{Binding SubDirectorys}">
+					<StackPanel Orientation="Horizontal">
+						<Image Source="pack://siteOfOrigin:,,,/Plugins/Image/folderImage.jpg" Width="20" Height="20"/>
+						<TextBlock Text="{Binding DirectoryName}" Margin="4,0"/>
+					</StackPanel>
+					<HierarchicalDataTemplate.ItemTemplate>
+						<HierarchicalDataTemplate ItemsSource="{Binding SubDirectorys}">
+							<StackPanel Orientation="Horizontal">
+								<Image Source="pack://siteOfOrigin:,,,/Plugins/Image/folderImage.jpg" Width="20" Height="20"/>
+								<TextBlock Text="{Binding DirectoryName}" Margin="4,0"/>
+							</StackPanel>
+						</HierarchicalDataTemplate>
+					</HierarchicalDataTemplate.ItemTemplate>
+				</HierarchicalDataTemplate>
+			</TreeView.ItemTemplate>-->
+            <TreeView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Refresh" Command="{Binding RefreshFolderCommand}"/>
+                    <Separator/>
+                    <!--<MenuItem Header="Delete" Command="{Binding DeleteItemCommand}" CommandParameter="{Binding ElementName=AssetTreeView,Path=SelectedItem}" />
+                    <Separator/>-->
+                    <MenuItem Header="OpenExplorer" Command="{Binding OpenExplorerCommand}" />
+                </ContextMenu>
+            </TreeView.ContextMenu>
+
+            <i:Interaction.Triggers>
+				<i:EventTrigger EventName="SelectedItemChanged">
+					<prism:InvokeCommandAction Command="{Binding DirectorySelect}" CommandParameter="{Binding AssetTreeView.SelectedItem}"/>
+				</i:EventTrigger>
+			</i:Interaction.Triggers>
+		</TreeView>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="3" ShowsPreview="True" Background="#FF000000"/>
+        <!--<ListBox Grid.Column="2"
+                 DataContext="{Binding FileInfoItem}"
+                 x:Name="AssetListBox"
+                 Background="#303030"
+                 ItemsSource="{Binding FilesInSelectDirectoryItem}"
+                 ItemTemplate="{StaticResource FileTemplate}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 service:DragDrop.IsDragSource="True"
+                 service:DragDrop.IsDropTarget="True"
+                 service:DragDrop.DropHandler="{Binding}"
+                 SelectionMode="Extended"
+                 Xcmd:KeyDown.Command="{Binding KeyDownCommand}"
+                 Xcmd:KeyDown.CommandParameter="{Binding ElementName=AssetListBox,Path=SelectedItems}"
+                 >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    --><!--<service:VirtualizingWrapPanel />--><!--
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="AddMaterial" Xcmd:MouseLeftButtonDown.Command="{Binding AddMaterialClick}"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonUp">
+                    <i:InvokeCommandAction Command="{Binding SelectionChanged}" CommandParameter="{Binding ElementName=AssetListBox, Path=SelectedItems}" />
+                </i:EventTrigger>
+                --><!--<i:EventTrigger EventName="SelectionChanged">
+                    <prism:InvokeCommandAction Command="{Binding SelectedObject}" TriggerParameterPath="AddedItems"/>
+                </i:EventTrigger>--><!--
+            </i:Interaction.Triggers>
+        </ListBox>-->
+
+        <Grid Grid.Column="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ListBox Grid.Row="0"
+                 x:Name="AssetListBox"
+                 Background="#303030"
+                 ItemsSource="{Binding FileItem}"
+                 ItemTemplate="{StaticResource smallViewTemplate}"
+                 ItemsPanel="{StaticResource commonViewPanelTemplate}"
+                 PreviewMouseLeftButtonUp="AssetListBox_PreviewMouseLeftButtonUp"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 service:DragDrop.IsDragSource="True"
+                 service:DragDrop.IsDropTarget="True"
+                 service:DragDrop.DropHandler="{Binding}"
+                 SelectionMode="Extended"
+                 Xcmd:KeyDown.Command="{Binding FileKeyDown}"
+                 Xcmd:KeyDown.CommandParameter="{Binding ElementName=AssetListBox,Path=SelectedItem}"
+                 Xcmd:MouseLeftButtonUp.Command="{Binding SelectedAssetLBUp}" Xcmd:MouseLeftButtonUp.CommandParameter="{Binding ElementName=AssetViewControl, Path=SelectCustomItem}"
+                 Xcmd:MouseLeftButtonDown.Command="{Binding SelectedAssetLBDown}" Xcmd:MouseLeftButtonDown.CommandParameter="{Binding ElementName=AssetViewControl, Path=SelectCustomItem}"
+                 VirtualizingStackPanel.VirtualizationMode="Recycling"
+                 VirtualizingStackPanel.IsVirtualizing="True"
+                 >
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="CreateFolder" Command="{Binding CreateFolderCommand}" />
+                        <Separator/>
+                        <MenuItem Header="OpenExplorer" Command="{Binding OpenExplorerCommand}" />
+                        <Separator/>
+                        <MenuItem Header="Test" Command="{Binding TestCommand}" />
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+            <DockPanel Grid.Row="1">
+                <Label Content="{Binding SelectedFile.FullPath}" DockPanel.Dock="Left" />
+                <Slider x:Name="viewOption" Width="150" HorizontalAlignment="Right" Minimum="0" Maximum="3" Value="1" TickFrequency="1" IsSnapToTickEnabled="True" ValueChanged="viewOption_ValueChanged"/>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

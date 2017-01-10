@@ -1,0 +1,1787 @@
+(("" NAMESPACE) ("nullable:1" CLASS) ("System" NAMESPACE)
+ ("System.Exception" CLASS) ("System.Boolean" STRUCT)
+ ("System.ValueType" CLASS) ("System.ArrayTypeMismatchException" CLASS)
+ ("System.Double" STRUCT) ("System.DivideByZeroException" CLASS)
+ ("System.Type" CLASS) ("System.Delegate" CLASS)
+ ("System.NullReferenceException" CLASS)
+ ("System.ApplicationException" CLASS) ("System.UInt64" STRUCT)
+ ("System.MyType" STRUCT) ("System.UInt16" STRUCT)
+ ("System.Char" STRUCT) ("System.Int16" STRUCT)
+ ("System.OverflowException" CLASS) ("System.SystemException" CLASS)
+ ("System.Array" CLASS) ("System.Int64" STRUCT) ("System.Byte" STRUCT)
+ ("System.Object" CLASS) ("System.InvalidCastException" CLASS)
+ ("System.ArithmeticException" CLASS) ("System.ICloneable" INTERFACE)
+ ("System.Int32" STRUCT) ("System.Single" STRUCT)
+ ("System.OutOfMemoryException" CLASS)
+ ("System.InvalidOperationException" CLASS)
+ ("System.NotSupportedException" CLASS) ("System.String" CLASS)
+ ("System.StackOverflowException" CLASS) ("System.Enum" CLASS)
+ ("System.ArgumentException" CLASS) ("System.UInt32" STRUCT)
+ ("System.SByte" STRUCT) ("System.Decimal" STRUCT)
+ ("System.TypeInitializationException" CLASS)
+ ("System.MemberInfo" CLASS) ("System.IndexOutOfRangeException" CLASS))
+(:NAME "" :KIND NAMESPACE :ID 3 :TYPE NIL :BASE-LS NIL :MODS NIL
+ :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+ :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+ NIL :STATUS USE :SRC-FILE NIL :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+ :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+ (("nullable:1"
+   (:NAME "nullable:1" :KIND CLASS :ID 4 :TYPE NIL :BASE-LS NIL :MODS
+    NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+    NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL
+    :ACCESSOR NIL :STATUS USE :SRC-FILE NIL :INIT NIL :PARA-LS NIL
+    :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+    NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+    :INDEXER-LS NIL :OPERATOR-LS NIL))
+  ("System"
+   (:NAME "System" :KIND NAMESPACE :ID 5 :TYPE NIL :BASE-LS NIL :MODS
+    NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+    NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL
+    :ACCESSOR "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL
+    :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS
+    NIL :SYM-TBL
+    (("Exception"
+      (:NAME "System.Exception" :KIND CLASS :ID 6 :TYPE NIL :BASE-LS
+       ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED
+       NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS
+       (("Exception" 87 NIL
+         (:NAME "System.Exception.Exception" :KIND METHOD :ID 16 :TYPE
+          (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL :MODS NIL
+          :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+          NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+          NIL :ACCESSOR "public" :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL))
+        ("Exception" 88 NIL
+         (:NAME "System.Exception.Exception" :KIND METHOD :ID 14 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.Exception.Exception.message" :KIND PARA :ID
+             15 :TYPE "System.String" :BASE-LS NIL :MODS NIL :PARTIAL
+             NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+             :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+             NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT
+             NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+             :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+             :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+             :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("Exception" 89 NIL
+         (:NAME "System.Exception.Exception" :KIND METHOD :ID 11 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.Exception.Exception.message" :KIND PARA :ID
+             12 :TYPE "System.String" :BASE-LS NIL :MODS NIL :PARTIAL
+             NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+             :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+             NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT
+             NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+             :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+             :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+             :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME "System.Exception.Exception.innerException" :KIND
+             PARA :ID 13 :TYPE "System.Exception" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS
+       (("InnerException" 90 NIL
+         (:NAME "System.Exception.InnerException" :KIND PROPERTY :ID 9
+          :TYPE "System.Exception" :BASE-LS NIL :MODS NIL :PARTIAL NIL
+          :ABSTRACT NIL :SEALED T :VIRTUAL NIL :OVERRIDE NIL :STATIC
+          NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL
+          :ACCESSOR "public" :STATUS USE :SRC-FILE "System.cs" :INIT
+          NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+          :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+          :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+          NIL)
+         (:NAME "System.Exception.InnerException.get" :KIND
+          GET-ACCESSOR :ID 10 :TYPE NIL :BASE-LS NIL :MODS NIL :PARTIAL
+          NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+          :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL
+          :ACCESSOR "internal" :STATUS USE :SRC-FILE "System.cs" :INIT
+          NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+          :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+          :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+          NIL)
+         NIL)
+        ("Message" 91 NIL
+         (:NAME "System.Exception.Message" :KIND PROPERTY :ID 7 :TYPE
+          "System.String" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL T :OVERRIDE NIL :STATIC NIL :NEW NIL
+          :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+          :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         (:NAME "System.Exception.Message.get" :KIND GET-ACCESSOR :ID 8
+          :TYPE NIL :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+          :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+          :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "internal"
+          :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         NIL))
+       :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Boolean"
+      (:NAME "System.Boolean" :KIND STRUCT :ID 17 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("ValueType"
+      (:NAME "System.ValueType" :KIND CLASS :ID 18 :TYPE NIL :BASE-LS
+       ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT T :SEALED NIL
+       :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS
+       (("ValueType" 21 NIL
+         (:NAME "System.ValueType.ValueType" :KIND METHOD :ID 19 :TYPE
+          (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL :MODS NIL
+          :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+          NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+          NIL :ACCESSOR "protected" :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("ArrayTypeMismatchException"
+      (:NAME "System.ArrayTypeMismatchException" :KIND CLASS :ID 20
+       :TYPE NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL
+       NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC
+       NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("ArrayTypeMismatchException" 119 NIL
+         (:NAME
+          "System.ArrayTypeMismatchException.ArrayTypeMismatchException"
+          :KIND METHOD :ID 26 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ArrayTypeMismatchException" 120 NIL
+         (:NAME
+          "System.ArrayTypeMismatchException.ArrayTypeMismatchException"
+          :KIND METHOD :ID 24 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.ArrayTypeMismatchException.ArrayTypeMismatchException.message"
+             :KIND PARA :ID 25 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ArrayTypeMismatchException" 121 NIL
+         (:NAME
+          "System.ArrayTypeMismatchException.ArrayTypeMismatchException"
+          :KIND METHOD :ID 21 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.ArrayTypeMismatchException.ArrayTypeMismatchException.message"
+             :KIND PARA :ID 22 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.ArrayTypeMismatchException.ArrayTypeMismatchException.innerException"
+             :KIND PARA :ID 23 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("Double"
+      (:NAME "System.Double" :KIND STRUCT :ID 27 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("DivideByZeroException"
+      (:NAME "System.DivideByZeroException" :KIND CLASS :ID 28 :TYPE
+       NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("DivideByZeroException" 125 NIL
+         (:NAME "System.DivideByZeroException.DivideByZeroException"
+          :KIND METHOD :ID 34 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("DivideByZeroException" 126 NIL
+         (:NAME "System.DivideByZeroException.DivideByZeroException"
+          :KIND METHOD :ID 32 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.DivideByZeroException.DivideByZeroException.message"
+             :KIND PARA :ID 33 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("DivideByZeroException" 127 NIL
+         (:NAME "System.DivideByZeroException.DivideByZeroException"
+          :KIND METHOD :ID 29 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.DivideByZeroException.DivideByZeroException.message"
+             :KIND PARA :ID 30 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.DivideByZeroException.DivideByZeroException.innerException"
+             :KIND PARA :ID 31 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("Type"
+      (:NAME "System.Type" :KIND CLASS :ID 35 :TYPE NIL :BASE-LS
+       ("System.MemberInfo") :MODS NIL :PARTIAL NIL :ABSTRACT T :SEALED
+       NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS
+       NIL :OPERATOR-LS NIL))
+     ("Delegate"
+      (:NAME "System.Delegate" :KIND CLASS :ID 36 :TYPE NIL :BASE-LS
+       ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT T :SEALED NIL
+       :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS
+       NIL :OPERATOR-LS NIL))
+     ("NullReferenceException"
+      (:NAME "System.NullReferenceException" :KIND CLASS :ID 37 :TYPE
+       NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("NullReferenceException" 155 NIL
+         (:NAME "System.NullReferenceException.NullReferenceException"
+          :KIND METHOD :ID 43 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("NullReferenceException" 156 NIL
+         (:NAME "System.NullReferenceException.NullReferenceException"
+          :KIND METHOD :ID 41 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.NullReferenceException.NullReferenceException.message"
+             :KIND PARA :ID 42 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("NullReferenceException" 157 NIL
+         (:NAME "System.NullReferenceException.NullReferenceException"
+          :KIND METHOD :ID 38 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.NullReferenceException.NullReferenceException.message"
+             :KIND PARA :ID 39 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.NullReferenceException.NullReferenceException.innerException"
+             :KIND PARA :ID 40 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("ApplicationException"
+      (:NAME "System.ApplicationException" :KIND CLASS :ID 44 :TYPE NIL
+       :BASE-LS ("System.Exception") :MODS NIL :PARTIAL NIL :ABSTRACT
+       NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS
+       (("ApplicationException" 95 NIL
+         (:NAME "System.ApplicationException.ApplicationException"
+          :KIND METHOD :ID 50 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ApplicationException" 96 NIL
+         (:NAME "System.ApplicationException.ApplicationException"
+          :KIND METHOD :ID 48 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.ApplicationException.ApplicationException.message"
+             :KIND PARA :ID 49 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ApplicationException" 97 NIL
+         (:NAME "System.ApplicationException.ApplicationException"
+          :KIND METHOD :ID 45 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.ApplicationException.ApplicationException.message"
+             :KIND PARA :ID 46 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.ApplicationException.ApplicationException.innerException"
+             :KIND PARA :ID 47 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("UInt64"
+      (:NAME "System.UInt64" :KIND STRUCT :ID 51 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("MyType"
+      (:NAME "System.MyType" :KIND STRUCT :ID 52 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS
+       (("x"
+         (:NAME "System.MyType.x" :KIND FIELD :ID 54 :TYPE
+          "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW
+          NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+          "private" :STATUS USE :SRC-FILE "System.cs" :INIT NIL
+          :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+          :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+          :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+          NIL))
+        ("y"
+         (:NAME "System.MyType.y" :KIND FIELD :ID 53 :TYPE
+          "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW
+          NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+          "private" :STATUS USE :SRC-FILE "System.cs" :INIT NIL
+          :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+          :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+          :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+          NIL))
+        ("z"
+         (:NAME "System.MyType.z" :KIND FIELD :ID 55 :TYPE
+          "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW
+          NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+          "private" :STATUS USE :SRC-FILE "System.cs" :INIT NIL
+          :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+          :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+          :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+          NIL)))
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS
+       NIL :OPERATOR-LS NIL))
+     ("UInt16"
+      (:NAME "System.UInt16" :KIND STRUCT :ID 56 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Char"
+      (:NAME "System.Char" :KIND STRUCT :ID 57 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Int16"
+      (:NAME "System.Int16" :KIND STRUCT :ID 58 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("OverflowException"
+      (:NAME "System.OverflowException" :KIND CLASS :ID 59 :TYPE NIL
+       :BASE-LS ("System.ArithmeticException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("OverflowException" 167 NIL
+         (:NAME "System.OverflowException.OverflowException" :KIND
+          METHOD :ID 65 :TYPE (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS
+          NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+          NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+          NIL :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("OverflowException" 168 NIL
+         (:NAME "System.OverflowException.OverflowException" :KIND
+          METHOD :ID 63 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.OverflowException.OverflowException.message"
+             :KIND PARA :ID 64 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("OverflowException" 169 NIL
+         (:NAME "System.OverflowException.OverflowException" :KIND
+          METHOD :ID 60 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.OverflowException.OverflowException.message"
+             :KIND PARA :ID 61 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.OverflowException.OverflowException.innerException"
+             :KIND PARA :ID 62 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("SystemException"
+      (:NAME "System.SystemException" :KIND CLASS :ID 66 :TYPE NIL
+       :BASE-LS ("System.Exception") :MODS NIL :PARTIAL NIL :ABSTRACT
+       NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS
+       (("SystemException" 101 NIL
+         (:NAME "System.SystemException.SystemException" :KIND METHOD
+          :ID 72 :TYPE (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("SystemException" 102 NIL
+         (:NAME "System.SystemException.SystemException" :KIND METHOD
+          :ID 70 :TYPE (CS-TY-DELEGATE "void" ("System.String") NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (("message") NIL)
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL
+          (("message"
+            (:NAME "System.SystemException.SystemException.message"
+             :KIND PARA :ID 71 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("SystemException" 103 NIL
+         (:NAME "System.SystemException.SystemException" :KIND METHOD
+          :ID 67 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.SystemException.SystemException.message"
+             :KIND PARA :ID 68 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.SystemException.SystemException.innerException"
+             :KIND PARA :ID 69 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("Array"
+      (:NAME "System.Array" :KIND CLASS :ID 73 :TYPE NIL :BASE-LS
+       ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT T :SEALED NIL
+       :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS
+       (("GetLength" 45 NIL
+         (:NAME "System.Array.GetLength" :KIND METHOD :ID 78 :TYPE
+          (CS-TY-DELEGATE "System.Int32" ("System.Int32") NIL) :BASE-LS
+          NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+          NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+          NIL :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("dimension") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("dimension"
+            (:NAME "System.Array.GetLength.dimension" :KIND PARA :ID 79
+             :TYPE "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL
+             :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+             :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+             NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT
+             NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+             :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+             :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+             :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS
+       (("Length" 43 NIL
+         (:NAME "System.Array.Length" :KIND PROPERTY :ID 76 :TYPE
+          "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW
+          NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+          "public" :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         (:NAME "System.Array.Length.get" :KIND GET-ACCESSOR :ID 77
+          :TYPE NIL :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+          :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+          :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "internal"
+          :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         NIL)
+        ("Rank" 44 NIL
+         (:NAME "System.Array.Rank" :KIND PROPERTY :ID 74 :TYPE
+          "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW
+          NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+          "public" :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         (:NAME "System.Array.Rank.get" :KIND GET-ACCESSOR :ID 75 :TYPE
+          NIL :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED
+          NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN
+          NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "internal" :STATUS
+          USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)
+         NIL))
+       :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Int64"
+      (:NAME "System.Int64" :KIND STRUCT :ID 80 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Byte"
+      (:NAME "System.Byte" :KIND STRUCT :ID 81 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Object"
+      (:NAME "System.Object" :KIND CLASS :ID 82 :TYPE NIL :BASE-LS NIL
+       :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+       :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+       :READONLY NIL :ACCESSOR "public" :STATUS MAKE :SRC-FILE
+       "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL
+       :FINALIZER
+       (:NAME "System.Object.Object" :KIND METHOD :ID 83 :TYPE
+        (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL :MODS NIL :PARTIAL
+        NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+        :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL
+        :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT NIL
+        :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+        :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+        :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+        NIL)
+       :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("Object" 5 NIL
+         (:NAME "System.Object.Object" :KIND METHOD :ID 89 :TYPE
+          (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL :MODS NIL
+          :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+          NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+          NIL :ACCESSOR "public" :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL))
+        ("Equals" 7 NIL
+         (:NAME "System.Object.Equals" :KIND METHOD :ID 87 :TYPE
+          (CS-TY-DELEGATE "System.Boolean" ("System.Object") NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL T :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (("obj") NIL)
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL
+          (("obj"
+            (:NAME "System.Object.Equals.obj" :KIND PARA :ID 88 :TYPE
+             "System.Object" :BASE-LS NIL :MODS NIL :PARTIAL NIL
+             :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+             :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+             NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT
+             NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+             :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+             :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+             :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("GetHashCode" 8 NIL
+         (:NAME "System.Object.GetHashCode" :KIND METHOD :ID 86 :TYPE
+          (CS-TY-DELEGATE "System.Int32" NIL NIL) :BASE-LS NIL :MODS
+          NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL T
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("GetType" 9 NIL
+         (:NAME "System.Object.GetType" :KIND METHOD :ID 85 :TYPE
+          (CS-TY-DELEGATE "System.Type" NIL NIL) :BASE-LS NIL :MODS NIL
+          :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+          NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+          NIL :ACCESSOR "public" :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL))
+        ("ToString" 10 NIL
+         (:NAME "System.Object.ToString" :KIND METHOD :ID 84 :TYPE
+          (CS-TY-DELEGATE "System.String" NIL NIL) :BASE-LS NIL :MODS
+          NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL T
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("InvalidCastException"
+      (:NAME "System.InvalidCastException" :KIND CLASS :ID 90 :TYPE NIL
+       :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("InvalidCastException" 137 NIL
+         (:NAME "System.InvalidCastException.InvalidCastException"
+          :KIND METHOD :ID 96 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("InvalidCastException" 138 NIL
+         (:NAME "System.InvalidCastException.InvalidCastException"
+          :KIND METHOD :ID 94 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.InvalidCastException.InvalidCastException.message"
+             :KIND PARA :ID 95 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("InvalidCastException" 139 NIL
+         (:NAME "System.InvalidCastException.InvalidCastException"
+          :KIND METHOD :ID 91 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.InvalidCastException.InvalidCastException.message"
+             :KIND PARA :ID 92 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.InvalidCastException.InvalidCastException.innerException"
+             :KIND PARA :ID 93 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("ArithmeticException"
+      (:NAME "System.ArithmeticException" :KIND CLASS :ID 97 :TYPE NIL
+       :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("ArithmeticException" 113 NIL
+         (:NAME "System.ArithmeticException.ArithmeticException" :KIND
+          METHOD :ID 103 :TYPE (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS
+          NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+          NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+          NIL :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ArithmeticException" 114 NIL
+         (:NAME "System.ArithmeticException.ArithmeticException" :KIND
+          METHOD :ID 101 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.ArithmeticException.ArithmeticException.message"
+             :KIND PARA :ID 102 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ArithmeticException" 115 NIL
+         (:NAME "System.ArithmeticException.ArithmeticException" :KIND
+          METHOD :ID 98 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.ArithmeticException.ArithmeticException.message"
+             :KIND PARA :ID 99 :TYPE "System.String" :BASE-LS NIL :MODS
+             NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+             :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+             NIL :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE
+             "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL
+             NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+             NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+             :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.ArithmeticException.ArithmeticException.innerException"
+             :KIND PARA :ID 100 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("ICloneable"
+      (:NAME "System.ICloneable" :KIND INTERFACE :ID 104 :TYPE NIL
+       :BASE-LS ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS
+       (("Clone" 54 NIL
+         (:NAME "System.ICloneable.Clone" :KIND METHOD :ID 105 :TYPE
+          (CS-TY-DELEGATE "System.Object" NIL NIL) :BASE-LS NIL :MODS
+          NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("Int32"
+      (:NAME "System.Int32" :KIND STRUCT :ID 106 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Single"
+      (:NAME "System.Single" :KIND STRUCT :ID 107 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("OutOfMemoryException"
+      (:NAME "System.OutOfMemoryException" :KIND CLASS :ID 108 :TYPE
+       NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("OutOfMemoryException" 161 NIL
+         (:NAME "System.OutOfMemoryException.OutOfMemoryException"
+          :KIND METHOD :ID 114 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("OutOfMemoryException" 162 NIL
+         (:NAME "System.OutOfMemoryException.OutOfMemoryException"
+          :KIND METHOD :ID 112 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.OutOfMemoryException.OutOfMemoryException.message"
+             :KIND PARA :ID 113 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("OutOfMemoryException" 163 NIL
+         (:NAME "System.OutOfMemoryException.OutOfMemoryException"
+          :KIND METHOD :ID 109 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.OutOfMemoryException.OutOfMemoryException.message"
+             :KIND PARA :ID 110 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.OutOfMemoryException.OutOfMemoryException.innerException"
+             :KIND PARA :ID 111 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("InvalidOperationException"
+      (:NAME "System.InvalidOperationException" :KIND CLASS :ID 115
+       :TYPE NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL
+       NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC
+       NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("InvalidOperationException" 143 NIL
+         (:NAME
+          "System.InvalidOperationException.InvalidOperationException"
+          :KIND METHOD :ID 121 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("InvalidOperationException" 144 NIL
+         (:NAME
+          "System.InvalidOperationException.InvalidOperationException"
+          :KIND METHOD :ID 119 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.InvalidOperationException.InvalidOperationException.message"
+             :KIND PARA :ID 120 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("InvalidOperationException" 145 NIL
+         (:NAME
+          "System.InvalidOperationException.InvalidOperationException"
+          :KIND METHOD :ID 116 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.InvalidOperationException.InvalidOperationException.message"
+             :KIND PARA :ID 117 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.InvalidOperationException.InvalidOperationException.innerException"
+             :KIND PARA :ID 118 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("NotSupportedException"
+      (:NAME "System.NotSupportedException" :KIND CLASS :ID 122 :TYPE
+       NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("NotSupportedException" 149 NIL
+         (:NAME "System.NotSupportedException.NotSupportedException"
+          :KIND METHOD :ID 128 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("NotSupportedException" 150 NIL
+         (:NAME "System.NotSupportedException.NotSupportedException"
+          :KIND METHOD :ID 126 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.NotSupportedException.NotSupportedException.message"
+             :KIND PARA :ID 127 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("NotSupportedException" 151 NIL
+         (:NAME "System.NotSupportedException.NotSupportedException"
+          :KIND METHOD :ID 123 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.NotSupportedException.NotSupportedException.message"
+             :KIND PARA :ID 124 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.NotSupportedException.NotSupportedException.innerException"
+             :KIND PARA :ID 125 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("String"
+      (:NAME "System.String" :KIND CLASS :ID 129 :TYPE NIL :BASE-LS
+       ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED T
+       :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS NIL :PROPERTY-LS
+       (("Length" 15 NIL
+         (:NAME "System.String.Length" :KIND PROPERTY :ID 130 :TYPE
+          "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT
+          NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW
+          NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+          "public" :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         (:NAME "System.String.Length.get" :KIND GET-ACCESSOR :ID 131
+          :TYPE NIL :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+          :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+          :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "internal"
+          :STATUS USE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL
+          :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS NIL)
+         NIL))
+       :EVENT-LS NIL :INDEXER-LS
+       ((16 NIL
+         (:NAME "System.String.this" :KIND INDEXER :ID 132 :TYPE
+          (CS-TY-DELEGATE "System.Char" ("System.Int32") NIL) :BASE-LS
+          NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+          NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+          NIL :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("index") NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("index"
+            (:NAME "System.String.this.index" :KIND PARA :ID 133 :TYPE
+             "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL
+             :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+             :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+             NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT
+             NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+             :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+             :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+             :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)
+         (:NAME "System.String.this.get" :KIND GET-ACCESSOR :ID 134
+          :TYPE (CS-TY-DELEGATE "System.Char" ("System.Int32") NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "internal" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (("index") NIL)
+          :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+          :SYM-TBL
+          (("index"
+            (:NAME "System.String.this.get.index" :KIND PARA :ID 135
+             :TYPE "System.Int32" :BASE-LS NIL :MODS NIL :PARTIAL NIL
+             :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL
+             :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+             NIL :ACCESSOR NIL :STATUS USE :SRC-FILE "System.cs" :INIT
+             NIL :PARA-LS NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL
+             :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS NIL
+             :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+             :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)
+         NIL))
+       :OPERATOR-LS NIL))
+     ("StackOverflowException"
+      (:NAME "System.StackOverflowException" :KIND CLASS :ID 136 :TYPE
+       NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED T :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("StackOverflowException" 173 NIL
+         (:NAME "System.StackOverflowException.StackOverflowException"
+          :KIND METHOD :ID 142 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("StackOverflowException" 174 NIL
+         (:NAME "System.StackOverflowException.StackOverflowException"
+          :KIND METHOD :ID 140 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.StackOverflowException.StackOverflowException.message"
+             :KIND PARA :ID 141 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("StackOverflowException" 175 NIL
+         (:NAME "System.StackOverflowException.StackOverflowException"
+          :KIND METHOD :ID 137 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.StackOverflowException.StackOverflowException.message"
+             :KIND PARA :ID 138 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.StackOverflowException.StackOverflowException.innerException"
+             :KIND PARA :ID 139 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("Enum"
+      (:NAME "System.Enum" :KIND CLASS :ID 143 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT T :SEALED
+       NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS
+       (("Enum" 60 NIL
+         (:NAME "System.Enum.Enum" :KIND METHOD :ID 144 :TYPE
+          (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL :MODS NIL
+          :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+          NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+          NIL :ACCESSOR "protected" :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("ArgumentException"
+      (:NAME "System.ArgumentException" :KIND CLASS :ID 145 :TYPE NIL
+       :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL NIL
+       :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL
+       :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("ArgumentException" 107 NIL
+         (:NAME "System.ArgumentException.ArgumentException" :KIND
+          METHOD :ID 151 :TYPE (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS
+          NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+          NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE
+          NIL :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL
+          :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ArgumentException" 108 NIL
+         (:NAME "System.ArgumentException.ArgumentException" :KIND
+          METHOD :ID 149 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.ArgumentException.ArgumentException.message"
+             :KIND PARA :ID 150 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("ArgumentException" 109 NIL
+         (:NAME "System.ArgumentException.ArgumentException" :KIND
+          METHOD :ID 146 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME "System.ArgumentException.ArgumentException.message"
+             :KIND PARA :ID 147 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.ArgumentException.ArgumentException.innerException"
+             :KIND PARA :ID 148 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("UInt32"
+      (:NAME "System.UInt32" :KIND STRUCT :ID 152 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("SByte"
+      (:NAME "System.SByte" :KIND STRUCT :ID 153 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("Decimal"
+      (:NAME "System.Decimal" :KIND STRUCT :ID 154 :TYPE NIL :BASE-LS
+       ("System.ValueType") :MODS NIL :PARTIAL NIL :ABSTRACT NIL
+       :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL
+       :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR "public"
+       :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL
+       :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+       NIL :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+       :INDEXER-LS NIL :OPERATOR-LS NIL))
+     ("TypeInitializationException"
+      (:NAME "System.TypeInitializationException" :KIND CLASS :ID 155
+       :TYPE NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL
+       NIL :ABSTRACT NIL :SEALED T :VIRTUAL NIL :OVERRIDE NIL :STATIC
+       NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("TypeInitializationException" 179 NIL
+         (:NAME
+          "System.TypeInitializationException.TypeInitializationException"
+          :KIND METHOD :ID 161 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("TypeInitializationException" 180 NIL
+         (:NAME
+          "System.TypeInitializationException.TypeInitializationException"
+          :KIND METHOD :ID 159 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.TypeInitializationException.TypeInitializationException.message"
+             :KIND PARA :ID 160 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("TypeInitializationException" 181 NIL
+         (:NAME
+          "System.TypeInitializationException.TypeInitializationException"
+          :KIND METHOD :ID 156 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.TypeInitializationException.TypeInitializationException.message"
+             :KIND PARA :ID 157 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.TypeInitializationException.TypeInitializationException.innerException"
+             :KIND PARA :ID 158 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("MemberInfo"
+      (:NAME "System.MemberInfo" :KIND CLASS :ID 162 :TYPE NIL :BASE-LS
+       ("System.Object") :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED
+       NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+       :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS MAKE
+       :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+       :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS
+       NIL :METHOD-LS
+       (("MemberInfo" 69 NIL
+         (:NAME "System.MemberInfo.MemberInfo" :KIND METHOD :ID 163
+          :TYPE (CS-TY-DELEGATE "void" NIL NIL) :BASE-LS NIL :MODS NIL
+          :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE
+          NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY
+          NIL :ACCESSOR "protected" :STATUS USE :SRC-FILE "System.cs"
+          :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL :BLOCK-LS NIL
+          :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL
+          :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL))
+     ("IndexOutOfRangeException"
+      (:NAME "System.IndexOutOfRangeException" :KIND CLASS :ID 164
+       :TYPE NIL :BASE-LS ("System.SystemException") :MODS NIL :PARTIAL
+       NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL :OVERRIDE NIL :STATIC
+       NIL :NEW NIL :EXTERN NIL :VOLATILE NIL :READONLY NIL :ACCESSOR
+       "public" :STATUS MAKE :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+       NIL :FIELD-LS NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL
+       :SYM-TBL NIL :BLOCK-LS NIL :METHOD-LS
+       (("IndexOutOfRangeException" 131 NIL
+         (:NAME
+          "System.IndexOutOfRangeException.IndexOutOfRangeException"
+          :KIND METHOD :ID 170 :TYPE (CS-TY-DELEGATE "void" NIL NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS (NIL NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("IndexOutOfRangeException" 132 NIL
+         (:NAME
+          "System.IndexOutOfRangeException.IndexOutOfRangeException"
+          :KIND METHOD :ID 168 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String") NIL) :BASE-LS NIL
+          :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL NIL
+          :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL :VOLATILE NIL
+          :READONLY NIL :ACCESSOR "public" :STATUS USE :SRC-FILE
+          "System.cs" :INIT NIL :PARA-LS (("message") NIL) :FIELD-LS
+          NIL :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.IndexOutOfRangeException.IndexOutOfRangeException.message"
+             :KIND PARA :ID 169 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL))
+        ("IndexOutOfRangeException" 133 NIL
+         (:NAME
+          "System.IndexOutOfRangeException.IndexOutOfRangeException"
+          :KIND METHOD :ID 165 :TYPE
+          (CS-TY-DELEGATE "void" ("System.String" "System.Exception")
+           NIL)
+          :BASE-LS NIL :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL
+          :VIRTUAL NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+          :VOLATILE NIL :READONLY NIL :ACCESSOR "public" :STATUS USE
+          :SRC-FILE "System.cs" :INIT NIL :PARA-LS
+          (("message" "innerException") NIL) :FIELD-LS NIL :PARTIAL NIL
+          :FINALIZER NIL :CONST-LS NIL :SYM-TBL
+          (("message"
+            (:NAME
+             "System.IndexOutOfRangeException.IndexOutOfRangeException.message"
+             :KIND PARA :ID 166 :TYPE "System.String" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL))
+           ("innerException"
+            (:NAME
+             "System.IndexOutOfRangeException.IndexOutOfRangeException.innerException"
+             :KIND PARA :ID 167 :TYPE "System.Exception" :BASE-LS NIL
+             :MODS NIL :PARTIAL NIL :ABSTRACT NIL :SEALED NIL :VIRTUAL
+             NIL :OVERRIDE NIL :STATIC NIL :NEW NIL :EXTERN NIL
+             :VOLATILE NIL :READONLY NIL :ACCESSOR NIL :STATUS USE
+             :SRC-FILE "System.cs" :INIT NIL :PARA-LS NIL :FIELD-LS NIL
+             :PARTIAL NIL :FINALIZER NIL :CONST-LS NIL :SYM-TBL NIL
+             :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS
+             NIL :INDEXER-LS NIL :OPERATOR-LS NIL)))
+          :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+          :INDEXER-LS NIL :OPERATOR-LS NIL)))
+       :PROPERTY-LS NIL :EVENT-LS NIL :INDEXER-LS NIL :OPERATOR-LS
+       NIL)))
+    :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+    :INDEXER-LS NIL :OPERATOR-LS NIL)))
+ :BLOCK-LS NIL :METHOD-LS NIL :PROPERTY-LS NIL :EVENT-LS NIL
+ :INDEXER-LS NIL :OPERATOR-LS NIL)

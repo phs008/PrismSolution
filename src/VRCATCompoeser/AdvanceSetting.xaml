@@ -1,0 +1,34 @@
+﻿<Window x:Class="VRCATCompoeser.AdvanceSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" Width="320" Height="240"
+        Title="AdvanceSetting">
+    <DockPanel Background="#bcbcbc">
+        <Button Content="Close" Click="Close_Click" DockPanel.Dock="Bottom"/>
+        <ListBox x:Name="PluginListBox" 
+                 ItemsSource="{Binding PackagesList}" 
+                 Focusable="True" SelectionMode="Multiple" DockPanel.Dock="Left" MouseMove="PluginListBox_MouseMove" Background="#bcbcbc" >
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding PluginSelectCommand}" CommandParameter="{Binding PluginListBox.SelectedItem}" />
+                    <!--<prism:InvokeCommandAction Command="{Binding PluginSelectCommand}" CommandParameter="{Binding PluginListBox.SelectedItem}"/>-->
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <!--<CheckBox Content="{Binding HeaderTitle}" Margin="5" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" >-->
+                        <CheckBox Content="{Binding HeaderTitle}" Margin="5" IsChecked="{Binding IsSelected}" >
+                            <CheckBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="{Binding Description}" />
+                                </ToolTip>
+                            </CheckBox.ToolTip>
+                        </CheckBox>
+                    </ScrollViewer>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Text="{Binding SelectedPluginInfo}" FontSize="15" FontWeight="SemiBold" TextWrapping="WrapWithOverflow" Margin="10,10,10,0" DockPanel.Dock="Right" Background="#bcbcbc"/>
+    </DockPanel>
+</Window>

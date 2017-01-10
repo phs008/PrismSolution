@@ -1,0 +1,15 @@
+
+void (*ENG_CAPI_PropertyUI_SetPivot)(eng_obj_ptr obj,  EngineMath3D::Vector2 value) = NULL;
+EngineMath3D::Vector2 (*ENG_CAPI_PropertyUI_GetPivot)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyUI_SetPixelPerfect)(eng_obj_ptr obj,  int value) = NULL;
+int (*ENG_CAPI_PropertyUI_GetPixelPerfect)(eng_obj_ptr obj  ) = NULL;
+
+
+
+void (*ENG_CAPI_PropertyUI_SetSize)(eng_obj_ptr obj,  EngineMath3D::Vector2 value) = NULL;
+EngineMath3D::Vector2 (*ENG_CAPI_PropertyUI_GetSize)(eng_obj_ptr obj  ) = NULL;
+
+

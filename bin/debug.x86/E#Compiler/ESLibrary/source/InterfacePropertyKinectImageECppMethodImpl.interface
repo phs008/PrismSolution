@@ -1,0 +1,27 @@
+
+int PropertyKinectImage::GetImageType( )
+{
+	if (ENG_CAPI_PropertyKinectImage_GetImageType)
+	{
+		return ENG_CAPI_PropertyKinectImage_GetImageType(Owner->id );
+	}
+	else
+		return 0;
+}
+
+
+void PropertyKinectImage::SetImageType(  int value)
+{
+	if (ENG_CAPI_PropertyKinectImage_SetImageType)
+	{
+		ENG_CAPI_PropertyKinectImage_SetImageType(Owner->id,   value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyKinectImage_SetImageType is not Linked", 0, 0.0f );
+	}
+}
+
+
+

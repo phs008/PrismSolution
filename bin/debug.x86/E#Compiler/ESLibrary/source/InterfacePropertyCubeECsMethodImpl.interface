@@ -1,0 +1,15 @@
+	public float GetDepth( );
+	public void SetDepth(float value);
+
+
+
+	public float GetHeight( );
+	public void SetHeight(float value);
+
+
+
+	public float GetWidth( );
+	public void SetWidth(float value);
+
+
+

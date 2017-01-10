@@ -1,0 +1,4 @@
+	public %csrettype% Get%prop%(int index);
+	public void Set%prop%(%csargtype% value, int index);
+
+

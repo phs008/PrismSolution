@@ -1,0 +1,18 @@
+
+int PropertyConfig::GetRenderPBR()
+{
+	if (ENG_CAPI_PropertyConfig_GetRenderPBR)
+		return ENG_CAPI_PropertyConfig_GetRenderPBR(id);
+	else
+		return 0;
+}
+
+
+void PropertyConfig::SetRenderPBR(int value)
+{
+	if (ENG_CAPI_PropertyConfig_SetRenderPBR)
+		return ENG_CAPI_PropertyConfig_SetRenderPBR(id, value);
+}
+
+
+

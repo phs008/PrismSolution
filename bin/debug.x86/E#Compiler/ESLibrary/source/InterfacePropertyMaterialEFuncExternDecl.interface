@@ -1,0 +1,144 @@
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetAlbedoColor)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Color value);
+EXTERN_C DLLAPI EngineMath3D::Color (*ENG_CAPI_PropertyMaterial_GetAlbedoColor)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetAlphaBlending)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetAlphaBlending)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetAlphaTest)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetAlphaTest)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetAmbient)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetAmbient)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetAmbientColor)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Color value);
+EXTERN_C DLLAPI EngineMath3D::Color (*ENG_CAPI_PropertyMaterial_GetAmbientColor)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetAmbientColorRate)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetAmbientColorRate)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetCullBackFace)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetCullBackFace)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetDiffuse)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetDiffuse)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetDiffuseColor)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Color value);
+EXTERN_C DLLAPI EngineMath3D::Color (*ENG_CAPI_PropertyMaterial_GetDiffuseColor)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetFog)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetFog)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetGlossiness)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetGlossiness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetIsPBRMaterial)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetIsPBRMaterial)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetMagFilter)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetMagFilter)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetMetalliness)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetMetalliness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetMinFilter)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetMinFilter)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetNormalMapDirection)(eng_obj_ptr obj, int propIndex,  EngineMath3D::Vector4 value);
+EXTERN_C DLLAPI EngineMath3D::Vector4 (*ENG_CAPI_PropertyMaterial_GetNormalMapDirection)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetOpacity)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetOpacity)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetPixelShader)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetPixelShader)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetRoughness)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetRoughness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetShadingModel)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetShadingModel)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetShadowDarkness)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetShadowDarkness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetShininess)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetShininess)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetSmoothness)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetSmoothness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetSpecular)(eng_obj_ptr obj, int propIndex,  float value);
+EXTERN_C DLLAPI float (*ENG_CAPI_PropertyMaterial_GetSpecular)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureDiffuse)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureDiffuse)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureEnv)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureEnv)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureEtc)(eng_obj_ptr obj, int propIndex,  const char * value, int index);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureEtc)(eng_obj_ptr obj, int propIndex,  int index);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureGlossiness)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureGlossiness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureNormal)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureNormal)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureRoughness)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureRoughness)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureShininess)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureShininess)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetTextureSpecular)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetTextureSpecular)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetUseAlbedoTexture)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetUseAlbedoTexture)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetUseMetalSmoothnessTexture)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetUseMetalSmoothnessTexture)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetVertexShader)(eng_obj_ptr obj, int propIndex,  const char * value);
+EXTERN_C DLLAPI const char * (*ENG_CAPI_PropertyMaterial_GetVertexShader)(eng_obj_ptr obj , int propIndex);
+
+
+EXTERN_C DLLAPI void (*ENG_CAPI_PropertyMaterial_SetWireFrame)(eng_obj_ptr obj, int propIndex,  int value);
+EXTERN_C DLLAPI int (*ENG_CAPI_PropertyMaterial_GetWireFrame)(eng_obj_ptr obj , int propIndex);
+
+

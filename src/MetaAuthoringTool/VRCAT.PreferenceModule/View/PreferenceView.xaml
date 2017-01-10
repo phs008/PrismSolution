@@ -1,0 +1,29 @@
+﻿<Window x:Class="VRCAT.PreferenceModule.PreferenceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VRCAT.PreferenceModule"
+             mc:Ignorable="d" 
+            WindowStyle="SingleBorderWindow"
+            WindowState="Normal"
+            ShowInTaskbar="False"
+            ResizeMode="NoResize"
+        Width="516" Height="439"
+        Title="Preference"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0">
+            <ListBoxItem>General</ListBoxItem>
+            <ListBoxItem>External Tools</ListBoxItem>
+            <ListBoxItem>Keys</ListBoxItem>
+        </ListBox>
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
+        <Border Grid.Column="2" />
+    </Grid>
+</Window>

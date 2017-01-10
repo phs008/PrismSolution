@@ -1,0 +1,12 @@
+	Color* GetAlbedoColor();
+	void SetAlbedoColor(Color *value);
+
+	Color* GetAmbientColor();
+	void SetAmbientColor(Color *value);
+
+	Color* GetDiffuseColor();
+	void SetDiffuseColor(Color *value);
+
+	Vector4* GetNormalMapDirection();
+	void SetNormalMapDirection(Vector4 *value);
+

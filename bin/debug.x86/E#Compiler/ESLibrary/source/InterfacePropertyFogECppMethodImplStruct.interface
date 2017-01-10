@@ -1,0 +1,37 @@
+
+
+Color* PropertyFog::GetFogColor( )
+{
+	if (ENG_CAPI_PropertyFog_GetFogColor)
+	{
+		Color *r = new Color;
+		*r = Color( ENG_CAPI_PropertyFog_GetFogColor(Owner->id  ) );
+		return r;
+	}
+	else
+	{
+		Color *r = new Color;
+		*r = Color( ::Color(0.0f, 0.0f, 0.0f, 0.0f) );
+		return r;
+	}
+}
+
+
+void PropertyFog::SetFogColor(  Color *value)
+{
+	if (ENG_CAPI_PropertyFog_SetFogColor)
+	{
+		ENG_CAPI_PropertyFog_SetFogColor(Owner->id,   *value);
+	}
+	else
+	{
+		if (ENG_CAPI_Debugger_Log)
+			ENG_CAPI_Debugger_Log("ENG_CAPI_PropertyFog_SetFogColor is not Linked", 0, 0.0f );
+	}
+}
+
+
+
+
+
+

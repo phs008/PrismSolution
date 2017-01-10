@@ -1,0 +1,53 @@
+#line 1 "enginedata\hls11\LineDrawer.Vertex.hls"
+
+cbuffer SHADER_EXTERN
+{
+	float4x4 ViewProj;
+};
+
+	//float4x4 World; do not use World 
+
+
+// 입력정점 형식
+struct VS_INPUT
+{
+    float3 Position : POSITION;
+	float4 Color : COLOR;
+};
+
+
+
+
+
+// 출력정점 형식
+struct VS_OUTPUT
+{
+	float4 Position : POSITION;
+	float4 Color : NORMAL0;
+};
+
+
+
+
+VS_OUTPUT VS(VS_INPUT In)
+{
+    VS_OUTPUT   Out;
+    
+    float4 posWorld;
+    posWorld.xyz = In.Position;
+    posWorld.w = 1.0;
+
+	//posWorld = mul(posWorld, World);
+	Out.Position = mul(posWorld, ViewProj); 
+
+	Out.Color = In.Color;
+    
+	return Out;
+
+
+}
+
+
+
+
+    
